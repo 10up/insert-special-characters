@@ -7,7 +7,7 @@ import './gutenberg-character-map.css';
 const GutenbergCharacterMap =
 	{
 		name: 'charactermap',
-		title: 'Ω Character map',
+		title: 'Character map',
 		character: 'o',
 		value: '',
 	};
@@ -58,7 +58,8 @@ registerFormatType( type, {
 					isActive,
 					shortcutType: 'primary',
 					shortcutCharacter: character,
-					className: `toolbar-button-with-text toolbar-button__advanced-${ name }`
+					className: `toolbar-button-with-text toolbar-button__advanced-${ name }`,
+					icon: 'editor-customchar'
 				} ) )
 		);
 	}
