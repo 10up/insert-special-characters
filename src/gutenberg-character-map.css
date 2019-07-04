@@ -1,3 +1,47 @@
-.toolbar-button__advanced-mathml:before {
-	content: 'M';
+.editor-styles-wrapper .charMap--container {
+	position: absolute;
+	top: 2em;
+	height: 200px;
+	overflow: scroll;
+	box-shadow: 0 3px 30px rgba(25,30,35,.1);
+	border: 1px solid #e2e4e7;
+	background: #fff;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+	font-size: 18px;
+}
+
+.editor-styles-wrapper .charMap--container ul {
+	list-style-type: none;
+}
+
+.charMap--category.active li {
+	line-height: 1;
+}
+
+.charMap--category-menu li {
+	display: inline-block;
+	border-bottom: none;
+	font-size: 14px;
+}
+
+.charMap--category-menu .charMap--category-menu-item.active,
+.charMap--category li a:hover {
+	background: #0085ba;
+}
+
+.editor-styles-wrapper .charMap--category-menu a:hover {
+	background: none;
+	text-decoration: underline;
+}
+
+.charMap--category-menu .charMap--category-menu-item.active a {
+	color: #fff;
+}
+
+.editor-styles-wrapper .charMap--container .charMap--categories {
+	margin: 5px;
+}
+
+.charMap--categories li a {
+	color: #111;
 }
