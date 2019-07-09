@@ -1,6 +1,8 @@
-const { registerFormatType, toggleFormat } = window.wp.richText;
-const { createElement, Fragment } = window.wp.element;
-const { RichTextToolbarButton, RichTextShortcut } = window.wp.editor;
+const { registerFormatType, toggleFormat } = wp.richText;
+const { createElement, Fragment } = wp.element;
+const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
+const { Popover } = wp.components;
+const { getRectangleFromRange } = wp.dom;
 
 import { CharacterMap } from 'react-character-map';
 import './gutenberg-character-map.css';
@@ -15,6 +17,16 @@ const GutenbergCharacterMap =
 const { name, title, character } = GutenbergCharacterMap;
 const type = `character-map/${ name }`;
 let originalValue;
+
+function getCaretRect() {
+	const range = window.getSelection().getRangeAt( 0 );
+
+	if ( range ) {
+		return getRectangleFromRange( range );
+	}
+}
+
+
 registerFormatType( type, {
 	title,
 	tagName: name,
@@ -29,19 +41,29 @@ registerFormatType( type, {
 
 		if ( isActive ) {
 			return (
-				<CharacterMap
-					onSelect={
-						( char ) => {
-							const slicedNewText = originalValue.text.slice( 0, originalValue.start ) +
-								char.char +
-								originalValue.text.slice( originalValue.end );
-							value.text = slicedNewText;
-							onChange( toggleFormat( value, { type, attributes: { char } } ) );
-							onToggle( false );
-							blur();
+				<Popover
+					className="character-map-popover"
+					position="bottom center"
+					focusOnMount={ false }
+					key="charmap-popover"
+					onClick={ () => {} }
+					getAnchorRect={ getCaretRect }
+				>
+					<CharacterMap
+						onSelect={
+							( char ) => {
+								const slicedNewText = originalValue.text.slice( 0, originalValue.start ) +
+									char.char +
+									originalValue.text.slice( originalValue.end );
+								value.text = slicedNewText;
+								onChange( toggleFormat( value, { type, attributes: { char } } ) );
+								onToggle( false );
+								blur();
+							}
 						}
-					}
-				/>
+						key="charmap"
+					/>
+				</Popover>
 			);
 		}
 
