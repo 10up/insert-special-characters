@@ -28,6 +28,7 @@ Development takes place on the GitHub repository: https://github.com/10up/gutenb
 1. Example of adding a Gutenberg Character Map.
 
 == Installation ==
+
 1. Install the plugin via the plugin installer, either by searching for it or uploading a .zip file.
 2. Activate the plugin.
 3. Use the Gutenberg Character Map!
