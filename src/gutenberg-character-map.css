@@ -45,3 +45,7 @@
 .charMap--categories li a {
 	color: #111;
 }
+
+body:not(.mobile) .character-map-popover .components-popover__content:not(.is-mobile) {
+	min-width: 550px;
+}
