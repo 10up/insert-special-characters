@@ -20,7 +20,7 @@ Development takes place on the GitHub repository: https://github.com/10up/gutenb
 === Technical Notes ===
 
 * Requires PHP 5.6+.
-* Requires WordPress 5.0+.
+* Requires [WordPress](http://wordpress.org/) 5.0+ ...or... WordPress 4.9 plus [Gutenberg 4.9](https://github.com/WordPress/gutenberg/releases/tag/v4.9.0)
 * Issues and Pull requests welcome on the GitHub repository: https://github.com/10up/gutenberg-special-characters.
 
 == Screenshots ==
