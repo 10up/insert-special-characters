@@ -2,7 +2,7 @@
 
 > A Gutenberg Character Map for the WordPress block editor (Gutenberg).
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.2%20tested-success.svg)
+[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.2%20tested-success.svg) [![MIT License](https://img.shields.io/github/license/10up/gutenberg-special-characters.svg)](https://github.com/10up/gutenberg-special-characters/blob/master/LICENSE.md)
 
 ## Support Level
 
