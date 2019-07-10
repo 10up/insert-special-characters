@@ -4,10 +4,22 @@
 
 [![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/gutenberg-special-characters.svg)](https://github.com/10up/gutenberg-special-characters/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.2%20tested-success.svg) [![MIT License](https://img.shields.io/github/license/10up/gutenberg-special-characters.svg)](https://github.com/10up/gutenberg-special-characters/blob/master/LICENSE.md)
 
+## Overview
+
+Ever wanted to add a special character while working within Gutenberg and suddenly find yourself longing for the days of the Classic Editor and the Special Character inserter?  Well long no more, the Gutenberg Character Map is here to ease your publishing woes!
+
+![Demo of special characters within Gutenberg](assets/gutenberg-special-characters.gif "Example of a special characters in the new WordPress editor")
+
 ## Requirements
 
 * PHP 5.4+
 * [WordPress](http://wordpress.org/) 5.0+ ...or... WordPress 4.9 plus [Gutenberg 4.9](https://github.com/WordPress/gutenberg/releases/tag/v4.9.0)
+
+## Installation
+
+1. Install the plugin via the plugin installer, either by searching for it or uploading a .zip file.
+1. Activate the plugin.
+1. Use the Gutenberg Character Map!
 
 ## Support Level
 
