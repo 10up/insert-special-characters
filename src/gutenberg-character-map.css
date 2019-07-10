@@ -1,21 +1,9 @@
-.editor-styles-wrapper .charMap--container {
-	position: absolute;
-	top: 2em;
-	height: 200px;
-	overflow: scroll;
-	box-shadow: 0 3px 30px rgba(25,30,35,.1);
-	border: 1px solid #e2e4e7;
-	background: #fff;
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+div.charMap--container {
 	font-size: 18px;
 }
 
-.editor-styles-wrapper .charMap--container ul {
-	list-style-type: none;
-}
-
 .charMap--category.active li {
-	line-height: 1;
+	margin-bottom: 0;
 }
 
 .charMap--category-menu li {
@@ -29,7 +17,7 @@
 	background: #0085ba;
 }
 
-.editor-styles-wrapper .charMap--category-menu a:hover {
+.charMap--container .charMap--category-menu a:hover {
 	background: none;
 	text-decoration: underline;
 }
@@ -38,7 +26,7 @@
 	color: #fff;
 }
 
-.editor-styles-wrapper .charMap--container .charMap--categories {
+.charMap--container .charMap--container .charMap--categories {
 	margin: 5px;
 }
 
