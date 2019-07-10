@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Gutenberg Character Map
- * Description:       Insert special charachters.
+ * Description:       Insert special characters.
  * Version:           1.1.0
  * Requires at least: 5.0.0
  * Tested up to:      5.2.0
@@ -23,7 +23,7 @@ function gcm_block_enqueue_scripts() {
 
 	wp_enqueue_script(
 		'character-map',
-		plugin_dir_url( __FILE__ ) . 'dist/gutenberg-character-map.js',
+		plugin_dir_url( __FILE__ ) . 'dist/special-characters.js',
 		array( 'wp-blocks', 'wp-i18n', 'wp-editor' ),
 		'',
 		true

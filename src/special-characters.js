@@ -1,3 +1,4 @@
+
 const { registerFormatType, toggleFormat } = wp.richText;
 const { createElement, Fragment } = wp.element;
 const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
@@ -5,8 +6,8 @@ const { Popover } = wp.components;
 const { getRectangleFromRange } = wp.dom;
 
 import { CharacterMap } from 'react-character-map';
-import './gutenberg-character-map.css';
-const GutenbergCharacterMap =
+import './special-characters.css';
+const CharacterMapOptions =
 	{
 		name: 'charactermap',
 		title: 'Character map',
@@ -14,7 +15,7 @@ const GutenbergCharacterMap =
 		value: '',
 	};
 
-const { name, title, character } = GutenbergCharacterMap;
+const { name, title, character } = CharacterMapOptions;
 const type = `character-map/${ name }`;
 let originalValue;
 
