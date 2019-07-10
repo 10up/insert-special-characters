@@ -10,7 +10,7 @@ const GutenbergCharacterMap =
 	{
 		name: 'charactermap',
 		title: 'Character map',
-		character: 'o',
+		character: 'Ω',
 		value: '',
 	};
 
@@ -18,27 +18,34 @@ const { name, title, character } = GutenbergCharacterMap;
 const type = `character-map/${ name }`;
 let originalValue;
 
-function getCaretRect() {
+// Calculate the caret insertion point.
+const getCaretRect = () => {
 	const range = window.getSelection().getRangeAt( 0 );
 
 	if ( range ) {
 		return getRectangleFromRange( range );
 	}
-}
+};
 
-
+/**
+ * Register the "Format Type" to create the character inserter.
+ */
 registerFormatType( type, {
 	title,
 	tagName: name,
 	className: null,
 	active: false,
+
+	/**
+	 * The `edit` function is called when the Character Map is selected.
+	 */
 	edit( { isActive, value, onChange } ) {
 		const onToggle = () => {
-			console.log( 'onToggle', isActive, value );
 			originalValue = value;
 			onChange( toggleFormat( value, { type } ) );
 		};
 
+		// Only display the character map when it is active.
 		if ( isActive ) {
 			return (
 				<Popover
@@ -51,13 +58,15 @@ registerFormatType( type, {
 				>
 					<CharacterMap
 						onSelect={
+
+							// Store the selected character and close the popover.
 							( char ) => {
 								const slicedNewText = originalValue.text.slice( 0, originalValue.start ) +
 									char.char +
 									originalValue.text.slice( originalValue.end );
 								value.text = slicedNewText;
 								onChange( toggleFormat( value, { type, attributes: { char } } ) );
-								onToggle( false );
+								onToggle();
 								blur();
 							}
 						}
