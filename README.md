@@ -15,6 +15,12 @@ Ever wanted to add a special character while working within Gutenberg and sudden
 * PHP 5.4+
 * [WordPress](http://wordpress.org/) 5.0+ ...or... WordPress 4.9 plus [Gutenberg 4.9](https://github.com/WordPress/gutenberg/releases/tag/v4.9.0)
 
+## Installation
+
+1. Install the plugin via the plugin installer, either by searching for it or uploading a .zip file.
+1. Activate the plugin.
+1. Use the Gutenberg Character Map!
+
 ## Support Level
 
 **Active:** 10up is actively working on this, and we expect to continue work for the foreseeable future including keeping tested up to the most recent version of WordPress.  Bug reports, feature requests, questions, and pull requests are welcome.
