@@ -1,16 +1,14 @@
 <?php
 /**
  * Plugin Name:       Gutenberg Character Map
- * Description:       Insert special characters.
- * Version:           1.1.0
- * Requires at least: 5.0.0
- * Tested up to:      5.2.0
- * Requires PHP:      5.6
- * Stable tag:        5.2.0
- * Author:            10up, adamsilverstein
+ * Plugin URI:        https://github.com/10up/gutenberg-special-characters
+ * Description:       Insert special characters within the Gutenberg editor.
+ * Version:           1.0.0
+ * Author:            10up
  * Author URI:        http://10up.com
  * License:           MIT
- * GitHub Plugin URI: https://github.com/10up
+ * License URI:       http://www.gnu.org/licenses/mit.html
+ * Text Domain:       character-map
  *
  * @package character-map
  */
