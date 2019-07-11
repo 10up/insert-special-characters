@@ -7,14 +7,14 @@ const { getRectangleFromRange } = wp.dom;
 
 import { CharacterMap } from 'react-character-map';
 import './insert-special-characters.css';
-const CharacterMapOptions = {
+const InsertSpecialCharactersOptions = {
 	name: 'specialcharacters',
 	title: 'Special Characters',
-	character: 'Ω',
+	character: 'o',
 	value: '',
 };
 
-const { name, title, character } = CharacterMapOptions;
+const { name, title, character } = InsertSpecialCharactersOptions;
 const type = `special-characters/${ name }`;
 let originalValue;
 
@@ -51,7 +51,7 @@ registerFormatType( type, {
 				<Popover
 					className="character-map-popover"
 					position="bottom center"
-					focusOnMount={ false }
+					focusOnMount="firstElement"
 					key="charmap-popover"
 					onClick={ () => {} }
 					getAnchorRect={ getCaretRect }
