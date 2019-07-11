@@ -6,17 +6,16 @@ const { Popover } = wp.components;
 const { getRectangleFromRange } = wp.dom;
 
 import { CharacterMap } from 'react-character-map';
-import './special-characters.css';
-const CharacterMapOptions =
-	{
-		name: 'charactermap',
-		title: 'Character map',
-		character: 'Ω',
-		value: '',
-	};
+import './insert-special-characters.css';
+const CharacterMapOptions = {
+	name: 'specialcharacters',
+	title: 'Special Characters',
+	character: 'Ω',
+	value: '',
+};
 
 const { name, title, character } = CharacterMapOptions;
-const type = `character-map/${ name }`;
+const type = `special-characters/${ name }`;
 let originalValue;
 
 // Calculate the caret insertion point.

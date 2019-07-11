@@ -1,14 +1,14 @@
-# Gutenberg Character Map
+# Insert Special Characters
 
-> A Gutenberg Character Map for the WordPress block editor (Gutenberg).
+> A Insert Special Characters for the WordPress block editor (Gutenberg).
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/gutenberg-special-characters.svg)](https://github.com/10up/gutenberg-special-characters/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.2%20tested-success.svg) [![MIT License](https://img.shields.io/github/license/10up/gutenberg-special-characters.svg)](https://github.com/10up/gutenberg-special-characters/blob/master/LICENSE.md)
+[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.2%20tested-success.svg) [![MIT License](https://img.shields.io/github/license/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/blob/master/LICENSE.md)
 
 ## Overview
 
-Ever wanted to add a special character while working within Gutenberg and suddenly find yourself longing for the days of the Classic Editor and the Special Character inserter?  Well long no more, the Gutenberg Character Map is here to ease your publishing woes!
+Ever wanted to add a special character while working within Gutenberg and suddenly find yourself longing for the days of the Classic Editor and the Special Character inserter?  Well long no more, the Insert Special Characters is here to ease your publishing woes!
 
-![Demo of special characters within Gutenberg](assets/gutenberg-special-characters.gif "Example of a special characters in the new WordPress editor")
+![Demo of special characters within Gutenberg](assets/insert-special-characters.gif "Example of a special characters in the new WordPress editor")
 
 ## Requirements
 
@@ -19,7 +19,7 @@ Ever wanted to add a special character while working within Gutenberg and sudden
 
 1. Install the plugin via the plugin installer, either by searching for it or uploading a .zip file.
 1. Activate the plugin.
-1. Use the Gutenberg Character Map!
+1. Use Insert Special Characters!
 
 ## Support Level
 
@@ -27,7 +27,7 @@ Ever wanted to add a special character while working within Gutenberg and sudden
 
 ## Changelog
 
-A complete listing of all notable changes to Gutenberg Character Map are documented in [CHANGELOG.md](https://github.com/10up/gutenberg-special-characters/blob/master/CHANGELOG.md).
+A complete listing of all notable changes to Insert Special Characters are documented in [CHANGELOG.md](https://github.com/10up/insert-special-characters/blob/master/CHANGELOG.md).
 
 ## Like what you see?
 
