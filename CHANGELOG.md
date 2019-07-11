@@ -7,5 +7,5 @@ All notable changes to this project will be documented in this file, per [the Ke
 ## [1.0.0] - TBD
 - Initial plugin release
 
-[Unreleased]: https://github.com/10up/gutenberg-special-characters/compare/1.0.0...master
-[1.0.0]: https://github.com/10up/gutenberg-special-characters/releases/tag/1.0.0
+[Unreleased]: https://github.com/10up/insert-special-characters/compare/1.0.0...master
+[1.0.0]: https://github.com/10up/insert-special-characters/releases/tag/1.0.0
