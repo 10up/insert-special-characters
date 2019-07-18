@@ -6,9 +6,9 @@ module.exports = [
 
 	// Build the settings js..
 	{
-		entry: [ './src/gutenberg-character-map.js' ],
+		entry: [ './src/insert-special-characters.js' ],
 		output: {
-			filename: 'gutenberg-character-map.js',
+			filename: 'insert-special-characters.js',
 			path: __dirname + '/dist/',
 		},
 		module: {

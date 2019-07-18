@@ -1,18 +1,18 @@
 <?php
 /**
- * Plugin Name:       Gutenberg Character Map
- * Plugin URI:        https://github.com/10up/gutenberg-special-characters
- * Description:       Insert special characters within the Gutenberg editor.
+ * Plugin Name:       Insert Special Characters
+ * Plugin URI:        https://github.com/10up/insert-special-characters
+ * Description:       Insert special characters in the block editor (Gutenberg).
  * Version:           1.0.0
  * Author:            10up
  * Author URI:        http://10up.com
  * License:           MIT
  * License URI:       http://www.gnu.org/licenses/mit.html
- * Text Domain:       character-map
+ * Text Domain:       insert-special-characters
  *
- * @package character-map
+ * @package insert-special-characters
  */
-namespace GutenbergCharacterMap;
+namespace InsertSpecialCharacters;
 
  /**
   * Enqueue the admin JavaScript assets.
@@ -20,8 +20,8 @@ namespace GutenbergCharacterMap;
 function gcm_block_enqueue_scripts() {
 
 	wp_enqueue_script(
-		'character-map',
-		plugin_dir_url( __FILE__ ) . 'dist/gutenberg-character-map.js',
+		'insert-special-characters',
+		plugin_dir_url( __FILE__ ) . 'dist/insert-special-characters.js',
 		array( 'wp-blocks', 'wp-i18n', 'wp-editor' ),
 		'',
 		true

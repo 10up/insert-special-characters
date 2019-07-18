@@ -1,3 +1,4 @@
+
 const { registerFormatType, toggleFormat } = wp.richText;
 const { createElement, Fragment } = wp.element;
 const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
@@ -5,17 +6,16 @@ const { Popover } = wp.components;
 const { getRectangleFromRange } = wp.dom;
 
 import { CharacterMap } from 'react-character-map';
-import './gutenberg-character-map.css';
-const GutenbergCharacterMap =
-	{
-		name: 'charactermap',
-		title: 'Character map',
-		character: 'Ω',
-		value: '',
-	};
+import './insert-special-characters.css';
+const InsertSpecialCharactersOptions = {
+	name: 'specialcharacters',
+	title: 'Special Characters',
+	character: 'o',
+	value: '',
+};
 
-const { name, title, character } = GutenbergCharacterMap;
-const type = `character-map/${ name }`;
+const { name, title, character } = InsertSpecialCharactersOptions;
+const type = `special-characters/${ name }`;
 let originalValue;
 
 // Calculate the caret insertion point.
@@ -51,7 +51,7 @@ registerFormatType( type, {
 				<Popover
 					className="character-map-popover"
 					position="bottom center"
-					focusOnMount={ false }
+					focusOnMount="firstElement"
 					key="charmap-popover"
 					onClick={ () => {} }
 					getAnchorRect={ getCaretRect }
