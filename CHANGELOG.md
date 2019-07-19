@@ -4,8 +4,8 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
-## [1.0.0] - TBD
+## [0.9.0] - TBD
 - Initial plugin release
 
-[Unreleased]: https://github.com/10up/insert-special-characters/compare/1.0.0...master
-[1.0.0]: https://github.com/10up/insert-special-characters/releases/tag/1.0.0
+[Unreleased]: https://github.com/10up/insert-special-characters/compare/0.9.0...develop
+[0.9.0]: https://github.com/10up/insert-special-characters/releases/tag/0.9.0
