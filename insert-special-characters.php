@@ -3,7 +3,7 @@
  * Plugin Name:       Insert Special Characters
  * Plugin URI:        https://github.com/10up/insert-special-characters
  * Description:       Insert special characters in the block editor (Gutenberg).
- * Version:           1.0.0
+ * Version:           0.9.0
  * Author:            10up
  * Author URI:        http://10up.com
  * License:           MIT
