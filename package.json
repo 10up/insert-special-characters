@@ -15,23 +15,24 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@wordpress/block-editor": "^2.2.0",
-    "@wordpress/core-data": "^2.4.0",
-    "babel": "^6.23.0",
+    "@wordpress/core-data": "^2.5.0",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
-    "css-loader": "^2.1.1",
-    "eslint": "^5.16.0",
-    "eslint-config-wordpress": "^2.0.0",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.1.0",
     "eslint-loader": "^2.2.1",
     "eslint-plugin-react": "^7.14.3",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.38.0",
+    "react": "^16.9.0",
+    "react-character-map": "github:adamsilverstein/react-character-map#updated",
+    "react-dom": "^16.9.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
     "webpackbar": "^3.2.0"
   },
-  "dependencies": {
-    "react-character-map": "^0.1.10"
+  "dependencies": {},
+  "globals": {
+    "wp": "off"
   }
 }

@@ -1,8 +1,7 @@
 {
 	"extends": [
 		"eslint:recommended",
-		"plugin:react/recommended",
-		"wordpress"
+		"plugin:react/recommended"
 	],
 	"parser": "babel-eslint",
 	"env": {
@@ -35,6 +34,6 @@
   },
   "globals": {
     "React": true,
-    "MathJax": true
+    "wp": true
   }
 }
