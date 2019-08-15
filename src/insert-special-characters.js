@@ -1,3 +1,4 @@
+
 const { registerFormatType, toggleFormat } = wp.richText;
 const { createElement, Fragment } = wp.element;
 const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
