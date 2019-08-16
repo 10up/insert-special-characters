@@ -1,5 +1,5 @@
 const { registerFormatType, toggleFormat } = wp.richText;
-const { createElement, Fragment } = wp.element;
+const { createElement, Fragment, useMemo } = wp.element;
 const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
 const { Popover } = wp.components;
 const { getRectangleFromRange } = wp.dom;
@@ -53,7 +53,7 @@ registerFormatType( type, {
 					focusOnMount="firstElement"
 					key="charmap-popover"
 					onClick={ () => {} }
-					getAnchorRect={ getCaretRect }
+					anchorRect={ useMemo( () => getCaretRect() ) }
 				>
 					<CharacterMap
 						onSelect={
