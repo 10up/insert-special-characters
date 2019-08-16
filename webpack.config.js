@@ -24,12 +24,6 @@ module.exports = [
 									'useBuiltIns': 'entry',
 								} ], '@babel/preset-react' ],
 							}
-						},
-						{
-							loader: 'eslint-loader',
-							options: {
-								failOnError: true,
-							}
 						}
 					]
 				},
