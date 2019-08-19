@@ -1,5 +1,3 @@
-const path = require( 'path' );
-
 const WebpackBar = require( 'webpackbar' );
 
 module.exports = [
