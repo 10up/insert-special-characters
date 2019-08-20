@@ -45,3 +45,6 @@ body:not(.mobile) .character-map-popover .components-popover__content:not(.is-mo
 .charMap--container ul.charMap--category-menu {
 	margin: 2px;
 }
+.components-popover__content {
+	overflow: scroll;
+}

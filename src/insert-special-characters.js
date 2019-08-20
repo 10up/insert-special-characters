@@ -3,12 +3,13 @@ const { createElement, Fragment, useMemo } = wp.element;
 const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
 const { Popover } = wp.components;
 const { getRectangleFromRange } = wp.dom;
+const { __ } = wp.i18n;
 
 import { CharacterMap } from 'react-character-map';
 import './insert-special-characters.css';
 const InsertSpecialCharactersOptions = {
 	name: 'specialcharacters',
-	title: 'Special Characters',
+	title: __( 'Special Characters', 'insert-special-characters' ) ,
 	character: 'o',
 	value: '',
 };
@@ -51,6 +52,8 @@ registerFormatType( type, {
 					key="charmap-popover"
 					onClick={ () => {} }
 					getAnchorRect={ anchorRect }
+					expandOnMobile={ true }
+					headerTitle={ __( 'Insert Special Character', 'insert-special-characters' ) }
 				>
 					<CharacterMap
 						onSelect={
