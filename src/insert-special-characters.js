@@ -15,7 +15,7 @@ const InsertSpecialCharactersOptions = {
 
 const { name, title, character } = InsertSpecialCharactersOptions;
 const type = `special-characters/${ name }`;
-
+let anchorRange;
 /**
  * Register the "Format Type" to create the character inserter.
  */
@@ -30,18 +30,27 @@ registerFormatType( type, {
 	 */
 	edit( { isActive, value, onChange } ) {
 		const onToggle = () => {
+
+			// Set up the anchorRange.
+			const selection = window.getSelection();
+			anchorRange = selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
 			onChange( toggleFormat( value, { type } ) );
 		};
+
+		const anchorRect =  () => {
+			return getRectangleFromRange( anchorRange );
+		} ;
 
 		// Only display the character map when it is active.
 		if ( isActive ) {
 			return (
 				<Popover
 					className="character-map-popover"
-					position="middle center"
+					position="bottom center"
 					focusOnMount="firstElement"
 					key="charmap-popover"
 					onClick={ () => {} }
+					getAnchorRect={ anchorRect }
 				>
 					<CharacterMap
 						onSelect={
