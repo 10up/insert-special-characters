@@ -1,4 +1,4 @@
-const { registerFormatType, toggleFormat } = wp.richText;
+const { registerFormatType, toggleFormat, insert } = wp.richText;
 const { createElement, Fragment, useMemo } = wp.element;
 const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
 const { Popover } = wp.components;
@@ -15,16 +15,6 @@ const InsertSpecialCharactersOptions = {
 
 const { name, title, character } = InsertSpecialCharactersOptions;
 const type = `special-characters/${ name }`;
-let originalValue;
-
-// Calculate the caret insertion point.
-const getCaretRect = () => {
-	const range = window.getSelection().getRangeAt( 0 );
-
-	if ( range ) {
-		return getRectangleFromRange( range );
-	}
-};
 
 /**
  * Register the "Format Type" to create the character inserter.
@@ -40,7 +30,6 @@ registerFormatType( type, {
 	 */
 	edit( { isActive, value, onChange } ) {
 		const onToggle = () => {
-			originalValue = value;
 			onChange( toggleFormat( value, { type } ) );
 		};
 
@@ -49,23 +38,17 @@ registerFormatType( type, {
 			return (
 				<Popover
 					className="character-map-popover"
-					position="bottom center"
+					position="middle center"
 					focusOnMount="firstElement"
 					key="charmap-popover"
 					onClick={ () => {} }
-					anchorRect={ useMemo( () => getCaretRect() ) }
 				>
 					<CharacterMap
 						onSelect={
 
-							// Store the selected character and close the popover.
+							// Insert the selected character and close the popover.
 							( char ) => {
-								const slicedNewText = originalValue.text.slice( 0, originalValue.start ) +
-									char.char +
-									originalValue.text.slice( originalValue.end );
-								value.text = slicedNewText;
-								onChange( toggleFormat( value, { type, attributes: { char } } ) );
-								onToggle();
+								onChange( insert( value, char.char ) );
 								blur();
 							}
 						}
