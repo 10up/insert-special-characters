@@ -11,12 +11,12 @@
   "author": "",
   "license": "GPL-2.0",
   "devDependencies": {
+    "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@wordpress/block-editor": "^2.2.0",
     "@wordpress/core-data": "^2.5.0",
-    "babel-cli": "^6.26.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
