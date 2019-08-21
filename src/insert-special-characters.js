@@ -9,7 +9,7 @@ import { CharacterMap } from 'react-character-map';
 import './insert-special-characters.css';
 const InsertSpecialCharactersOptions = {
 	name: 'specialcharacters',
-	title: __( 'Special Characters', 'insert-special-characters' ) ,
+	title: __( 'Special Characters', 'insert-special-characters' ),
 	character: 'o',
 	value: '',
 };
@@ -17,6 +17,7 @@ const InsertSpecialCharactersOptions = {
 const { name, title, character } = InsertSpecialCharactersOptions;
 const type = `special-characters/${ name }`;
 let anchorRange;
+
 /**
  * Register the "Format Type" to create the character inserter.
  */
@@ -32,17 +33,18 @@ registerFormatType( type, {
 	edit( { isActive, value, onChange } ) {
 		const onToggle = () => {
 
-			// Set up the anchorRange.
+			// Set up the anchorRange when the Popover is opened.
 			const selection = window.getSelection();
 			anchorRange = selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
 			onChange( toggleFormat( value, { type } ) );
 		};
 
+		// Pin the Popover to the caret position.
 		const anchorRect =  () => {
 			return getRectangleFromRange( anchorRange );
 		} ;
 
-		// Only display the character map when it is active.
+		// Display the character map when it is active.
 		if ( isActive ) {
 			return (
 				<Popover
@@ -60,10 +62,7 @@ registerFormatType( type, {
 						onSelect={
 
 							// Insert the selected character and close the popover.
-							( char ) => {
-								onChange( insert( value, char.char ) );
-								blur();
-							}
+							( char ) => { onChange( insert( value, char.char ) ); }
 						}
 						key="charmap"
 					/>
