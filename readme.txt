@@ -1,7 +1,7 @@
 === Insert Special Characters ===
 Contributors:  10up, adamsilverstein
 Tags: Special Characters, Character Map, Omega, Gutenberg, Block, block editor
-Requires at least: 5.0
+Requires at least: 5.2
 Tested up to: 5.2
 Requires PHP: 5.6
 Stable tag: 1.0.0
@@ -13,15 +13,15 @@ A Special Character inserter for the WordPress block editor (Gutenberg).
 == Description ==
 
 A Special Character inserter for the WordPress block editor (Gutenberg).
-Requires PHP 5.4+ and WordPress 5.0+.
+Requires PHP 5.6+ and WordPress 5.2+.
 
-Development takes place on the GitHub repository: https://github.com/10up/insert-special-characters.
+Development takes place in the GitHub repository: https://github.com/10up/insert-special-characters.
 
 === Technical Notes ===
 
 * Requires PHP 5.6+.
-* Requires [WordPress](http://wordpress.org/) 5.0+ ...or... WordPress 4.9 plus [Gutenberg 4.9](https://github.com/WordPress/gutenberg/releases/tag/v4.9.0)
-* Issues and Pull requests welcome on the GitHub repository: https://github.com/10up/insert-special-characters.
+* Requires [WordPress](http://wordpress.org/) 5.2+
+* Issues and Pull requests welcome in the GitHub repository: https://github.com/10up/insert-special-characters.
 
 == Screenshots ==
 
@@ -36,4 +36,6 @@ Development takes place on the GitHub repository: https://github.com/10up/insert
 == Changelog ==
 
 = 1.0.0 =
-* Initial plugin release
+== Added ==
+* Initial plugin release 🎉
+* Wrap [React Character Map](https://github.com/Dayjo/react-character-map) in a Gutenberg Popover (props @adamsilverstein)
