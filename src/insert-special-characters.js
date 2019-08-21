@@ -1,5 +1,5 @@
 const { registerFormatType, toggleFormat, insert } = wp.richText;
-const { createElement, Fragment, useMemo } = wp.element;
+const { createElement, Fragment } = wp.element;
 const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
 const { Popover } = wp.components;
 const { getRectangleFromRange } = wp.dom;
@@ -54,6 +54,7 @@ registerFormatType( type, {
 					getAnchorRect={ anchorRect }
 					expandOnMobile={ true }
 					headerTitle={ __( 'Insert Special Character', 'insert-special-characters' ) }
+					onClose={ () => { onChange( toggleFormat( value, { type } ) ); } }
 				>
 					<CharacterMap
 						onSelect={
