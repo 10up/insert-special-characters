@@ -12,8 +12,8 @@ Ever wanted to add a special character while working within Gutenberg and sudden
 
 ## Requirements
 
-* PHP 5.4+
-* [WordPress](http://wordpress.org/) 5.0+ ...or... WordPress 4.9 plus [Gutenberg 4.9](https://github.com/WordPress/gutenberg/releases/tag/v4.9.0)
+* PHP 5.6+
+* [WordPress](http://wordpress.org/) 5.2+
 
 ## Installation
 
