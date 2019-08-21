@@ -37,3 +37,14 @@ div.charMap--container {
 body:not(.mobile) .character-map-popover .components-popover__content:not(.is-mobile) {
 	min-width: 550px;
 }
+
+.charMap--container {
+	margin: 2px;
+}
+
+.charMap--container ul.charMap--category-menu {
+	margin: 2px;
+}
+.components-popover__content {
+	overflow: scroll;
+}
