@@ -15,12 +15,12 @@
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
-    "@wordpress/block-editor": "^2.2.0",
+    "@wordpress/block-editor": "^3.0.0",
     "@wordpress/core-data": "^2.5.0",
     "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
-    "eslint": "^6.1.0",
+    "eslint": "^6.2.1",
     "eslint-loader": "^2.2.1",
     "eslint-plugin-react": "^7.14.3",
     "react": "^16.9.0",
@@ -28,8 +28,8 @@
     "react-dom": "^16.9.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.6",
-    "webpackbar": "^3.2.0"
+    "webpack-cli": "^3.3.7",
+    "webpackbar": "^4.0.0"
   },
   "dependencies": {},
   "globals": {
