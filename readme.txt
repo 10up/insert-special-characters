@@ -39,3 +39,4 @@ Development takes place in the GitHub repository: https://github.com/10up/insert
 == Added ==
 * Initial plugin release 🎉
 * Wrap [React Character Map](https://github.com/Dayjo/react-character-map) in a Gutenberg Popover (props @adamsilverstein)
+* Plugin header and icon images (props @dillonmccallum)
