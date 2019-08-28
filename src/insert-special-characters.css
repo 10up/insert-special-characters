@@ -37,9 +37,9 @@ ul.charMap--category {
 	background: #0085ba;
 }
 
-.charMap--container .charMap--category-menu a:hover {
-	background: none;
-	text-decoration: underline;
+.charMap--container .charMap--category-menu button:hover {
+	background: inherit;
+	cursor: pointer;
 }
 
 .charMap--category-menu .charMap--category-menu-item.active a {
