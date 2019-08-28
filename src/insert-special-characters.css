@@ -12,6 +12,10 @@ div.charMap--container {
 	font-size: 14px;
 }
 
+ul.charMap--category {
+	background-color: white;
+}
+
 .charMap--category-menu .charMap--category-menu-item.active,
 .charMap--category li a:hover {
 	background: #0085ba;
@@ -45,6 +49,7 @@ body:not(.mobile) .character-map-popover .components-popover__content:not(.is-mo
 .charMap--container ul.charMap--category-menu {
 	margin: 2px;
 }
+
 .components-popover__content {
-	overflow: scroll;
+	max-height: 350px;
 }
