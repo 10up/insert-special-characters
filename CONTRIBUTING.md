@@ -29,12 +29,10 @@ The `develop` branch is the development branch which means it contains the next 
 ## Release instructions
 
 1. Starting from `develop`, cut a release branch named `release/X.Y.Z` for your changes.
-2. Version bump: Bump the version number in `insert-special-characters.php` and `config.php` if it does not already reflect the version being released.
+2. Version bump: Bump the version number in `insert-special-characters.php` and `package.json` if it does not already reflect the version being released.
 3. Changelog: Add/update the changelog in `CHANGELOG.md`
-4. Update the `.pot` file by running `npm run makepot`.
-5. Check to be sure any new files/paths that are unnecessary in the production version are included in `.github/action-release/rsync-filter.txt`.
-6. Merge: Make a non-fast-forward merge from your release branch to `develop`, then do the same for `develop` into `master`. `master` contains the stable development version.
-7. Push: Push your master branch to GitHub, e.g. `git push origin master`.
-8. [Wait for build](https://xkcd.com/303/): Head to the [Actions](https://github.com/10up/insert-special-characters/actions) tab in the repo and wait for it to finish if it hasn't already. If it doesn't succeed, figure out why and start over.
-9. Check the build: Check out the `stable` branch and test for functionality locally.
-10. Git tag: Create the release as `X.Y.Z` on the `stable` branch in GitHub. It should now appear under [releases](https://github.com/10up/insert-special-characters/releases) and in the WordPress admin as an update as well.
+4. Check to be sure any new files/paths that are unnecessary in the production version are included in `.gitattributes`.
+5. Merge: Make a non-fast-forward merge from your release branch to `develop` (or merge the pull request), then do the same for `develop` into `master`. `master` contains the stable development version.
+6. Push: Push your master branch to GitHub, e.g. `git push origin master`.
+7. Git tag: Create a [new release](https://github.com/10up/insert-special-characters/releases/new) as `X.Y.Z` on the `master` branch in GitHub.
+8. Deploy to WordPress.org: Head to the [Actions](https://github.com/10up/insert-special-characters/actions) tab in the repo and wait for the Deploy to WordPress.org workflow to finish if it hasn't already. If it doesn't succeed, figure out why and head back to delete the tag and try again.
