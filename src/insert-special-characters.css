@@ -1,5 +1,24 @@
+.character-map-popover .components-popover__content {
+	max-height: 350px; /* avoid a bug with scrolling on initial load and repositioning */
+}
+
 div.charMap--container {
+	margin: 2px;
 	font-size: 18px;
+}
+
+.charMap--container ul.charMap--filter {
+	float: right;
+	margin-right: 5px;
+	font-size: 14px;
+}
+
+.charMap--container ul.charMap--filter input {
+	padding: 3px;
+}
+
+ul.charMap--category {
+	background-color: white;
 }
 
 .charMap--category.active li {
@@ -8,6 +27,7 @@ div.charMap--container {
 
 .charMap--category-menu li {
 	display: inline-block;
+	margin-bottom: 0;
 	border-bottom: none;
 	font-size: 14px;
 }
@@ -17,9 +37,9 @@ div.charMap--container {
 	background: #0085ba;
 }
 
-.charMap--container .charMap--category-menu a:hover {
-	background: none;
-	text-decoration: underline;
+.charMap--container .charMap--category-menu button:hover {
+	background: inherit;
+	cursor: pointer;
 }
 
 .charMap--category-menu .charMap--category-menu-item.active a {
@@ -36,15 +56,4 @@ div.charMap--container {
 
 body:not(.mobile) .character-map-popover .components-popover__content:not(.is-mobile) {
 	min-width: 550px;
-}
-
-.charMap--container {
-	margin: 2px;
-}
-
-.charMap--container ul.charMap--category-menu {
-	margin: 2px;
-}
-.components-popover__content {
-	overflow: scroll;
 }
