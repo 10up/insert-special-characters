@@ -3,12 +3,17 @@ const { createElement, Fragment } = wp.element;
 const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
 const { Popover } = wp.components;
 const { getRectangleFromRange } = wp.dom;
+const { applyFilters } = wp.hooks;
 const { __ } = wp.i18n;
 
 import { CharacterMap } from 'react-character-map';
 import './insert-special-characters.css';
+
+// Load the default Chars provided by react-character-map component.
+import Chars from '../node_modules/react-character-map/dist/component/chars.json';
+
 const InsertSpecialCharactersOptions = {
-	name: 'specialcharacters',
+	name: 'insertspecialcharacters',
 	title: __( 'Special Characters', 'insert-special-characters' ),
 	character: 'o',
 	value: '',
@@ -46,6 +51,7 @@ registerFormatType( type, {
 
 		// Display the character map when it is active.
 		if ( isActive ) {
+			const characters = applyFilters(  `${name}-characters`, Chars );
 			return (
 				<Popover
 					className="character-map-popover"
@@ -56,13 +62,18 @@ registerFormatType( type, {
 					getAnchorRect={ anchorRect }
 					expandOnMobile={ true }
 					headerTitle={ __( 'Insert Special Character', 'insert-special-characters' ) }
-					onClose={ () => { onChange( toggleFormat( value, { type } ) ); } }
+					onClose={ () => {
+						onChange( toggleFormat( value, { type } ) );
+					} }
 				>
 					<CharacterMap
+						characterData={ characters }
 						onSelect={
 
 							// Insert the selected character and close the popover.
-							( char ) => { onChange( insert( value, char.char ) ); }
+							( char ) => {
+								onChange( insert( value, char.char ) );
+							}
 						}
 						key="charmap"
 					/>
