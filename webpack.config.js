@@ -1,5 +1,3 @@
-const path = require( 'path' );
-
 const WebpackBar = require( 'webpackbar' );
 
 module.exports = [
@@ -23,12 +21,6 @@ module.exports = [
 								presets: [ [ '@babel/env', {
 									'useBuiltIns': 'entry',
 								} ], '@babel/preset-react' ],
-							}
-						},
-						{
-							loader: 'eslint-loader',
-							options: {
-								failOnError: true,
 							}
 						}
 					]

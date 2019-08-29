@@ -10,6 +10,33 @@ Ever wanted to add a special character while working within Gutenberg and sudden
 
 ![Demo of special characters within Gutenberg](assets/insert-special-characters.gif "Example of a special characters in the new WordPress editor")
 
+## Extending
+To control the available tabs and characters, developers can filter the data set using the `insertspecialcharacters-characters` JavaScript (`wp.hooks`) filter.
+
+For example, to create a character inserter that only provides currency symbols:
+
+```js
+wp.hooks.addFilter(
+	'insertspecialcharacters-characters',  // The filter name.
+	'mycallback', // Our callback namespace.
+	function( component ) { // The callback function.
+
+		// Return the categories/characters to display.
+		// The data structure is: { category: [ character data ], category2: ... }
+		return {
+			"Currency": [
+				{ "entity": "&dollar;", "hex": "&#0024;", "name": "Dollar Sign", "char": "$" },
+				{ "entity": "&wuro;", "hex": "&#20AC;", "name": "Euro Sign", "char": "€" },
+				{ "entity": "&cent;", "hex": "&#00A2;", "name": "Cent Sign", "char": "¢" },
+				{ "entity": "&pound;", "hex": "&#00A3;", "name": "Pound Sign", "char": "£" },
+				{ "entity": "&yen;", "hex": "&#00A5;", "name": "Yen Sign", "char": "¥" },
+			]
+		};
+	}
+);
+
+```
+
 ## Requirements
 
 * PHP 5.6+
