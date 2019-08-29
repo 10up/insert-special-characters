@@ -1,31 +1,27 @@
-
-const { registerFormatType, toggleFormat } = wp.richText;
+const { registerFormatType, toggleFormat, insert } = wp.richText;
 const { createElement, Fragment } = wp.element;
 const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
 const { Popover } = wp.components;
 const { getRectangleFromRange } = wp.dom;
+const { applyFilters } = wp.hooks;
+const { __ } = wp.i18n;
 
 import { CharacterMap } from 'react-character-map';
 import './insert-special-characters.css';
+
+// Load the default Chars provided by react-character-map component.
+import Chars from '../node_modules/react-character-map/dist/component/chars.json';
+
 const InsertSpecialCharactersOptions = {
-	name: 'specialcharacters',
-	title: 'Special Characters',
+	name: 'insertspecialcharacters',
+	title: __( 'Special Characters', 'insert-special-characters' ),
 	character: 'o',
 	value: '',
 };
 
 const { name, title, character } = InsertSpecialCharactersOptions;
 const type = `special-characters/${ name }`;
-let originalValue;
-
-// Calculate the caret insertion point.
-const getCaretRect = () => {
-	const range = window.getSelection().getRangeAt( 0 );
-
-	if ( range ) {
-		return getRectangleFromRange( range );
-	}
-};
+let anchorRange;
 
 /**
  * Register the "Format Type" to create the character inserter.
@@ -41,12 +37,21 @@ registerFormatType( type, {
 	 */
 	edit( { isActive, value, onChange } ) {
 		const onToggle = () => {
-			originalValue = value;
+
+			// Set up the anchorRange when the Popover is opened.
+			const selection = window.getSelection();
+			anchorRange = selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
 			onChange( toggleFormat( value, { type } ) );
 		};
 
-		// Only display the character map when it is active.
+		// Pin the Popover to the caret position.
+		const anchorRect =  () => {
+			return getRectangleFromRange( anchorRange );
+		} ;
+
+		// Display the character map when it is active.
 		if ( isActive ) {
+			const characters = applyFilters(  `${name}-characters`, Chars );
 			return (
 				<Popover
 					className="character-map-popover"
@@ -54,20 +59,20 @@ registerFormatType( type, {
 					focusOnMount="firstElement"
 					key="charmap-popover"
 					onClick={ () => {} }
-					getAnchorRect={ getCaretRect }
+					getAnchorRect={ anchorRect }
+					expandOnMobile={ true }
+					headerTitle={ __( 'Insert Special Character', 'insert-special-characters' ) }
+					onClose={ () => {
+						onChange( toggleFormat( value, { type } ) );
+					} }
 				>
 					<CharacterMap
+						characterData={ characters }
 						onSelect={
 
-							// Store the selected character and close the popover.
+							// Insert the selected character and close the popover.
 							( char ) => {
-								const slicedNewText = originalValue.text.slice( 0, originalValue.start ) +
-									char.char +
-									originalValue.text.slice( originalValue.end );
-								value.text = slicedNewText;
-								onChange( toggleFormat( value, { type, attributes: { char } } ) );
-								onToggle();
-								blur();
+								onChange( insert( value, char.char ) );
 							}
 						}
 						key="charmap"
