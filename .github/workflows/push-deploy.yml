@@ -14,7 +14,7 @@ jobs:
         npm install
         npm run build
     - name: WordPress Plugin Deploy
-      uses: 10up/actions-wordpress/dotorg-plugin-deploy@master
+      uses: 10up/actions-wordpress/dotorg-plugin-deploy@develop
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
