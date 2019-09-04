@@ -1,6 +1,6 @@
 # Insert Special Characters
 
-> Insert Special Characters using a menu in the WordPress block editor (Gutenberg).
+> A Special Character inserter for the WordPress block editor (Gutenberg).
 
 [![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.2%20tested-success.svg) [![MIT License](https://img.shields.io/github/license/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/blob/develop/LICENSE.md)
 
@@ -39,8 +39,8 @@ wp.hooks.addFilter(
 
 ## Requirements
 
-* PHP 5.4+
-* [WordPress](http://wordpress.org/) 5.0+ ...or... WordPress 4.9 plus [Gutenberg 4.9](https://github.com/WordPress/gutenberg/releases/tag/v4.9.0)
+* PHP 5.6+
+* [WordPress](http://wordpress.org/) 5.2+
 
 ## Installation
 
@@ -55,6 +55,10 @@ wp.hooks.addFilter(
 ## Changelog
 
 A complete listing of all notable changes to Insert Special Characters are documented in [CHANGELOG.md](https://github.com/10up/insert-special-characters/blob/develop/CHANGELOG.md).
+
+## Contributing
+
+Please read [CODE_OF_CONDUCT.md](https://github.com/10up/insert-special-characters/blob/develop/CODE_OF_CONDUCT.md) for details on our code of conduct, [CONTRIBUTING.md](https://github.com/10up/insert-special-characters/blob/develop/CONTRIBUTING.md) for details on the process for submitting pull requests to us, and [CREDITS.md](https://github.com/10up/insert-special-characters/blob/develop/CONTRIBUTORS.md) for a listing of maintainers of, contributors to, and libraries used by Insert Special Characters.
 
 ## Like what you see?
 
