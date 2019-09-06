@@ -60,7 +60,7 @@ A complete listing of all notable changes to Insert Special Characters are docum
 
 ## Contributing
 
-Please read [CODE_OF_CONDUCT.md](https://github.com/10up/insert-special-characters/blob/develop/CODE_OF_CONDUCT.md) for details on our code of conduct, [CONTRIBUTING.md](https://github.com/10up/insert-special-characters/blob/develop/CONTRIBUTING.md) for details on the process for submitting pull requests to us, and [CREDITS.md](https://github.com/10up/insert-special-characters/blob/develop/CONTRIBUTORS.md) for a listing of maintainers of, contributors to, and libraries used by Insert Special Characters.
+Please read [CODE_OF_CONDUCT.md](https://github.com/10up/insert-special-characters/blob/develop/CODE_OF_CONDUCT.md) for details on our code of conduct, [CONTRIBUTING.md](https://github.com/10up/insert-special-characters/blob/develop/CONTRIBUTING.md) for details on the process for submitting pull requests to us, and [CREDITS.md](https://github.com/10up/insert-special-characters/blob/develop/CREDITS.md) for a listing of maintainers of, contributors to, and libraries used by Insert Special Characters.
 
 ## Like what you see?
 
