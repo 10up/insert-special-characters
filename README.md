@@ -8,6 +8,8 @@
 
 Ever wanted to add a special character while working within Gutenberg and suddenly find yourself longing for the days of the Classic Editor and the Special Character inserter?  Well long no more, the Insert Special Characters plugin is here to ease your publishing woes!
 
+**Note:** you can display the popover via the `ctrl`/`cmd` + `o` keyboard shortcut.
+
 ![Demo of special characters within Gutenberg](assets/insert-special-characters.gif "Example of a special characters in the new WordPress editor")
 
 ## Extending
@@ -58,7 +60,7 @@ A complete listing of all notable changes to Insert Special Characters are docum
 
 ## Contributing
 
-Please read [CODE_OF_CONDUCT.md](https://github.com/10up/insert-special-characters/blob/develop/CODE_OF_CONDUCT.md) for details on our code of conduct, [CONTRIBUTING.md](https://github.com/10up/insert-special-characters/blob/develop/CONTRIBUTING.md) for details on the process for submitting pull requests to us, and [CREDITS.md](https://github.com/10up/insert-special-characters/blob/develop/CONTRIBUTORS.md) for a listing of maintainers of, contributors to, and libraries used by Insert Special Characters.
+Please read [CODE_OF_CONDUCT.md](https://github.com/10up/insert-special-characters/blob/develop/CODE_OF_CONDUCT.md) for details on our code of conduct, [CONTRIBUTING.md](https://github.com/10up/insert-special-characters/blob/develop/CONTRIBUTING.md) for details on the process for submitting pull requests to us, and [CREDITS.md](https://github.com/10up/insert-special-characters/blob/develop/CREDITS.md) for a listing of maintainers of, contributors to, and libraries used by Insert Special Characters.
 
 ## Like what you see?
 

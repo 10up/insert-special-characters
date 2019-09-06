@@ -45,9 +45,9 @@ registerFormatType( type, {
 		};
 
 		// Pin the Popover to the caret position.
-		const anchorRect =  () => {
+		const anchorRect = () => {
 			return getRectangleFromRange( anchorRange );
-		} ;
+		};
 
 		// Display the character map when it is active.
 		if ( isActive ) {
@@ -56,7 +56,7 @@ registerFormatType( type, {
 				<Popover
 					className="character-map-popover"
 					position="bottom center"
-					focusOnMount="firstElement"
+					focusOnMount="container"
 					key="charmap-popover"
 					onClick={ () => {} }
 					getAnchorRect={ anchorRect }
