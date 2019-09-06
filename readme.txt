@@ -14,7 +14,9 @@ A Special Character inserter for the WordPress block editor (Gutenberg).
 
 Ever wanted to add a special character while working within the WordPress block editor (Gutenberg) and suddenly find yourself longing for the days of the Classic Editor and the Special Character inserter? Well long no more, the Insert Special Characters plugin is here to ease your publishing woes!
 
-Development takes place in the [GitHub repository](https://github.com/10up/insert-special-characters).
+**Note:** you can display the popover via the `ctrl`/`cmd` + `o` keyboard shortcut.
+
+Development takes place in the GitHub repository: https://github.com/10up/insert-special-characters.
 
 === Technical Notes ===
 
