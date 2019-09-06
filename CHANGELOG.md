@@ -4,12 +4,12 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
-## [1.0.1] - TBD
+## [1.0.1] - 2019-09-06
 ### Added
 - Documentation for keyboard shortcut (props @mrwweb, @jeffpaul via #44)
 
 ### Fixed
-- Firefox popover closing immediately after opening the first time (props @adamsilverstein via #41)
+- Ensure character map appears as expected in Firefox (props @adamsilverstein via #41)
 
 ## [1.0.0] - 2019-08-21
 ### Added

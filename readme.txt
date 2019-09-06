@@ -41,7 +41,7 @@ Added
 * Documentation for keyboard shortcut (props [@mrwweb](https://profiles.wordpress.org/mrwweb/), [@jeffpaul](https://profiles.wordpress.org/jeffpaul/))
 
 Fixed
-* Firefox popover closing immediately after opening the first time (props [@adamsilverstein](https://profiles.wordpress.org/adamsilverstein/))
+* Ensure character map appears as expected in Firefox (props [@adamsilverstein](https://profiles.wordpress.org/adamsilverstein/))
 
 = 1.0.0 =
 Added
