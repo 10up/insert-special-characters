@@ -15,13 +15,13 @@ A Special Character inserter for the WordPress block editor (Gutenberg).
 A Special Character inserter for the WordPress block editor (Gutenberg).
 Requires PHP 5.6+ and WordPress 5.2+.
 
-Development takes place in the GitHub repository: https://github.com/10up/insert-special-characters.
+Development takes place in the [GitHub repository](https://github.com/10up/insert-special-characters).
 
 === Technical Notes ===
 
 * Requires PHP 5.6+.
 * Requires [WordPress](http://wordpress.org/) 5.2+
-* Issues and Pull requests welcome in the GitHub repository: https://github.com/10up/insert-special-characters.
+* Issues and Pull requests welcome in the [GitHub repository](https://github.com/10up/insert-special-characters).
 
 == Screenshots ==
 
@@ -37,10 +37,10 @@ Development takes place in the GitHub repository: https://github.com/10up/insert
 
 = 1.0.1 =
 Fixed
-* Firefox popover closing immediately after opening the first time (props @adamsilverstein)
+* Firefox popover closing immediately after opening the first time (props [@adamsilverstein](https://profiles.wordpress.org/adamsilverstein/))
 
 = 1.0.0 =
 Added
 * Initial plugin release 🎉
-* Wrap [React Character Map](https://github.com/Dayjo/react-character-map) in a Gutenberg Popover (props @adamsilverstein)
-* Plugin header and icon images (props @dillonmccallum)
+* Wrap [React Character Map](https://github.com/Dayjo/react-character-map) in a Gutenberg Popover (props [@adamsilverstein](https://profiles.wordpress.org/adamsilverstein/))
+* Plugin header and icon images (props [@dillonmccallum](https://profiles.wordpress.org/dillonmccallum/))
