@@ -15,6 +15,8 @@ A Special Character inserter for the WordPress block editor (Gutenberg).
 A Special Character inserter for the WordPress block editor (Gutenberg).
 Requires PHP 5.6+ and WordPress 5.2+.
 
+**Note:** you can display the popover via the `ctrl`/`cmd` + `o` keyboard shortcut.
+
 Development takes place in the GitHub repository: https://github.com/10up/insert-special-characters.
 
 === Technical Notes ===
