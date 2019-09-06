@@ -35,6 +35,9 @@ Development takes place in the [GitHub repository](https://github.com/10up/inser
 == Changelog ==
 
 = 1.0.1 =
+Added
+* Documentation for keyboard shortcut (props [@mrwweb](https://profiles.wordpress.org/mrwweb/), [@jeffpaul](https://profiles.wordpress.org/jeffpaul/))
+
 Fixed
 * Firefox popover closing immediately after opening the first time (props [@adamsilverstein](https://profiles.wordpress.org/adamsilverstein/))
 
