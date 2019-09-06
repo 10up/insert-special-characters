@@ -35,8 +35,12 @@ Development takes place in the GitHub repository: https://github.com/10up/insert
 
 == Changelog ==
 
+= 1.0.1 =
+Fixed
+* Firefox popover closing immediately after opening the first time (props @adamsilverstein)
+
 = 1.0.0 =
-== Added ==
+Added
 * Initial plugin release 🎉
 * Wrap [React Character Map](https://github.com/Dayjo/react-character-map) in a Gutenberg Popover (props @adamsilverstein)
 * Plugin header and icon images (props @dillonmccallum)
