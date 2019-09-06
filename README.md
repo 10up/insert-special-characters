@@ -8,6 +8,8 @@
 
 Ever wanted to add a special character while working within Gutenberg and suddenly find yourself longing for the days of the Classic Editor and the Special Character inserter?  Well long no more, the Insert Special Characters plugin is here to ease your publishing woes!
 
+**Note:** you can display the popover via the `ctrl`/`cmd` + `o` keyboard shortcut.
+
 ![Demo of special characters within Gutenberg](assets/insert-special-characters.gif "Example of a special characters in the new WordPress editor")
 
 ## Extending
