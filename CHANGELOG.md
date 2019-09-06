@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file, per [the Ke
 ## [Unreleased] - TBD
 
 ## [1.0.1] - TBD
+### Added
+- Documentation for keyboard shortcut (props @mrwweb, @jeffpaul via #44)
+
 ### Fixed
 - Firefox popover closing immediately after opening the first time (props @adamsilverstein via #41)
 
