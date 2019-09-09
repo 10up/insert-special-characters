@@ -16,7 +16,7 @@ Ever wanted to add a special character while working within the WordPress block 
 
 **Note:** you can display the popover via the `ctrl`/`cmd` + `o` keyboard shortcut.
 
-Development takes place in the GitHub repository: https://github.com/10up/insert-special-characters.
+Development takes place in the [GitHub repository](https://github.com/10up/insert-special-characters).
 
 === Technical Notes ===
 
