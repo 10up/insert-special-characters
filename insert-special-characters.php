@@ -29,4 +29,4 @@ function gcm_block_enqueue_scripts() {
 		true
 	);
 }
-add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\gcm_block_enqueue_scripts' );
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\gcm_block_enqueue_scripts' );
