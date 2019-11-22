@@ -36,15 +36,18 @@ Development takes place in the [GitHub repository](https://github.com/10up/inser
 
 == Changelog ==
 
-= 1.0.1 =
-Added
-* Documentation for keyboard shortcut (props [@mrwweb](https://profiles.wordpress.org/mrwweb/), [@jeffpaul](https://profiles.wordpress.org/jeffpaul/))
+= 1.0.2 =
+* Fixed: Hook on `enqueue_block_editor_assets` so script is only enqueued in editor (props @adamsilverstein, @josch87)
+* Fixed: Register text domain to ensure translations can be loaded (props @ocean90)
+* Fixed: Bump WordPress version "tested up to" 5.3 (props @adamsilverstein)
+* Fixed: Documentation and credits (props @jeffpaul)
 
-Fixed
-* Ensure character map appears as expected in Firefox (props [@adamsilverstein](https://profiles.wordpress.org/adamsilverstein/))
+= 1.0.1 =
+* Added: Documentation for keyboard shortcut (props @mrwweb, @jeffpaul)
+* Fixed: Ensure character map appears as expected in Firefox (props @adamsilverstein)
 
 = 1.0.0 =
 Added
 * Initial plugin release 🎉
-* Wrap [React Character Map](https://github.com/Dayjo/react-character-map) in a Gutenberg Popover (props [@adamsilverstein](https://profiles.wordpress.org/adamsilverstein/))
-* Plugin header and icon images (props [@dillonmccallum](https://profiles.wordpress.org/dillonmccallum/))
+* Wrap [React Character Map](https://github.com/Dayjo/react-character-map) in a Gutenberg Popover (props @adamsilverstein)
+* Plugin header and icon images (props @dillonmccallum)
