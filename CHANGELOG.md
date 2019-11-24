@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file, per [the Ke
 ## [Unreleased] - TBD
 
 ## [1.0.2] - 2019-11-22
+### Changed
+- Relicensed from MIT to GPLv2
+
 ### Fixed
 - Hook on `enqueue_block_editor_assets` so script is only enqueued in editor (props [@adamsilverstein](https://github.com/adamsilverstein), [@josch87](https://github.com/josch87) via [#48](https://github.com/10up/insert-special-characters/pull/48))
 - Register text domain to ensure translations can be loaded (props [@ocean90](https://github.com/ocean90) via [#52](https://github.com/10up/insert-special-characters/pull/52))
