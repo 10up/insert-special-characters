@@ -37,6 +37,7 @@ Development takes place in the [GitHub repository](https://github.com/10up/inser
 == Changelog ==
 
 = 1.0.2 =
+* Changed: Relicensed from MIT to GPLv2
 * Fixed: Hook on `enqueue_block_editor_assets` so script is only enqueued in editor (props @adamsilverstein, @josch87)
 * Fixed: Register text domain to ensure translations can be loaded (props @ocean90)
 * Fixed: Bump WordPress version "tested up to" 5.3 (props @adamsilverstein)
