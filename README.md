@@ -28,7 +28,7 @@ wp.hooks.addFilter(
 		return {
 			"Currency": [
 				{ "entity": "&dollar;", "hex": "&#0024;", "name": "Dollar Sign", "char": "$" },
-				{ "entity": "&wuro;", "hex": "&#20AC;", "name": "Euro Sign", "char": "€" },
+				{ "entity": "&euro;", "hex": "&#20AC;", "name": "Euro Sign", "char": "€" },
 				{ "entity": "&cent;", "hex": "&#00A2;", "name": "Cent Sign", "char": "¢" },
 				{ "entity": "&pound;", "hex": "&#00A3;", "name": "Pound Sign", "char": "£" },
 				{ "entity": "&yen;", "hex": "&#00A5;", "name": "Yen Sign", "char": "¥" },
