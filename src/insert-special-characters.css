@@ -37,9 +37,20 @@ ul.charMap--category {
 	background: #0085ba;
 }
 
+.charMap--category-menu button:focus {
+	outline: thin dotted;
+}
+
 .charMap--container .charMap--category-menu button:hover {
 	background: inherit;
 	cursor: pointer;
+}
+
+.charMap--category li button:focus {
+	background-color: #41a6ac;
+	color: #fff;
+	/* For Windows high contrast mode. */
+	outline: 2px solid transparent;
 }
 
 .charMap--category-menu .charMap--category-menu-item.active a {
