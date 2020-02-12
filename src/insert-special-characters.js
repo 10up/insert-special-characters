@@ -1,5 +1,5 @@
 const { registerFormatType, toggleFormat, insert } = wp.richText;
-const { createElement, Fragment } = wp.element;
+const { createElement, Fragment, Component } = wp.element;
 const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
 const { Popover } = wp.components;
 const { getRectangleFromRange } = wp.dom;
@@ -22,6 +22,27 @@ const InsertSpecialCharactersOptions = {
 const { name, title, character } = InsertSpecialCharactersOptions;
 const type = `special-characters/${ name }`;
 let anchorRange;
+
+class WithInputFocus extends Component {
+	/**
+	 * Scroll to the top of the inner container and focus the search input on mount.
+	 */
+	componentDidMount() {
+		const filterInput = document.querySelector( '.charMap--filter input[name="filter"]' )
+
+		// This works best with a slight delay.
+		setTimeout( () => {
+			if ( filterInput && 'focus' in filterInput ) {
+				filterInput.focus();
+			}
+		}, 25 );
+	}
+
+
+	render() {
+		return this.props.children;
+	}
+}
 
 /**
  * Register the "Format Type" to create the character inserter.
@@ -51,33 +72,36 @@ registerFormatType( type, {
 
 		// Display the character map when it is active.
 		if ( isActive ) {
-			const characters = applyFilters(  `${name}-characters`, Chars );
+			const characters = applyFilters( `${name}-characters`, Chars );
 			return (
-				<Popover
-					className="character-map-popover"
-					position="bottom center"
-					focusOnMount="container"
-					key="charmap-popover"
-					onClick={ () => {} }
-					getAnchorRect={ anchorRect }
-					expandOnMobile={ true }
-					headerTitle={ __( 'Insert Special Character', 'insert-special-characters' ) }
-					onClose={ () => {
-						onChange( toggleFormat( value, { type } ) );
-					} }
-				>
-					<CharacterMap
-						characterData={ characters }
-						onSelect={
+				<WithInputFocus>
+					<Popover
+						animate={ false }
+						className="character-map-popover"
+						position="bottom center"
+						focusOnMount={ false }
+						key="charmap-popover"
+						onClick={ () => {} }
+						getAnchorRect={ anchorRect }
+						expandOnMobile={ true }
+						headerTitle={ __( 'Insert Special Character', 'insert-special-characters' ) }
+						onClose={ () => {
+							onChange( toggleFormat( value, { type } ) );
+						} }
+					>
+						<CharacterMap
+							characterData={ characters }
+							onSelect={
 
-							// Insert the selected character and close the popover.
-							( char ) => {
-								onChange( insert( value, char.char ) );
+								// Insert the selected character and close the popover.
+								( char ) => {
+									onChange( insert( value, char.char ) );
+								}
 							}
-						}
-						key="charmap"
-					/>
-				</Popover>
+							key="charmap"
+						/>
+					</Popover>
+				</WithInputFocus>
 			);
 		}
 
