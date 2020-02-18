@@ -18,11 +18,7 @@ div.charMap--container {
 }
 
 ul.charMap--category {
-	background-color: white;
-}
-
-.charMap--category.active li {
-	margin-bottom: 0;
+	background-color: #fff;
 }
 
 .charMap--category-menu li {
@@ -30,6 +26,14 @@ ul.charMap--category {
 	margin-bottom: 0;
 	border-bottom: none;
 	font-size: 14px;
+}
+
+.charMap--category.active li {
+	margin-bottom: 0;
+}
+
+.charMap--categories li a {
+	color: #111;
 }
 
 .charMap--category-menu .charMap--category-menu-item.active,
@@ -41,16 +45,17 @@ ul.charMap--category {
 	outline: thin dotted;
 }
 
-.charMap--container .charMap--category-menu button:hover {
-	background: inherit;
-	cursor: pointer;
-}
-
 .charMap--category li button:focus {
 	background-color: #41a6ac;
 	color: #fff;
+
 	/* For Windows high contrast mode. */
 	outline: 2px solid transparent;
+}
+
+.charMap--container .charMap--category-menu button:hover {
+	background: inherit;
+	cursor: pointer;
 }
 
 .charMap--category-menu .charMap--category-menu-item.active a {
@@ -59,10 +64,6 @@ ul.charMap--category {
 
 .charMap--container .charMap--container .charMap--categories {
 	margin: 5px;
-}
-
-.charMap--categories li a {
-	color: #111;
 }
 
 body:not(.mobile) .character-map-popover .components-popover__content:not(.is-mobile) {
