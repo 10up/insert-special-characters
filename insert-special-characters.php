@@ -20,12 +20,19 @@ namespace InsertSpecialCharacters;
   * Enqueue the admin JavaScript assets.
   */
 function gcm_block_enqueue_scripts() {
+	$asset_data_file = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'build/index.asset.php';
+
+	if ( ! file_exists( $asset_data_file ) ) {
+		return;
+	}
+
+	$script_data = include $asset_data_file;
 
 	wp_enqueue_script(
 		'insert-special-characters',
-		plugin_dir_url( __FILE__ ) . 'dist/insert-special-characters.js',
-		array( 'wp-blocks', 'wp-i18n', 'wp-editor' ),
-		'',
+		plugin_dir_url( __FILE__ ) . 'build/index.js',
+		$script_data['dependencies'],
+		$script_data['version'],
 		true
 	);
 	

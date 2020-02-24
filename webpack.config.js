@@ -1,42 +1,15 @@
-const WebpackBar = require( 'webpackbar' );
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 
-module.exports = [
-
-	// Build the settings js..
-	{
-		entry: [ './src/insert-special-characters.js' ],
-		output: {
-			filename: 'insert-special-characters.js',
-			path: __dirname + '/dist/',
-		},
-		module: {
-			rules: [
-				{
-					test: /\.js$/,
-
-					use: [
-						{
-							loader: 'babel-loader',
-							query: {
-								presets: [ [ '@babel/env', {
-									'useBuiltIns': 'entry',
-								} ], '@babel/preset-react' ],
-							}
-						}
-					]
-				},
-				{
-					test: /\.css$/,
-					use: [ 'style-loader', 'css-loader' ],
-				},
-			]
-		},
-		plugins: [ new WebpackBar(
+module.exports = {
+	...defaultConfig,
+	module: {
+		...defaultConfig.module,
+		rules: [
+			...defaultConfig.module.rules,
 			{
-				name: 'Plugin Entry Points',
-				color: '#B6CD58',
-			}
-		) ],
+				test: /\.css$/,
+				use: [ 'style-loader', 'css-loader' ],
+			},
+		],
 	},
-
-];
+};

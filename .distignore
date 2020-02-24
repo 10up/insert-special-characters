@@ -6,7 +6,8 @@
 /src
 
 .DS_Store
-.eslintrc.json
+.eslintignore
+.eslintrc.js
 .distignore
 .gitignore
 CHANGELOG.md
