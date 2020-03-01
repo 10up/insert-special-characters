@@ -37,10 +37,10 @@ registerFormatType( type, {
 	 */
 	edit( { isActive, value, onChange } ) {
 		const onToggle = () => {
-
 			// Set up the anchorRange when the Popover is opened.
 			const selection = window.getSelection();
-			anchorRange = selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
+			anchorRange =
+				selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
 			onChange( toggleFormat( value, { type } ) );
 		};
 
@@ -51,7 +51,7 @@ registerFormatType( type, {
 
 		// Display the character map when it is active.
 		if ( isActive ) {
-			const characters = applyFilters(  `${name}-characters`, Chars );
+			const characters = applyFilters( `${ name }-characters`, Chars );
 			return (
 				<Popover
 					className="character-map-popover"
@@ -61,7 +61,10 @@ registerFormatType( type, {
 					onClick={ () => {} }
 					getAnchorRect={ anchorRect }
 					expandOnMobile={ true }
-					headerTitle={ __( 'Insert Special Character', 'insert-special-characters' ) }
+					headerTitle={ __(
+						'Insert Special Character',
+						'insert-special-characters'
+					) }
 					onClose={ () => {
 						onChange( toggleFormat( value, { type } ) );
 					} }
@@ -69,7 +72,6 @@ registerFormatType( type, {
 					<CharacterMap
 						characterData={ characters }
 						onSelect={
-
 							// Insert the selected character and close the popover.
 							( char ) => {
 								onChange( insert( value, char.char ) );
@@ -81,22 +83,23 @@ registerFormatType( type, {
 			);
 		}
 
-		return (
-			createElement( Fragment, null,
-				createElement( RichTextShortcut, {
-					type: 'primary',
-					character,
-					onUse: onToggle
-				} ),
-				createElement( RichTextToolbarButton, {
-					title,
-					onClick: onToggle,
-					isActive,
-					shortcutType: 'primary',
-					shortcutCharacter: character,
-					className: `toolbar-button-with-text toolbar-button__advanced-${ name }`,
-					icon: 'editor-customchar'
-				} ) )
+		return createElement(
+			Fragment,
+			null,
+			createElement( RichTextShortcut, {
+				type: 'primary',
+				character,
+				onUse: onToggle,
+			} ),
+			createElement( RichTextToolbarButton, {
+				title,
+				onClick: onToggle,
+				isActive,
+				shortcutType: 'primary',
+				shortcutCharacter: character,
+				className: `toolbar-button-with-text toolbar-button__advanced-${ name }`,
+				icon: 'editor-customchar',
+			} )
 		);
-	}
+	},
 } );
