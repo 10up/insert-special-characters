@@ -81,11 +81,20 @@ registerFormatType( type, {
 							Arrows: __( 'Arrows', 'insert-special-characters' ),
 							Latin: __( 'Latin', 'insert-special-characters' ),
 							Math: __( 'Math', 'insert-special-characters' ),
-							Misc: __( 'Misc', 'insert-special-characters' )
+							Misc: __( 'Misc', 'insert-special-characters' ),
 						} }
-						categoriesLabelText={ __( 'Categories', 'insert-special-characters' ) }
-						characterListLabelText={ __( 'Character List', 'insert-special-characters' ) }
-						filterLabelText={ __( 'Filter', 'insert-special-characters' ) }
+						categoriesLabelText={ __(
+							'Categories',
+							'insert-special-characters'
+						) }
+						characterListLabelText={ __(
+							'Character List',
+							'insert-special-characters'
+						) }
+						filterLabelText={ __(
+							'Filter',
+							'insert-special-characters'
+						) }
 						key="charmap"
 					/>
 				</Popover>
