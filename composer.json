@@ -1,0 +1,20 @@
+{
+    "name": "10up/insert-special-characters",
+    "description": "A Special Character inserter for the WordPress block editor (Gutenberg).",
+    "type": "wordpress-plugin",
+    "authors": [
+        {
+            "name": "10up",
+            "email": "opensource@10up.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {},
+    "require-dev": {
+        "10up/wpacceptance": "^0.16.5"
+    },
+    "scripts": {
+        "test:acceptance": "wpacceptance run"
+    }
+}
