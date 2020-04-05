@@ -19,10 +19,6 @@ export class Edit extends Component {
 	constructor( props ) {
 		super( props );
 
-		this.state = {
-			valueWithCursor: null,
-		};
-
 		this.onToggle = this.onToggle.bind( this );
 	}
 
