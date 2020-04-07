@@ -1,0 +1,21 @@
+{
+    "name": "insert-special-characters",
+    "exclude": [
+        "./node_modules"
+    ],
+    "tests": [
+        "./tests/wpacceptance/*Test.php"
+    ],
+    "enforce_clean_db": true,
+    "snapshots": [
+        {
+            "snapshot_name": "wordpress-5.4",
+            "snapshot_id": "48b5313e7ffcdbe7dfad49240c703c12"
+        }
+    ],
+    "bootstrap": "tests/wpacceptance/bootstrap.php",
+    "before_scripts": [
+        "npm install",
+        "npm run build"
+    ]
+}
