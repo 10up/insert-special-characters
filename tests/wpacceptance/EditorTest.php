@@ -1,6 +1,6 @@
 <?php
 /**
- * Example test class
+ * EditorTest class.
  *
  * @package insert-special-characters
  */
@@ -11,9 +11,9 @@
 class EditorTest extends \TestCaseBase {
 
 	/**
-	 * Example test
+	 * Basic test of plugin functionality.
 	 */
-	public function testExample() {
+	public function testInsertCharacter() {
 		$we = $this->openBrowserPage();
 		$we->login();
 
