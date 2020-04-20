@@ -10,7 +10,7 @@
     "snapshots": [
         {
             "snapshot_name": "wordpress-5.4",
-            "snapshot_id": "48b5313e7ffcdbe7dfad49240c703c12"
+            "snapshot_id": "6ee37fe4714ff6fe39ea8db35b7c2af2"
         }
     ],
     "bootstrap": "tests/wpacceptance/bootstrap.php",
