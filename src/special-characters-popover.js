@@ -47,11 +47,15 @@ export class SpecialCharactersPopover extends Component {
 	}
 
 	close() {
-		const { onChange, onFocus, value } = this.props;
+		const { onChange, onFocus, value, selectedText } = this.props;
 		const { char } = this.state;
 
 		let newValue = removeFormat( value, cursorFormatType, 0 );
-		newValue = replace( newValue, HAIR_SPACE, char );
+		if ( char ) {
+			newValue = replace( newValue, HAIR_SPACE, char );
+		} else {
+			newValue = replace( newValue, HAIR_SPACE, selectedText );
+		}
 
 		onChange( newValue );
 		onFocus();

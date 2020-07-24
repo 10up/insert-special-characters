@@ -19,11 +19,21 @@ export class Edit extends Component {
 	constructor( props ) {
 		super( props );
 
+		this.state = {
+			selectedText: '',
+		};
+
 		this.onToggle = this.onToggle.bind( this );
 	}
 
 	onToggle() {
 		const { onChange, value } = this.props;
+
+		if ( value.start !== value.end ) {
+			this.setState( {
+				selectedText: value.text.substring( value.start, value.end ),
+			} );
+		}
 
 		let newValue = insert(
 			value,
@@ -41,6 +51,7 @@ export class Edit extends Component {
 
 	render() {
 		const { isActive, onChange, value, onFocus } = this.props;
+		const { selectedText } = this.state;
 
 		// Display the character map when it is active.
 		if ( isActive && value ) {
@@ -50,6 +61,7 @@ export class Edit extends Component {
 					onChange={ onChange }
 					value={ value }
 					onFocus={ onFocus }
+					selectedText={ selectedText }
 				/>
 			);
 		}
