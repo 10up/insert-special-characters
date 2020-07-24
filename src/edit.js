@@ -40,7 +40,7 @@ export class Edit extends Component {
 	}
 
 	render() {
-		const { isActive, onChange, value } = this.props;
+		const { isActive, onChange, value, onFocus } = this.props;
 
 		// Display the character map when it is active.
 		if ( isActive && value ) {
@@ -49,6 +49,7 @@ export class Edit extends Component {
 					anchorRange={ getAnchorRange() }
 					onChange={ onChange }
 					value={ value }
+					onFocus={ onFocus }
 				/>
 			);
 		}
