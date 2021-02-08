@@ -27,7 +27,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Wrap [React Character Map](https://github.com/Dayjo/react-character-map) in a Gutenberg Popover (props [@adamsilverstein](https://github.com/adamsilverstein) via [#1](https://github.com/10up/insert-special-characters/pull/1))
 - Plugin header and icon images (props [@McCallumDillon](https://github.com/McCallumDillon) via [#28](https://github.com/10up/insert-special-characters/pull/28))
 
-[Unreleased]: https://github.com/10up/insert-special-characters/compare/master...develop
+[Unreleased]: https://github.com/10up/insert-special-characters/compare/trunk...develop
 [1.0.2]: https://github.com/10up/insert-special-characters/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/10up/insert-special-characters/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/10up/insert-special-characters/releases/tag/1.0.0
