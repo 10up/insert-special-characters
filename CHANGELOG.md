@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [1.0.3] - TBD
+### Added
+- Focus style on buttons to improve accessibility for keyboard users (props [@samikeijonen](https://github.com/samikeijonen) via [#62](https://github.com/10up/insert-special-characters/pull/62)).
+- WP Acceptance tests (props [@johnwatkins0](https://github.com/johnwatkins0), [@jeffpaul](https://github.com/jeffpaul) via [#70](https://github.com/10up/insert-special-characters/pull/70)).
+
+### Changed
+- Update to React Character Map `v0.3.0` (props [@johnwatkins0](https://github.com/johnwatkins0), [@dinhtungdu](https://github.com/dinhtungdu) via [#66](https://github.com/10up/insert-special-characters/pull/66)). 
+- Make UI text in the component translatable (props [@johnwatkins0](https://github.com/johnwatkins0), [@dinhtungdu](https://github.com/dinhtungdu) via [#66](https://github.com/10up/insert-special-characters/pull/66)).
+- Integrate [@wordpress/scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) for building and linting (props [@johnwatkins0](https://github.com/johnwatkins0), [@ocean90](https://github.com/ocean90), [@adamsilverstein](https://github.com/adamsilverstein) via [#65](https://github.com/10up/insert-special-characters/pull/65)).
+- Renamed release branch from `master` to `trunk`, so please make sure to update and direct references to `master` in downstream code (props [@jeffpaul](https://github.com/jeffpaul) via [#78](https://github.com/10up/insert-special-characters/pull/78), [#79](https://github.com/10up/insert-special-characters/pull/79)).
+- Bump WordPress version "tested up to" 5.7 (props [@jeffpaul](https://github.com/jeffpaul), [@davidchabbi](https://profiles.wordpress.org/davidchabbi/), [@pabamato](https://github.com/pabamato), [@ankitguptaindia](https://github.com/ankitguptaindia) via [#80](https://github.com/10up/insert-special-characters/pull/80), [#84](https://github.com/10up/insert-special-characters/pull/84)).
+- Documentation updates (props [@bobbingwide](https://github.com/bobbingwide) via [#60](https://github.com/10up/insert-special-characters/pull/60)).
+
+### Security
+- Bump `acorn` from 5.7.3 to 5.7.4 (props [@dependabot](https://github.com/apps/dependabot) via [#67](https://github.com/10up/insert-special-characters/pull/67)).
+- Bump `ini` from 1.3.5 to 1.3.7 (props [@dependabot](https://github.com/apps/dependabot) via [#77](https://github.com/10up/insert-special-characters/pull/77)).
+- Bump `elliptic` from 6.5.2 to 6.5.4 (props [@dependabot](https://github.com/apps/dependabot) via [#73](https://github.com/10up/insert-special-characters/pull/73), [#82](https://github.com/10up/insert-special-characters/pull/82)).
+- Bump `y18n` from 4.0.0 to 4.0.1 (props [@dependabot](https://github.com/apps/dependabot) via [#85](https://github.com/10up/insert-special-characters/pull/85)).
+- Bump `rmccue/requests` from 1.7.0 to 1.8.0 (props [@dependabot](https://github.com/apps/dependabot) via [#86](https://github.com/10up/insert-special-characters/pull/86)).
+- Bump `ssri` from 6.0.1 to 6.0.2 (props [@dependabot](https://github.com/apps/dependabot) via [#87](https://github.com/10up/insert-special-characters/pull/87)).
+- Bump `lodash` from 4.17.15 to 4.17.21 (props [@dependabot](https://github.com/apps/dependabot) via [#72](https://github.com/10up/insert-special-characters/pull/72), [#88](https://github.com/10up/insert-special-characters/pull/88)).
+- Bump `browserslist` from 4.8.7 to 4.16.6 (props [@dependabot](https://github.com/apps/dependabot) via [#89](https://github.com/10up/insert-special-characters/pull/89)).
+
 ## [1.0.2] - 2019-11-22
 ### Changed
 - Relicensed from MIT to GPLv2
@@ -28,6 +51,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Plugin header and icon images (props [@McCallumDillon](https://github.com/McCallumDillon) via [#28](https://github.com/10up/insert-special-characters/pull/28))
 
 [Unreleased]: https://github.com/10up/insert-special-characters/compare/trunk...develop
+[1.0.3]: https://github.com/10up/insert-special-characters/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/10up/insert-special-characters/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/10up/insert-special-characters/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/10up/insert-special-characters/releases/tag/1.0.0
