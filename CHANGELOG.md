@@ -26,6 +26,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Bump `ssri` from 6.0.1 to 6.0.2 (props [@dependabot](https://github.com/apps/dependabot) via [#87](https://github.com/10up/insert-special-characters/pull/87)).
 - Bump `lodash` from 4.17.15 to 4.17.21 (props [@dependabot](https://github.com/apps/dependabot) via [#72](https://github.com/10up/insert-special-characters/pull/72), [#88](https://github.com/10up/insert-special-characters/pull/88)).
 - Bump `browserslist` from 4.8.7 to 4.16.6 (props [@dependabot](https://github.com/apps/dependabot) via [#89](https://github.com/10up/insert-special-characters/pull/89)).
+- Bump `postcss` from 7.0.27 to 7.0.36 (props [@dependabot](https://github.com/apps/dependabot) via [#94](https://github.com/10up/insert-special-characters/pull/94)).
 
 ## [1.0.2] - 2019-11-22
 ### Changed
