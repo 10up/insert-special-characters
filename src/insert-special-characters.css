@@ -69,3 +69,10 @@ ul.charMap--category {
 body:not(.mobile) .character-map-popover .components-popover__content:not(.is-mobile) {
 	min-width: 550px;
 }
+
+
+.insert-special-characters-cursor {
+	display: inline-block;
+	background-color: #f00;
+	width: 2px;
+}

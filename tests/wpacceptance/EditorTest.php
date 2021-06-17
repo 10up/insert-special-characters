@@ -33,6 +33,9 @@ class EditorTest extends \TestCaseBase {
 		$we->click( '.components-dropdown-menu__menu .components-dropdown-menu__menu-item:nth-of-type(3)' );
 
 		$we->waitUntilElementVisible( '.character-map-popover' );
+
+		$we->seeElement( '.insert-special-characters-cursor' );
+
 		$we->scrollToElement( '[data-hex="&#25A6;"]' );
 		$we->click( '[data-hex="&#25A6;"]' );
 

@@ -7,6 +7,7 @@
     "build": "wp-scripts build",
     "start": "wp-scripts start",
     "lint:js": "wp-scripts lint-js",
+    "format:js": "wp-scripts format-js",
     "lint:css": "wp-scripts lint-style"
   },
   "license": "GPL-2.0",
