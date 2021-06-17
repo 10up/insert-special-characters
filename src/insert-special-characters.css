@@ -1,24 +1,28 @@
-.character-map-popover .components-popover__content {
-	max-height: 350px; /* avoid a bug with scrolling on initial load and repositioning */
-}
-
 div.charMap--container {
 	margin: 2px;
 	font-size: 18px;
+	max-height: 400px;
 }
 
 .charMap--container ul.charMap--filter {
 	float: right;
-	margin-right: 5px;
+	margin: 2px 5px 6px;
 	font-size: 14px;
+}
+
+.charMap--container ul.charMap--filter label {
+	vertical-align: text-bottom;
 }
 
 .charMap--container ul.charMap--filter input {
 	padding: 3px;
+	min-height: 26px;
+	line-height: 1;
 }
 
 ul.charMap--category {
 	background-color: #fff;
+	padding-bottom: 2px;
 }
 
 .charMap--category-menu li {

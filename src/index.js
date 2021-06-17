@@ -78,10 +78,19 @@ registerFormatType( type, {
 							}
 						}
 						categoryNames={ {
-							Arrows: __( 'Arrows', 'insert-special-characters' ),
-							Latin: __( 'Latin', 'insert-special-characters' ),
 							Math: __( 'Math', 'insert-special-characters' ),
+							Currency: __(
+								'Currency',
+								'insert-special-characters'
+							),
+							Punctuation: __(
+								'Punctuation',
+								'insert-special-characters'
+							),
 							Misc: __( 'Misc', 'insert-special-characters' ),
+							Greek: __( 'Greek', 'insert-special-characters' ),
+							Latin: __( 'Latin', 'insert-special-characters' ),
+							Arrows: __( 'Arrows', 'insert-special-characters' ),
 						} }
 						categoriesLabelText={ __(
 							'Categories',
