@@ -10,12 +10,16 @@ All notable changes to this project will be documented in this file, per [the Ke
 - WP Acceptance tests (props [@johnwatkins0](https://github.com/johnwatkins0), [@jeffpaul](https://github.com/jeffpaul) via [#70](https://github.com/10up/insert-special-characters/pull/70)).
 
 ### Changed
-- Update to React Character Map `v0.3.0` (props [@johnwatkins0](https://github.com/johnwatkins0), [@dinhtungdu](https://github.com/dinhtungdu) via [#66](https://github.com/10up/insert-special-characters/pull/66)). 
-- Make UI text in the component translatable (props [@johnwatkins0](https://github.com/johnwatkins0), [@dinhtungdu](https://github.com/dinhtungdu) via [#66](https://github.com/10up/insert-special-characters/pull/66)).
+- Update to React Character Map `v0.3.0` (props [@johnwatkins0](https://github.com/johnwatkins0), [@dinhtungdu](https://github.com/dinhtungdu) via [#66](https://github.com/10up/insert-special-characters/pull/66)).
 - Integrate [@wordpress/scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) for building and linting (props [@johnwatkins0](https://github.com/johnwatkins0), [@ocean90](https://github.com/ocean90), [@adamsilverstein](https://github.com/adamsilverstein) via [#65](https://github.com/10up/insert-special-characters/pull/65)).
 - Renamed release branch from `master` to `trunk`, so please make sure to update and direct references to `master` in downstream code (props [@jeffpaul](https://github.com/jeffpaul) via [#78](https://github.com/10up/insert-special-characters/pull/78), [#79](https://github.com/10up/insert-special-characters/pull/79)).
-- Bump WordPress version "tested up to" 5.7 (props [@jeffpaul](https://github.com/jeffpaul), [@davidchabbi](https://profiles.wordpress.org/davidchabbi/), [@pabamato](https://github.com/pabamato), [@ankitguptaindia](https://github.com/ankitguptaindia) via [#80](https://github.com/10up/insert-special-characters/pull/80), [#84](https://github.com/10up/insert-special-characters/pull/84)).
+- Bump WordPress version "tested up to" 5.8 (props [@jeffpaul](https://github.com/jeffpaul), [@davidchabbi](https://profiles.wordpress.org/davidchabbi/), [@pabamato](https://github.com/pabamato), [@ankitguptaindia](https://github.com/ankitguptaindia), [@phpbits](https://github.com/phpbits), [@BBerg10up](https://github.com/BBerg10up) via [#80](https://github.com/10up/insert-special-characters/pull/80), [#84](https://github.com/10up/insert-special-characters/pull/84), [#98](https://github.com/10up/insert-special-characters/pull/98)).
 - Documentation updates (props [@bobbingwide](https://github.com/bobbingwide) via [#60](https://github.com/10up/insert-special-characters/pull/60)).
+
+### Fixed
+- Make UI text in the component translatable (props [@johnwatkins0](https://github.com/johnwatkins0), [@dinhtungdu](https://github.com/dinhtungdu) via [#66](https://github.com/10up/insert-special-characters/pull/66)).
+- Popover initial focus on top instead of bottom or center of the contents (props [@phpbits](https://github.com/phpbits), [@BBerg10up](https://github.com/BBerg10up) via [#96](https://github.com/10up/insert-special-characters/pull/96)).
+- Compatility with the new widget screen in WordPress 5.8 and formatting of returned elements (props [@phpbits](https://github.com/phpbits) via [#97](https://github.com/10up/insert-special-characters/pull/97)).
 
 ### Security
 - Bump `acorn` from 5.7.3 to 5.7.4 (props [@dependabot](https://github.com/apps/dependabot) via [#67](https://github.com/10up/insert-special-characters/pull/67)).

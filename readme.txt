@@ -40,11 +40,13 @@ Development takes place in the [GitHub repository](https://github.com/10up/inser
 * **Added:** Focus style on buttons to improve accessibility for keyboard users (props [@samikeijonen](https://profiles.wordpress.org/samikeijonen/)).
 * **Added:** WP Acceptance tests (props [@johnwatkins0](https://profiles.wordpress.org/johnwatkins0/), [@jeffpaul](https://profiles.wordpress.org/jeffpaul/)).
 * **Changed:** Update to React Character Map `v0.3.0` (props [@johnwatkins0](https://profiles.wordpress.org/johnwatkins0/), [@dinhtungdu](https://profiles.wordpress.org/dinhtungdu/)).
-* **Changed:** Make UI text in the component translatable (props [@johnwatkins0](https://profiles.wordpress.org/johnwatkins0/), [@dinhtungdu](https://profiles.wordpress.org/dinhtungdu/)).
 * **Changed:** Integrate [@wordpress/scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) for building and linting (props [@johnwatkins0](https://profiles.wordpress.org/johnwatkins0/), [@ocean90](https://profiles.wordpress.org/ocean90/), [@adamsilverstein](https://profiles.wordpress.org/adamsilverstein/)).
 * **Changed:** Renamed release branch from `master` to `trunk`, so please make sure to update and direct references to `master` in downstream code (props [@jeffpaul](https://profiles.wordpress.org/jeffpaul/)).
-* **Changed:** Bump WordPress version "tested up to" 5.7 (props [@jeffpaul](https://profiles.wordpress.org/jeffpaul/), [@davidchabbi](https://profiles.wordpress.org/davidchabbi/), [@pabamato](https://profiles.wordpress.org/pabamato/), [@ankitguptaindia](https://profiles.wordpress.org/ankit-k-gupta/)).
+* **Changed:** Bump WordPress version "tested up to" 5.8 (props [@jeffpaul](https://profiles.wordpress.org/jeffpaul/), [@davidchabbi](https://profiles.wordpress.org/davidchabbi/), [@pabamato](https://profiles.wordpress.org/pabamato/), [@ankitguptaindia](https://profiles.wordpress.org/ankit-k-gupta/), [@phpbits](https://profiles.wordpress.org/phpbits/), [@BBerg10up](https://github.com/BBerg10up)).
 * **Changed:** Documentation updates (props [@bobbingwide](https://profiles.wordpress.org/bobbingwide/)).
+* **Fixed:** Make UI text in the component translatable (props [@johnwatkins0](https://profiles.wordpress.org/johnwatkins0/), [@dinhtungdu](https://profiles.wordpress.org/dinhtungdu/)).
+* **Fixed:** Popover initial focus on top instead of bottom or center of the contents (props [@phpbits](https://profiles.wordpress.org/phpbits/), [@BBerg10up](https://github.com/BBerg10up)).
+* **Fixed:** Compatility with the new widget screen in WordPress 5.8 and formatting of returned elements (props [@phpbits](https://profiles.wordpress.org/phpbits/)).
 * **Security:** Bump `acorn` from 5.7.3 to 5.7.4 (props [@dependabot](https://github.com/apps/dependabot)).
 * **Security:** Bump `ini` from 1.3.5 to 1.3.7 (props [@dependabot](https://github.com/apps/dependabot)).
 * **Security:** Bump `elliptic` from 6.5.2 to 6.5.4 (props [@dependabot](https://github.com/apps/dependabot)).
