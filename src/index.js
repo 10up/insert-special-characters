@@ -1,6 +1,6 @@
 const { registerFormatType, toggleFormat, insert } = wp.richText;
-const { createElement, Fragment } = wp.element;
-const { RichTextToolbarButton, RichTextShortcut } = wp.editor;
+const { Fragment } = wp.element;
+const { RichTextToolbarButton, RichTextShortcut } = wp.blockEditor;
 const { Popover } = wp.components;
 const { getRectangleFromRange } = wp.dom;
 const { applyFilters } = wp.hooks;
@@ -110,23 +110,23 @@ registerFormatType( type, {
 			);
 		}
 
-		return createElement(
-			Fragment,
-			null,
-			createElement( RichTextShortcut, {
-				type: 'primary',
-				character,
-				onUse: onToggle,
-			} ),
-			createElement( RichTextToolbarButton, {
-				title,
-				onClick: onToggle,
-				isActive,
-				shortcutType: 'primary',
-				shortcutCharacter: character,
-				className: `toolbar-button-with-text toolbar-button__advanced-${ name }`,
-				icon: 'editor-customchar',
-			} )
+		return (
+			<Fragment>
+				<RichTextShortcut
+					type="primary"
+					character={ character }
+					onUse={ onToggle }
+				/>
+				<RichTextToolbarButton
+					className={ `toolbar-button-with-text toolbar-button__advanced-${ name }` }
+					icon="editor-customchar"
+					title={ title }
+					onClick={ onToggle }
+					isActive={ isActive }
+					shortcutType="primary"
+					shortcutCharacter={ character }
+				/>
+			</Fragment>
 		);
 	},
 } );
