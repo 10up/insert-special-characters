@@ -6,11 +6,12 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [1.0.3] - TBD
 ### Added
+- Many new special characters (e.g., em dash, en dash, hair space, thin space, no-break space, en space, em space, zero width non-joiner, non-breaking hyphen) and groupings (Currency, Punctuation, Greek).
 - Focus style on buttons to improve accessibility for keyboard users (props [@samikeijonen](https://github.com/samikeijonen) via [#62](https://github.com/10up/insert-special-characters/pull/62)).
 - WP Acceptance tests (props [@johnwatkins0](https://github.com/johnwatkins0), [@jeffpaul](https://github.com/jeffpaul) via [#70](https://github.com/10up/insert-special-characters/pull/70)).
 
 ### Changed
-- Update to React Character Map `v0.3.0` (props [@johnwatkins0](https://github.com/johnwatkins0), [@dinhtungdu](https://github.com/dinhtungdu) via [#66](https://github.com/10up/insert-special-characters/pull/66)).
+- Update to React Character Map `v0.4.2` (props [@johnwatkins0](https://github.com/johnwatkins0), [@dinhtungdu](https://github.com/dinhtungdu), [@jeffpaul](https://github.com/jeffpaul) via [#66](https://github.com/10up/insert-special-characters/pull/66), [#92](https://github.com/10up/insert-special-characters/pull/92)).
 - Integrate [@wordpress/scripts](https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/) for building and linting (props [@johnwatkins0](https://github.com/johnwatkins0), [@ocean90](https://github.com/ocean90), [@adamsilverstein](https://github.com/adamsilverstein) via [#65](https://github.com/10up/insert-special-characters/pull/65)).
 - Renamed release branch from `master` to `trunk`, so please make sure to update and direct references to `master` in downstream code (props [@jeffpaul](https://github.com/jeffpaul) via [#78](https://github.com/10up/insert-special-characters/pull/78), [#79](https://github.com/10up/insert-special-characters/pull/79)).
 - Bump WordPress version "tested up to" 5.8 (props [@jeffpaul](https://github.com/jeffpaul), [@davidchabbi](https://profiles.wordpress.org/davidchabbi/), [@pabamato](https://github.com/pabamato), [@ankitguptaindia](https://github.com/ankitguptaindia), [@phpbits](https://github.com/phpbits), [@BBerg10up](https://github.com/BBerg10up) via [#80](https://github.com/10up/insert-special-characters/pull/80), [#84](https://github.com/10up/insert-special-characters/pull/84), [#98](https://github.com/10up/insert-special-characters/pull/98)).
