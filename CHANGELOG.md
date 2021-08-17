@@ -32,6 +32,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Bump `lodash` from 4.17.15 to 4.17.21 (props [@dependabot](https://github.com/apps/dependabot) via [#72](https://github.com/10up/insert-special-characters/pull/72), [#88](https://github.com/10up/insert-special-characters/pull/88)).
 - Bump `browserslist` from 4.8.7 to 4.16.6 (props [@dependabot](https://github.com/apps/dependabot) via [#89](https://github.com/10up/insert-special-characters/pull/89)).
 - Bump `postcss` from 7.0.27 to 7.0.36 (props [@dependabot](https://github.com/apps/dependabot) via [#94](https://github.com/10up/insert-special-characters/pull/94)).
+- Bump `path-parse` from 1.0.6 to 1.0.7 (props [@dependabot](https://github.com/apps/dependabot) via [#99](https://github.com/10up/insert-special-characters/pull/99)).
 
 ## [1.0.2] - 2019-11-22
 ### Changed

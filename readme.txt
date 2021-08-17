@@ -56,6 +56,7 @@ Development takes place in the [GitHub repository](https://github.com/10up/inser
 * **Security:** Bump `ssri` from 6.0.1 to 6.0.2 (props [@dependabot](https://github.com/apps/dependabot)).
 * **Security:** Bump `lodash` from 4.17.15 to 4.17.21 (props [@dependabot](https://github.com/apps/dependabot)).
 * **Security:** Bump `browserslist` from 4.8.7 to 4.16.6 (props [@dependabot](https://github.com/apps/dependabot)).
+* **Security:** Bump `path-parse` from 1.0.6 to 1.0.7 (props [@dependabot](https://github.com/apps/dependabot)).
 
 = 1.0.2 =
 * **Changed:** Relicensed from MIT to GPLv2.
