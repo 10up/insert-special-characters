@@ -26,7 +26,10 @@ Development takes place in the [GitHub repository](https://github.com/10up/inser
 
 == Screenshots ==
 
-1. Example of inserting a special character.
+1. "Special Characters" option in Paragraph Block dropdown menu.
+2. Initial special characters, showing the "Misc" character set.
+3. Filtering the special characters via search.
+4. Resulting inserted special character (note focus on special character, rest of window has been blurred).
 
 == Installation ==
 
