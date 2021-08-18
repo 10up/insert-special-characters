@@ -2,7 +2,7 @@
 
 > A Special Character inserter for the WordPress block editor (Gutenberg).
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.3%20tested-success.svg) [![GPLv2 License](https://img.shields.io/github/license/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/blob/develop/LICENSE.md)
+[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.8%20tested-success.svg) [![GPLv2 License](https://img.shields.io/github/license/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/blob/develop/LICENSE.md)
 
 ## Overview
 
@@ -28,7 +28,7 @@ wp.hooks.addFilter(
 		return {
 			"Currency": [
 				{ "entity": "&dollar;", "hex": "&#0024;", "name": "Dollar Sign", "char": "$" },
-				{ "entity": "&wuro;", "hex": "&#20AC;", "name": "Euro Sign", "char": "€" },
+				{ "entity": "&euro;", "hex": "&#20AC;", "name": "Euro Sign", "char": "€" },
 				{ "entity": "&cent;", "hex": "&#00A2;", "name": "Cent Sign", "char": "¢" },
 				{ "entity": "&pound;", "hex": "&#00A3;", "name": "Pound Sign", "char": "£" },
 				{ "entity": "&yen;", "hex": "&#00A5;", "name": "Yen Sign", "char": "¥" },
@@ -64,4 +64,4 @@ Please read [CODE_OF_CONDUCT.md](https://github.com/10up/insert-special-characte
 
 ## Like what you see?
 
-<a href="http://10up.com/contact/"><img src="https://10updotcom-wpengine.s3.amazonaws.com/uploads/2016/10/10up-Github-Banner.png" width="850" alt="Work with us at 10up"></a>
+<a href="http://10up.com/contact/"><img src="https://10up.com/uploads/2016/10/10up-Github-Banner.png" width="850" alt="Work with us at 10up"></a>

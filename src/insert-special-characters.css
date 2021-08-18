@@ -1,28 +1,28 @@
-.character-map-popover .components-popover__content {
-	max-height: 350px; /* avoid a bug with scrolling on initial load and repositioning */
-}
-
 div.charMap--container {
 	margin: 2px;
 	font-size: 18px;
+	max-height: 400px;
 }
 
 .charMap--container ul.charMap--filter {
 	float: right;
-	margin-right: 5px;
+	margin: 2px 5px 6px;
 	font-size: 14px;
+}
+
+.charMap--container ul.charMap--filter label {
+	vertical-align: text-bottom;
 }
 
 .charMap--container ul.charMap--filter input {
 	padding: 3px;
+	min-height: 26px;
+	line-height: 1;
 }
 
 ul.charMap--category {
-	background-color: white;
-}
-
-.charMap--category.active li {
-	margin-bottom: 0;
+	background-color: #fff;
+	padding-bottom: 2px;
 }
 
 .charMap--category-menu li {
@@ -32,9 +32,29 @@ ul.charMap--category {
 	font-size: 14px;
 }
 
+.charMap--category.active li {
+	margin-bottom: 0;
+}
+
+.charMap--categories li a {
+	color: #111;
+}
+
 .charMap--category-menu .charMap--category-menu-item.active,
 .charMap--category li a:hover {
 	background: #0085ba;
+}
+
+.charMap--category-menu button:focus {
+	outline: thin dotted;
+}
+
+.charMap--category li button:focus {
+	background-color: #41a6ac;
+	color: #fff;
+
+	/* For Windows high contrast mode. */
+	outline: 2px solid transparent;
 }
 
 .charMap--container .charMap--category-menu button:hover {
@@ -48,10 +68,6 @@ ul.charMap--category {
 
 .charMap--container .charMap--container .charMap--categories {
 	margin: 5px;
-}
-
-.charMap--categories li a {
-	color: #111;
 }
 
 body:not(.mobile) .character-map-popover .components-popover__content:not(.is-mobile) {

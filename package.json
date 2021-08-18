@@ -1,36 +1,37 @@
 {
   "name": "insert-special-characters",
-  "version": "1.0.2",
-  "description": "",
-  "main": "insert-special-characters.js",
+  "version": "1.0.3",
+  "description": "A Special Character inserter for the WordPress block editor (Gutenberg).",
+  "main": "src",
   "scripts": {
-    "build": "webpack --mode=production ",
-    "build:dev": "webpack --mode=development --debug --devtool cheap-source-map --output-pathinfo",
-    "watch": "webpack --watch --mode=development --debug --devtool cheap-module-eval-source-map --output-pathinfo"
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "lint:js": "wp-scripts lint-js",
+    "lint:css": "wp-scripts lint-style"
   },
-  "author": "",
   "license": "GPL-2.0",
   "devDependencies": {
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/preset-env": "^7.6.3",
-    "@babel/preset-react": "^7.6.3",
-    "babel-eslint": "^10.0.3",
-    "babel-loader": "^8.0.6",
+    "@wordpress/scripts": "^7.1.0",
     "css-loader": "^3.2.0",
-    "eslint": "^6.6.0",
-    "eslint-loader": "^3.0.2",
-    "eslint-plugin-react": "^7.16.0",
-    "react": "^16.11.0",
-    "react-character-map": "^0.2.2",
-    "react-dom": "^16.11.0",
-    "style-loader": "^1.0.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9",
-    "webpackbar": "^4.0.0"
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.7",
+    "prettier": "npm:wp-prettier@1.19.1",
+    "style-loader": "^1.0.0"
   },
-  "dependencies": {},
-  "globals": {
-    "wp": "off"
+  "dependencies": {
+    "react-character-map": "^0.4.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.css": [
+      "npm run lint:css"
+    ],
+    "*.js": [
+      "npm run lint:js"
+    ]
   }
 }
