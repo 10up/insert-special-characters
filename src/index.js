@@ -117,14 +117,13 @@ registerFormatType( type, {
 						/>
 					</ToolbarGroup>
 				</BlockControls>
-				<>
+				<Fragment>
 					<RichTextShortcut
 						type="primary"
 						character={ character }
-						// eslint-disable-next-line no-console
 						onUse={ onToggle }
 					/>
-				</>
+				</Fragment>
 				{ specialCharsPopover }
 			</Fragment>
 		);
