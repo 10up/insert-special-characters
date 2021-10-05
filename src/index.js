@@ -54,7 +54,7 @@ registerFormatType( type, {
 			<Popover
 				className="character-map-popover"
 				position="bottom center"
-				focusOnMount="container"
+				focusOnMount="firstElement"
 				key="charmap-popover"
 				getAnchorRect={ anchorRect }
 				expandOnMobile={ true }
