@@ -91,6 +91,7 @@ registerFormatType( type, {
 							Greek: __( 'Greek', 'insert-special-characters' ),
 							Latin: __( 'Latin', 'insert-special-characters' ),
 							Arrows: __( 'Arrows', 'insert-special-characters' ),
+							Music: __( 'Music', 'insert-special-characters' ),
 						} }
 						categoriesLabelText={ __(
 							'Categories',
