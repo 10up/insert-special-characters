@@ -105,7 +105,7 @@ registerFormatType( type, {
 
 		return (
 			<Fragment>
-				<BlockControls group="inline">
+				<BlockControls group="other">
 					<ToolbarGroup>
 						<ToolbarButton
 							className={ `toolbar-button-with-text toolbar-button__advanced-${ name }` }
