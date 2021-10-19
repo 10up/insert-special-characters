@@ -5,8 +5,7 @@ div.charMap--container {
 }
 
 .charMap--container ul.charMap--filter {
-	float: right;
-	margin: 2px 5px 6px;
+	margin: 5px 6px;
 	font-size: 14px;
 }
 
@@ -40,13 +39,18 @@ ul.charMap--category {
 	color: #111;
 }
 
+.charMap--category-menu .charMap--category-menu-item {
+	margin: 5px 2px;
+}
+
 .charMap--category-menu .charMap--category-menu-item.active,
 .charMap--category li a:hover {
 	background: #0085ba;
 }
 
 .charMap--category-menu button:focus {
-	outline: thin dotted;
+	outline: 2px solid #0085ba;
+	outline-offset: 3px;
 }
 
 .charMap--category li button:focus {
