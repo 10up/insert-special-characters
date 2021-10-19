@@ -1,12 +1,12 @@
 const { registerFormatType, toggleFormat, insert } = wp.richText;
-const { Fragment } = wp.element;
-const { RichTextToolbarButton, RichTextShortcut } = wp.blockEditor;
-const { Popover } = wp.components;
 const { getRectangleFromRange } = wp.dom;
 const { applyFilters } = wp.hooks;
 const { __ } = wp.i18n;
 
 import { CharacterMap } from 'react-character-map';
+import { BlockControls } from '@wordpress/block-editor';
+import { Popover, Toolbar, IconButton } from '@wordpress/components';
+
 import './insert-special-characters.css';
 
 // Load the default Chars provided by react-character-map component.
@@ -15,7 +15,7 @@ import Chars from '../node_modules/react-character-map/dist/component/chars.json
 const InsertSpecialCharactersOptions = {
 	name: 'insertspecialcharacters',
 	title: __( 'Special Characters', 'insert-special-characters' ),
-	character: 'o',
+	character: 'Special Characters',
 	value: '',
 };
 
@@ -107,23 +107,19 @@ registerFormatType( type, {
 		);
 
 		return (
-			<Fragment>
-				<RichTextShortcut
-					type="primary"
-					character={ character }
-					onUse={ onToggle }
-				/>
-				<RichTextToolbarButton
-					className={ `toolbar-button-with-text toolbar-button__advanced-${ name }` }
-					icon="editor-customchar"
-					title={ title }
-					onClick={ onToggle }
-					isActive={ isActive }
-					shortcutType="primary"
-					shortcutCharacter={ character }
-				/>
+			<>
+				<BlockControls>
+					<Toolbar>
+						<IconButton
+							icon="editor-customchar"
+							label={ character }
+							className={ `toolbar-button-with-text toolbar-button__advanced-${ name }` }
+							onClick={ onToggle }
+						/>
+					</Toolbar>
+				</BlockControls>
 				{ specialPopover }
-			</Fragment>
+			</>
 		);
 	},
 } );
