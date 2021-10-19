@@ -50,65 +50,61 @@ registerFormatType( type, {
 		};
 
 		// Display the character map when it is active.
-		if ( isActive ) {
-			const characters = applyFilters( `${ name }-characters`, Chars );
-			return (
-				<Popover
-					className="character-map-popover"
-					position="bottom center"
-					focusOnMount="firstElement"
-					key="charmap-popover"
-					onClick={ () => {} }
-					getAnchorRect={ anchorRect }
-					expandOnMobile={ true }
-					headerTitle={ __(
-						'Insert Special Character',
+		const characters = applyFilters( `${ name }-characters`, Chars );
+
+		const specialPopover = isActive && (
+			<Popover
+				className="character-map-popover"
+				position="bottom center"
+				focusOnMount="firstElement"
+				key="charmap-popover"
+				onClick={ () => {} }
+				getAnchorRect={ anchorRect }
+				expandOnMobile={ true }
+				headerTitle={ __(
+					'Insert Special Character',
+					'insert-special-characters'
+				) }
+				onClose={ () => {
+					onChange( toggleFormat( value, { type } ) );
+				} }
+			>
+				<CharacterMap
+					characterData={ characters }
+					onSelect={
+						// Insert the selected character and close the popover.
+						( char ) => {
+							onChange( insert( value, char.char ) );
+						}
+					}
+					categoryNames={ {
+						Math: __( 'Math', 'insert-special-characters' ),
+						Currency: __( 'Currency', 'insert-special-characters' ),
+						Punctuation: __(
+							'Punctuation',
+							'insert-special-characters'
+						),
+						Misc: __( 'Misc', 'insert-special-characters' ),
+						Greek: __( 'Greek', 'insert-special-characters' ),
+						Latin: __( 'Latin', 'insert-special-characters' ),
+						Arrows: __( 'Arrows', 'insert-special-characters' ),
+					} }
+					categoriesLabelText={ __(
+						'Categories',
 						'insert-special-characters'
 					) }
-					onClose={ () => {
-						onChange( toggleFormat( value, { type } ) );
-					} }
-				>
-					<CharacterMap
-						characterData={ characters }
-						onSelect={
-							// Insert the selected character and close the popover.
-							( char ) => {
-								onChange( insert( value, char.char ) );
-							}
-						}
-						categoryNames={ {
-							Math: __( 'Math', 'insert-special-characters' ),
-							Currency: __(
-								'Currency',
-								'insert-special-characters'
-							),
-							Punctuation: __(
-								'Punctuation',
-								'insert-special-characters'
-							),
-							Misc: __( 'Misc', 'insert-special-characters' ),
-							Greek: __( 'Greek', 'insert-special-characters' ),
-							Latin: __( 'Latin', 'insert-special-characters' ),
-							Arrows: __( 'Arrows', 'insert-special-characters' ),
-						} }
-						categoriesLabelText={ __(
-							'Categories',
-							'insert-special-characters'
-						) }
-						characterListLabelText={ __(
-							'Character List',
-							'insert-special-characters'
-						) }
-						filterLabelText={ __(
-							'Filter',
-							'insert-special-characters'
-						) }
-						key="charmap"
-					/>
-				</Popover>
-			);
-		}
+					characterListLabelText={ __(
+						'Character List',
+						'insert-special-characters'
+					) }
+					filterLabelText={ __(
+						'Filter',
+						'insert-special-characters'
+					) }
+					key="charmap"
+				/>
+			</Popover>
+		);
 
 		return (
 			<Fragment>
@@ -126,6 +122,7 @@ registerFormatType( type, {
 					shortcutType="primary"
 					shortcutCharacter={ character }
 				/>
+				{ specialPopover }
 			</Fragment>
 		);
 	},
