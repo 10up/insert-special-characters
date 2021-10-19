@@ -73,3 +73,7 @@ ul.charMap--category {
 body:not(.mobile) .character-map-popover .components-popover__content:not(.is-mobile) {
 	min-width: 550px;
 }
+
+body.mobile .components-popover.is-expanded {
+	overflow: scroll;
+}
