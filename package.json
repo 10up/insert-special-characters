@@ -19,7 +19,7 @@
     "style-loader": "^1.0.0"
   },
   "dependencies": {
-    "react-character-map": "^0.4.3"
+    "react-character-map": "^0.4.4"
   },
   "husky": {
     "hooks": {
