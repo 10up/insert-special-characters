@@ -24,18 +24,26 @@ Development takes place in the [GitHub repository](https://github.com/10up/inser
 * Requires [WordPress](http://wordpress.org/) 5.2+
 * Issues and Pull requests welcome in the [GitHub repository](https://github.com/10up/insert-special-characters).
 
+== Installation ==
+
+1. Install the plugin via the plugin installer, either by searching for it or uploading a .zip file.
+2. Activate the plugin.
+3. Use Insert Special Characters!
+
+== Frequently Asked Questions ==
+
+= How come I do not see all the special characters? =
+
+When a character is displayed using a font that doesn't support that character, a default "not defined" glyph from that font is used. The "not defined" glyph in most fonts has the appearance of a rectangular box, or some variation of that.
+
+One example of a font with support for wide range of glyphs is the [Noto](https://fonts.google.com/noto) family by Google Fonts, which can be loaded by the theme to render the missing characters.
+
 == Screenshots ==
 
 1. "Special Characters" option in Paragraph Block dropdown menu.
 2. Initial special characters, showing the "Misc" character set.
 3. Filtering the special characters via search.
 4. Resulting inserted special character (note focus on special character, rest of window has been blurred).
-
-== Installation ==
-
-1. Install the plugin via the plugin installer, either by searching for it or uploading a .zip file.
-2. Activate the plugin.
-3. Use Insert Special Characters!
 
 == Changelog ==
 
