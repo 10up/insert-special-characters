@@ -1,6 +1,6 @@
 {
   "name": "insert-special-characters",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Special Character inserter for the WordPress block editor (Gutenberg).",
   "main": "src",
   "scripts": {
