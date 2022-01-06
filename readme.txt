@@ -47,6 +47,13 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 
 == Changelog ==
 
+= 1.0.4 =
+* **Added:** Many new special characters (e.g., ⅐, ⅑, ⅒, single quotation marks, ß, ẞ, Ć, ć, Ḉ, ḉ) and grouping (Music) (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9)).
+* **Added:** Issue management automation via GitHub Actions (props [@jeffpaul](https://github.com/jeffpaul)).
+* **Changed:** Move icon from dropdown to block format toolbar (props [@pabamato](https://github.com/pabamato), [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9), [@mahnunchik](https://github.com/mahnunchik)).
+* **Changed:** Updated `react-character-map` from 0.4.2 to 0.4.4 (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9)).
+* **Fixed:** Character map popover scrolling issue on mobile viewport (props [@ajmaurya99](https://github.com/ajmaurya99), [@Sidsector9](https://github.com/Sidsector9), [@adamsilverstein](https://github.com/adamsilverstein), [@helen](https://github.com/helen)).
+
 = 1.0.3 =
 * **Added:** Many new special characters (e.g., em dash, en dash, hair space, thin space, no-break space, en space, em space, zero width non-joiner, non-breaking hyphen) and groupings (Currency, Punctuation, Greek).
 * **Added:** Focus style on buttons to improve accessibility for keyboard users (props [@samikeijonen](https://profiles.wordpress.org/samikeijonen/)).

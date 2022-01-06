@@ -4,7 +4,19 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
-## [1.0.3] - TBD
+## [1.0.4] - TBD
+### Added
+- Many new special characters (e.g., ⅐, ⅑, ⅒, single quotation marks, ß, ẞ, Ć, ć, Ḉ, ḉ) and grouping (Music) (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#104](https://github.com/10up/insert-special-characters/pull/104)).
+- Issue management automation via GitHub Actions (props [@jeffpaul](https://github.com/jeffpaul) via [#101](https://github.com/10up/insert-special-characters/pull/101)).
+
+### Changed
+- Move icon from dropdown to block format toolbar (props [@pabamato](https://github.com/pabamato), [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9), [@mahnunchik](https://github.com/mahnunchik) via [#103](https://github.com/10up/insert-special-characters/pull/103)).
+- Updated `react-character-map` from 0.4.2 to 0.4.4 (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#104](https://github.com/10up/insert-special-characters/pull/104)).
+
+### Fixed
+- Character map popover scrolling issue on mobile viewport (props [@ajmaurya99](https://github.com/ajmaurya99), [@Sidsector9](https://github.com/Sidsector9), [@adamsilverstein](https://github.com/adamsilverstein), [@helen](https://github.com/helen) via [#105](https://github.com/10up/insert-special-characters/pull/105)).
+
+## [1.0.3] - 2021-08-17
 ### Added
 - Many new special characters (e.g., em dash, en dash, hair space, thin space, no-break space, en space, em space, zero width non-joiner, non-breaking hyphen) and groupings (Currency, Punctuation, Greek).
 - Focus style on buttons to improve accessibility for keyboard users (props [@samikeijonen](https://github.com/samikeijonen) via [#62](https://github.com/10up/insert-special-characters/pull/62)).
@@ -58,6 +70,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Plugin header and icon images (props [@McCallumDillon](https://github.com/McCallumDillon) via [#28](https://github.com/10up/insert-special-characters/pull/28))
 
 [Unreleased]: https://github.com/10up/insert-special-characters/compare/trunk...develop
+[1.0.4]: https://github.com/10up/insert-special-characters/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/10up/insert-special-characters/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/10up/insert-special-characters/compare/1.0.1...1.0.2
 [1.0.1]: https://github.com/10up/insert-special-characters/compare/1.0.0...1.0.1
