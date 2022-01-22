@@ -56,7 +56,7 @@ wp.hooks.addFilter(
 2. Build the plugin by running the following NPM commands in the plugin folder.
 	* `npm install && composer install`
 	* `npm run build`
-4. Activate the `Insert Special Characters` plugin.
+3. Activate the `Insert Special Characters` plugin.
 
 ## Frequently Asked Questions
 
