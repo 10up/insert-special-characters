@@ -50,6 +50,14 @@ wp.hooks.addFilter(
 1. Activate the plugin.
 1. Use Insert Special Characters!
 
+## Development
+
+1. Clone this repo into your `wp-content/plugins` folder: `git clone https://github.com/10up/insert-special-characters.git`
+2. Build the plugin by running the following NPM commands in the plugin folder.
+	* `npm install && composer install`
+	* `npm run build`
+4. Activate the `Insert Special Characters` plugin.
+
 ## Frequently Asked Questions
 
 ### How come I do not see all the special characters?
