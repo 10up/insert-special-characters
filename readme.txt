@@ -78,9 +78,11 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 
 = 1.0.4 =
 * **Added:** Many new special characters (e.g., ⅐, ⅑, ⅒, single quotation marks, ß, ẞ, Ć, ć, Ḉ, ḉ) and grouping (Music) (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9)).
-* **Added:** Issue management automation via GitHub Actions (props [@jeffpaul](https://github.com/jeffpaul)).
+* **Added:** Issue management automation and CodeQL analysis via GitHub Actions (props [@jeffpaul](https://github.com/jeffpaul), [@cadic](https://github.com/cadic)).
 * **Changed:** Move icon from dropdown to block format toolbar (props [@pabamato](https://github.com/pabamato), [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9), [@mahnunchik](https://github.com/mahnunchik)).
 * **Changed:** Updated `react-character-map` from 0.4.2 to 0.4.4 (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9)).
+* **Changed:** Bump WordPress "tested up to" version 5.9 (props [@cadic](https://github.com/cadic), [@sudip-10up](https://github.com/sudip-10up)).
+* **Changed:** Documentation updates (props [@faisal-alvi](https://github.com/faisal-alvi), [@sudip-10up](https://github.com/sudip-10up)).
 * **Fixed:** Character map popover scrolling issue on mobile viewport (props [@ajmaurya99](https://github.com/ajmaurya99), [@Sidsector9](https://github.com/Sidsector9), [@adamsilverstein](https://github.com/adamsilverstein), [@helen](https://github.com/helen)).
 
 = 1.0.3 =
