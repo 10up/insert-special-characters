@@ -1,7 +1,15 @@
 {
   "name": "insert-special-characters",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Special Character inserter for the WordPress block editor (Gutenberg).",
+  "homepage": "https://github.com/10up/insert-special-characters#readme",
+  "license": "GPL-2.0-only",
+  "author": {
+    "name": "10up",
+    "email": "opensource@10up.com",
+    "url": "https://10up.com",
+    "role": "developer"
+  },
   "main": "src",
   "scripts": {
     "build": "wp-scripts build",
@@ -9,7 +17,6 @@
     "lint:js": "wp-scripts lint-js",
     "lint:css": "wp-scripts lint-style"
   },
-  "license": "GPL-2.0",
   "devDependencies": {
     "@wordpress/scripts": "^7.1.0",
     "css-loader": "^3.2.0",

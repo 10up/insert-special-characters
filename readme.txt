@@ -3,10 +3,10 @@ Contributors:      10up, adamsilverstein
 Tags:              Special Characters, Character Map, Omega, Gutenberg, Block, block editor
 Requires at least: 5.2
 Tested up to:      5.9
+Stable tag:        1.0.4
 Requires PHP:      5.6
-Stable tag:        1.0.3
 License:           GPLv2
-License URI:       insert-special-characters.php
+License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 A Special Character inserter for the WordPress block editor (Gutenberg).
 
@@ -16,9 +16,11 @@ Ever wanted to add a special character while working within the WordPress block 
 
 **Note:** you can display the popover via the `ctrl`/`cmd` + `o` keyboard shortcut.
 
+https://media.giphy.com/media/ImJtBjUD0RQqjdJkHv/giphy.mp4
+
 Development takes place in the [GitHub repository](https://github.com/10up/insert-special-characters).
 
-=== Technical Notes ===
+== Technical Notes ==
 
 * Requires PHP 5.6+.
 * Requires [WordPress](http://wordpress.org/) 5.2+
@@ -30,6 +32,33 @@ Development takes place in the [GitHub repository](https://github.com/10up/inser
 2. Activate the plugin.
 3. Use Insert Special Characters!
 
+== Extending ==
+
+To control the available tabs and characters, developers can filter the data set using the `insertspecialcharacters-characters` JavaScript (`wp.hooks`) filter.
+
+For example, to create a character inserter that only provides currency symbols:
+
+`
+wp.hooks.addFilter(
+	'insertspecialcharacters-characters',  // The filter name.
+	'mycallback', // Our callback namespace.
+	function( component ) { // The callback function.
+
+		// Return the categories/characters to display.
+		// The data structure is: { category: [ character data ], category2: ... }
+		return {
+			"Currency": [
+				{ "entity": "&dollar;", "hex": "&#0024;", "name": "Dollar Sign", "char": "$" },
+				{ "entity": "&euro;", "hex": "&#20AC;", "name": "Euro Sign", "char": "€" },
+				{ "entity": "&cent;", "hex": "&#00A2;", "name": "Cent Sign", "char": "¢" },
+				{ "entity": "&pound;", "hex": "&#00A3;", "name": "Pound Sign", "char": "£" },
+				{ "entity": "&yen;", "hex": "&#00A5;", "name": "Yen Sign", "char": "¥" },
+			]
+		};
+	}
+);
+`
+
 == Frequently Asked Questions ==
 
 = How come I do not see all the special characters? =
@@ -40,12 +69,21 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 
 == Screenshots ==
 
-1. "Special Characters" option in Paragraph Block dropdown menu.
-2. Initial special characters, showing the "Misc" character set.
+1. "Special Characters" option in Paragraph Block menu.
+2. Initial special characters, showing the "Math" character set.
 3. Filtering the special characters via search.
 4. Resulting inserted special character (note focus on special character, rest of window has been blurred).
 
 == Changelog ==
+
+= 1.0.4 =
+* **Added:** Many new special characters (e.g., ⅐, ⅑, ⅒, single quotation marks, ß, ẞ, Ć, ć, Ḉ, ḉ) and grouping (Music) (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9)).
+* **Added:** Issue management automation and CodeQL analysis via GitHub Actions (props [@jeffpaul](https://github.com/jeffpaul), [@cadic](https://github.com/cadic)).
+* **Changed:** Move icon from dropdown to block format toolbar (props [@pabamato](https://github.com/pabamato), [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9), [@mahnunchik](https://github.com/mahnunchik)).
+* **Changed:** Updated `react-character-map` from 0.4.2 to 0.4.4 (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9)).
+* **Changed:** Bump WordPress "tested up to" version 5.9 (props [@cadic](https://github.com/cadic), [@sudip-10up](https://github.com/sudip-10up)).
+* **Changed:** Documentation updates (props [@faisal-alvi](https://github.com/faisal-alvi), [@sudip-10up](https://github.com/sudip-10up)).
+* **Fixed:** Character map popover scrolling issue on mobile viewport (props [@ajmaurya99](https://github.com/ajmaurya99), [@Sidsector9](https://github.com/Sidsector9), [@adamsilverstein](https://github.com/adamsilverstein), [@helen](https://github.com/helen)).
 
 = 1.0.3 =
 * **Added:** Many new special characters (e.g., em dash, en dash, hair space, thin space, no-break space, en space, em space, zero width non-joiner, non-breaking hyphen) and groupings (Currency, Punctuation, Greek).
