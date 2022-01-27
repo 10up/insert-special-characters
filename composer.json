@@ -2,6 +2,8 @@
     "name": "10up/insert-special-characters",
     "description": "A Special Character inserter for the WordPress block editor (Gutenberg).",
     "type": "wordpress-plugin",
+	"homepage": "https://github.com/10up/insert-special-characters",
+	"license": "GPL-2.0-only",
     "authors": [
         {
             "name": "10up",

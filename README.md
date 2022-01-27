@@ -2,7 +2,7 @@
 
 > A Special Character inserter for the WordPress block editor (Gutenberg).
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.8%20tested-success.svg) [![GPLv2 License](https://img.shields.io/github/license/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/blob/develop/LICENSE.md)
+[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/releases/latest) ![WordPress tested up to version](https://img.shields.io/wordpress/plugin/tested/insert-special-characters?label=WordPress) [![GPLv2 License](https://img.shields.io/github/license/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/blob/develop/LICENSE.md)
 
 ## Overview
 
@@ -13,6 +13,7 @@ Ever wanted to add a special character while working within Gutenberg and sudden
 ![Demo of special characters within Gutenberg](assets/insert-special-characters.gif "Example of a special characters in the new WordPress editor")
 
 ## Extending
+
 To control the available tabs and characters, developers can filter the data set using the `insertspecialcharacters-characters` JavaScript (`wp.hooks`) filter.
 
 For example, to create a character inserter that only provides currency symbols:
@@ -36,7 +37,6 @@ wp.hooks.addFilter(
 		};
 	}
 );
-
 ```
 
 ## Requirements
@@ -49,6 +49,21 @@ wp.hooks.addFilter(
 1. Install the plugin via the plugin installer, either by searching for it or uploading a .zip file.
 1. Activate the plugin.
 1. Use Insert Special Characters!
+
+## Development
+
+1. Clone this repo into your `wp-content/plugins` folder: `git clone https://github.com/10up/insert-special-characters.git`
+2. Build the plugin by running the following NPM commands in the plugin folder.
+	* `npm install && composer install`
+	* `npm run build`
+3. Activate the `Insert Special Characters` plugin.
+
+## Frequently Asked Questions
+
+### How come I do not see all the special characters?
+When a character is displayed using a font that doesn't support that character, a default "not defined" glyph from that font is used. The "not defined" glyph in most fonts has the appearance of a rectangular box, or some variation of that.
+
+One example of a font with support for wide range of glyphs is the [Noto](https://fonts.google.com/noto) family by Google Fonts, which can be loaded by the theme to render the missing characters.
 
 ## Support Level
 
