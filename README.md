@@ -2,7 +2,7 @@
 
 > A Special Character inserter for the WordPress block editor (Gutenberg).
 
-[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/releases/latest) ![WordPress tested up to version](https://img.shields.io/badge/WordPress-v5.8%20tested-success.svg) [![GPLv2 License](https://img.shields.io/github/license/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/blob/develop/LICENSE.md)
+[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level) [![Release Version](https://img.shields.io/github/release/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/releases/latest) ![WordPress tested up to version](https://img.shields.io/wordpress/plugin/tested/insert-special-characters?label=WordPress) [![GPLv2 License](https://img.shields.io/github/license/10up/insert-special-characters.svg)](https://github.com/10up/insert-special-characters/blob/develop/LICENSE.md)
 
 ## Overview
 
@@ -49,6 +49,14 @@ wp.hooks.addFilter(
 1. Install the plugin via the plugin installer, either by searching for it or uploading a .zip file.
 1. Activate the plugin.
 1. Use Insert Special Characters!
+
+## Development
+
+1. Clone this repo into your `wp-content/plugins` folder: `git clone https://github.com/10up/insert-special-characters.git`
+2. Build the plugin by running the following NPM commands in the plugin folder.
+	* `npm install && composer install`
+	* `npm run build`
+3. Activate the `Insert Special Characters` plugin.
 
 ## Frequently Asked Questions
 

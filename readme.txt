@@ -1,7 +1,9 @@
 === Insert Special Characters ===
 Contributors:      10up, adamsilverstein
 Tags:              Special Characters, Character Map, Omega, Gutenberg, Block, block editor
-Tested up to:      5.8
+Requires at least: 5.2
+Tested up to:      5.9
+Requires PHP:      5.6
 Stable tag:        1.0.4
 License:           GPLv2
 License URI:       insert-special-characters.php
