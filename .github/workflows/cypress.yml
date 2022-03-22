@@ -35,5 +35,7 @@ jobs:
       run: npm run env:start
     - name: Set permissions
       run: ./tests/bin/initialize.sh
+    - name: Create test pages
+      run: npm run create-pages
     - name: Test
       run: npm run cypress:run
