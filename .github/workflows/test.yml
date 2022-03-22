@@ -23,15 +23,3 @@ jobs:
       run: |
         npm install
         npm run lint:js
-
-  test_acceptance:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Install dependencies
-      run: composer install
-    - name: Run WP Acceptance
-      run: |
-        WP_SNAPSHOTS_DIR=${{ github.workspace }}/.wpsnapshots/ ./vendor/bin/wpsnapshots configure --aws_key=${{ secrets.AWS_ACCESS_KEY }} --aws_secret=${{ secrets.SECRET_ACCESS_KEY }} --user_name="wp-acceptance" --user_email=travis@10up.com 10up
-        ./vendor/bin/wpacceptance run
