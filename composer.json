@@ -12,8 +12,5 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "require": {},
-    "scripts": {
-        "test:acceptance": "wpacceptance run"
-    }
+    "require": {}
 }

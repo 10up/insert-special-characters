@@ -34,8 +34,6 @@ jobs:
       run: ./tests/bin/set-core-version.js ${{ matrix.core.version }}
     - name: Set up WP environment
       run: npm run env:start
-    - name: Set permissions
-      run: ./tests/bin/initialize.sh
     - name: Create test pages
       run: npm run create-pages
     - name: Test
