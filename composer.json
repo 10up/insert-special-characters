@@ -12,5 +12,7 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "require": {}
+    "require-dev": {
+        "10up/phpcs-composer": "dev-master"
+    }
 }
