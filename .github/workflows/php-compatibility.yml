@@ -11,12 +11,8 @@ on:
 
 jobs:
   php-compatibility:
-    name: PHP ${{ matrix.php-versions }}
+    name: PHP minimum 7.0
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        php-versions: [7.0, 7.3, 7.4, 8.0]
 
     steps:
       - name: Checkout
@@ -25,7 +21,7 @@ jobs:
       - name: Set PHP version
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-versions }}
+          php-version: '7.0'
           tools: composer:v2
           coverage: none
 
