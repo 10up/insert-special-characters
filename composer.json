@@ -14,5 +14,10 @@
     "prefer-stable": true,
     "require-dev": {
         "10up/phpcs-composer": "dev-master"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     }
 }
