@@ -1,0 +1,34 @@
+name: Default Policy
+
+# Code Scanning policy
+codescanning:
+  level: error
+
+# Dependency Security Alerts (dependabot) policy
+dependabot:
+  level: high
+
+# Dependency Licensing Alerts (dependency graph) policy
+licensing:
+  conditions:
+    ids:
+      - GPL-*
+      - LGPL-*
+      - AGPL-*
+
+  warnings:
+    # Warning is the dependency isn't known
+    ids:
+      - Other
+      - NA
+
+# Dependency usage Alerts (dependency graph) policy
+# dependencies:
+  # warnings:
+  #   ids:
+  #     - Maintenance
+  #     - Organization
+
+# Secret Scanning Alerts policys
+secretscanning:
+  level: all
