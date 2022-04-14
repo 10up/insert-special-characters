@@ -13,10 +13,14 @@ jobs:
 
     steps:
     - name: Advance Security Compliance Action
-      uses: GeekMasher/advanced-security-compliance@policy
+      uses: GeekMasher/advanced-security-compliance@v1.6
       with:
         # We'll need an access token that can call the GraphQL GitHub API to get
         #  all the of the licensing data.
         token: ${{ secrets.ACCESS_TOKEN }}
         # Disable everything else to check for and focus on licensing
         argvs: '--disable-dependabot --disable-secret-scanning --disable-code-scanning'
+        # The owner/repo of where the policy is stored  
+        policy: 10up/insert-special-characters
+        # The local (within the workspace) or repository
+        policy-path: .github/policy.yml
