@@ -15,11 +15,21 @@
     "build": "wp-scripts build",
     "start": "wp-scripts start",
     "lint:js": "wp-scripts lint-js",
-    "lint:css": "wp-scripts lint-style"
+    "lint:css": "wp-scripts lint-style",
+    "cypress:open": "cypress open --config-file tests/cypress/config.json",
+    "cypress:run": "cypress run --config-file tests/cypress/config.json",
+    "env": "wp-env",
+    "env:start": "wp-env start",
+    "env:stop": "wp-env stop",
+    "postenv:start": "./tests/bin/initialize.sh",
+    "create-pages": "wp-env run tests-cli \"wp post create --post_type=page --post_title='Page with special characters' --post_status='publish'\""
   },
   "devDependencies": {
+    "@10up/cypress-wp-utils": "github:10up/cypress-wp-utils#build",
+    "@wordpress/env": "^4.3.1",
     "@wordpress/scripts": "^7.1.0",
     "css-loader": "^3.2.0",
+    "cypress": "^9.5.2",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
     "prettier": "npm:wp-prettier@1.19.1",
