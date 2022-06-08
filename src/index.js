@@ -1,11 +1,11 @@
-const { registerFormatType, toggleFormat, insert } = wp.richText;
-const { Fragment } = wp.element;
-const { BlockControls, RichTextShortcut } = wp.blockEditor;
-const { Popover, ToolbarButton, ToolbarGroup } = wp.components;
-const { getRectangleFromRange } = wp.dom;
-const { applyFilters } = wp.hooks;
-const { displayShortcut } = wp.keycodes;
-const { __ } = wp.i18n;
+import { registerFormatType, toggleFormat, insert } from '@wordpress/rich-text';
+import { Fragment } from '@wordpress/element';
+import { BlockControls, RichTextShortcut } from '@wordpress/block-editor';
+import { Popover, ToolbarButton, ToolbarGroup } from '@wordpress/components';
+import { getRectangleFromRange } from '@wordpress/dom';
+import { applyFilters } from '@wordpress/hooks';
+import { displayShortcut } from '@wordpress/keycodes';
+import { __ } from '@wordpress/i18n';
 
 import { CharacterMap } from 'react-character-map';
 import './insert-special-characters.css';
