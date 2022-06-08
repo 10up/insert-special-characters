@@ -46,7 +46,7 @@ registerFormatType( type, {
 		};
 		// Pin the Popover to the caret position.
 		const anchorRect = () => {
-			/**
+			/*
 			 * @see https://github.com/10up/insert-special-characters/issues/115
 			 * to know more about reasons behind the following computation.
 			 */
@@ -59,7 +59,7 @@ registerFormatType( type, {
 			);
 			const editorViewportRect = editorViewportEl.getBoundingClientRect();
 
-			/**
+			/*
 			 * The width of the charmap is 550px, so we use 550/2 = 275
 			 * as the popover opens from the horizontal center.
 			 */
@@ -68,7 +68,7 @@ registerFormatType( type, {
 			const canCharMapOverflowOnRight =
 				275 > editorViewportRect.right - rangeSelectionRectCenterX;
 
-			/**
+			/*
 			 * The value 30 is an additional offset.
 			 * For some reason, Popover uses React.x - 24px instead of the
 			 * exact value. The value 30 is provided to add 24 + some empty space.
