@@ -5,7 +5,9 @@ module.exports = {
 		"tests/cypress/fixures",
 		"tests/cypress/plugins",
 		"tests/cypress/support",
-		"tests/bin"
+		"tests/bin",
+		"vendor",
+		".eslintrc.js"
 	],
 	"globals": {
 		"Cypress": "readonly",

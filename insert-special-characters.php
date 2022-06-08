@@ -29,11 +29,25 @@ function gcm_block_enqueue_scripts() {
 	$script_data = include $asset_data_file;
 
 	wp_enqueue_script(
-		'insert-special-characters',
+		'insert-special-characters-js',
 		plugin_dir_url( __FILE__ ) . 'build/index.js',
 		$script_data['dependencies'],
 		$script_data['version'],
 		true
+	);
+
+	wp_enqueue_style(
+		'insert-special-characters-css',
+		plugin_dir_url( __FILE__ ) . 'build/index.css',
+		array(),
+		$script_data['version']
+	);
+
+	wp_enqueue_style(
+		'insert-special-characters-react-character-map',
+		plugin_dir_url( __FILE__ ) . 'build/style-index.css',
+		array(),
+		$script_data['version']
 	);
 	
 	wp_set_script_translations( 'insert-special-characters', 'insert-special-characters' );

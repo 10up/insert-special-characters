@@ -27,16 +27,12 @@
   "devDependencies": {
     "@10up/cypress-wp-utils": "github:10up/cypress-wp-utils#build",
     "@wordpress/env": "^4.3.1",
-    "@wordpress/scripts": "^7.1.0",
-    "css-loader": "^3.2.0",
+    "@wordpress/postcss-plugins-preset": "^3.8.0",
+    "@wordpress/scripts": "^22.1.0",
     "cypress": "^9.5.2",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
-    "prettier": "npm:wp-prettier@1.19.1",
-    "style-loader": "^1.0.0"
-  },
-  "dependencies": {
-    "react-character-map": "^0.4.4"
+    "style-loader": "^3.3.1"
   },
   "husky": {
     "hooks": {
@@ -50,5 +46,8 @@
     "*.js": [
       "npm run lint:js"
     ]
+  },
+  "dependencies": {
+    "react-character-map": "file:react-character-map"
   }
 }
