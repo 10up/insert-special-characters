@@ -14,11 +14,12 @@
  *
  * @package insert-special-characters
  */
+
 namespace InsertSpecialCharacters;
 
- /**
-  * Enqueue the admin JavaScript assets.
-  */
+/**
+ * Enqueue the admin JavaScript assets.
+ */
 function gcm_block_enqueue_scripts() {
 	$asset_data_file = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'build/index.asset.php';
 
@@ -35,7 +36,7 @@ function gcm_block_enqueue_scripts() {
 		$script_data['version'],
 		true
 	);
-	
+
 	wp_set_script_translations( 'insert-special-characters', 'insert-special-characters' );
 }
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\gcm_block_enqueue_scripts' );
