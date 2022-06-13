@@ -23,4 +23,4 @@ jobs:
         # The owner/repo of where the policy is stored  
         policy: 10up/.github
         # The local (within the workspace) or repository
-        policy-path: policy.yml
+        policy-path: blob/trunk/policy.yml
