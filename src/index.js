@@ -70,7 +70,7 @@ registerFormatType( type, {
 
 			/*
 			 * The value 30 is an additional offset.
-			 * For some reason, Popover uses React.x - 24px instead of the
+			 * For some reason, Popover uses Rect.x - 24px instead of the
 			 * exact value. The value 30 is provided to add 24 + some empty space.
 			 */
 			if ( canCharMapOverflowOnLeft ) {
