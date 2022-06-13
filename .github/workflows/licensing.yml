@@ -21,6 +21,6 @@ jobs:
         # Disable everything else to check for and focus on licensing
         argvs: '--disable-dependabot --disable-secret-scanning --disable-code-scanning'
         # The owner/repo of where the policy is stored  
-        policy: 10up/insert-special-characters
+        policy: 10up/.github
         # The local (within the workspace) or repository
-        policy-path: blob/add/licensing-action/.github/workflows/policy.yml
+        policy-path: policy.yml
