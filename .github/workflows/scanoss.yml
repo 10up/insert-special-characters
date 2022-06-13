@@ -1,9 +1,10 @@
 name: SCANOSS CI Scan
 
-on: push:
-    branches: [ "main" ]
+on: 
+  push:
+    branches: [ "develop", "trunk" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "develop", "trunk" ]
 
 jobs:
   build:
