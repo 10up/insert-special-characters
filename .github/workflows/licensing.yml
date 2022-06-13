@@ -23,4 +23,4 @@ jobs:
         # The owner/repo of where the policy is stored  
         policy: 10up/insert-special-characters
         # The local (within the workspace) or repository
-        policy-path: .github/policy.yml
+        policy-path: /.github/policy.yml
