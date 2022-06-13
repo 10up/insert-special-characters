@@ -4,7 +4,7 @@
  * Plugin URI:        https://github.com/10up/insert-special-characters
  * Description:       A Special Character inserter for the WordPress block editor (Gutenberg).
  * Version:           1.0.4
- * Requires at least: 5.2
+ * Requires at least: 5.4
  * Requires PHP:      5.6
  * Author:            10up
  * Author URI:        https://10up.com
@@ -14,11 +14,12 @@
  *
  * @package insert-special-characters
  */
+
 namespace InsertSpecialCharacters;
 
- /**
-  * Enqueue the admin JavaScript assets.
-  */
+/**
+ * Enqueue the admin JavaScript assets.
+ */
 function gcm_block_enqueue_scripts() {
 	$asset_data_file = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'build/index.asset.php';
 
@@ -35,7 +36,7 @@ function gcm_block_enqueue_scripts() {
 		$script_data['version'],
 		true
 	);
-	
+
 	wp_set_script_translations( 'insert-special-characters', 'insert-special-characters' );
 }
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\gcm_block_enqueue_scripts' );
