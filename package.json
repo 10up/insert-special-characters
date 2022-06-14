@@ -14,7 +14,7 @@
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start",
-    "lint:js": "wp-scripts lint-js",
+    "lint:js": "wp-scripts lint-js src",
     "lint:css": "wp-scripts lint-style",
     "cypress:open": "cypress open --config-file tests/cypress/config.json",
     "cypress:run": "cypress run --config-file tests/cypress/config.json",
@@ -27,16 +27,14 @@
   "devDependencies": {
     "@10up/cypress-wp-utils": "github:10up/cypress-wp-utils#build",
     "@wordpress/env": "^4.3.1",
-    "@wordpress/scripts": "^7.1.0",
-    "css-loader": "^3.2.0",
+    "@wordpress/scripts": "^22.1.0",
     "cypress": "^9.5.2",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.7",
-    "prettier": "npm:wp-prettier@1.19.1",
-    "style-loader": "^1.0.0"
+    "prettier": "npm:wp-prettier@1.19.1"
   },
   "dependencies": {
-    "react-character-map": "^0.4.4"
+    "react-character-map": "^0.4.5"
   },
   "husky": {
     "hooks": {

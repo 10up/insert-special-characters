@@ -37,6 +37,20 @@ function gcm_block_enqueue_scripts() {
 		true
 	);
 
+	wp_enqueue_style(
+		'insert-special-characters-css',
+		plugin_dir_url( __FILE__ ) . 'build/index.css',
+		array(),
+		$script_data['version']
+	);
+
+	wp_enqueue_style(
+		'insert-special-characters-char-map-css',
+		plugin_dir_url( __FILE__ ) . 'build/style-index.css',
+		array(),
+		$script_data['version']
+	);
+
 	wp_set_script_translations( 'insert-special-characters', 'insert-special-characters' );
 }
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\gcm_block_enqueue_scripts' );
