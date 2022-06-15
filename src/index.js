@@ -8,7 +8,7 @@ import { displayShortcut } from '@wordpress/keycodes';
 import { __ } from '@wordpress/i18n';
 
 import { CharacterMap } from 'react-character-map';
-import './insert-special-characters.css';
+import './insert-special-characters.scss';
 
 // Load the default Chars provided by react-character-map component.
 import Chars from '../node_modules/react-character-map/dist/component/chars.json';
@@ -141,6 +141,7 @@ registerFormatType( type, {
 						'insert-special-characters'
 					) }
 					key="charmap"
+					mostUsedPalette={ true }
 				/>
 			</Popover>
 		);

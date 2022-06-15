@@ -33,9 +33,6 @@
     "lint-staged": "^10.0.7",
     "prettier": "npm:wp-prettier@1.19.1"
   },
-  "dependencies": {
-    "react-character-map": "^0.4.5"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -48,5 +45,8 @@
     "*.js": [
       "npm run lint:js"
     ]
+  },
+  "dependencies": {
+    "react-character-map": "github:Sidsector9/react-character-map"
   }
 }
