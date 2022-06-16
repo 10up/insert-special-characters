@@ -47,6 +47,6 @@
     ]
   },
   "dependencies": {
-    "react-character-map": "github:Sidsector9/react-character-map"
+    "react-character-map": "^0.4.6"
   }
 }
