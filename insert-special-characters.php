@@ -120,6 +120,8 @@ function render_isc_writing_setting() {
 
 /**
  * Helper function to get most used character palette setting.
+ *
+ * @return boolean
  */
 function get_most_used_palette_setting() {
 	return 'on' === get_option( 'tenup_isc_most_read_palette' );
