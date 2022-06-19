@@ -44,6 +44,83 @@ function gcm_block_enqueue_scripts() {
 		$script_data['version']
 	);
 
+	wp_add_inline_script(
+		'insert-special-characters',
+		sprintf( 'var tenupIscVars = window.tenupIscVars || {}; tenupIscVars = %1$s', wp_json_encode( array(
+			'most_read_palette' => get_most_used_palette_setting(),
+		) ) )
+	);
+
 	wp_set_script_translations( 'insert-special-characters', 'insert-special-characters' );
 }
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\gcm_block_enqueue_scripts' );
+
+/**
+ * Registers settings fields.
+ */
+function register_settings_fields() {
+	register_setting(
+		'writing',
+		'tenup_isc_most_read_palette',
+		array(
+			'type'         => 'boolean',
+			'show_in_rest' => true,
+			'default'      => false,
+		)
+	);
+
+	add_settings_section(
+		'tenup_isc_writing_section',
+		__( 'Insert Special Characters', 'insert-special-characters' ),
+		null,
+		'writing'
+	);
+
+	add_settings_field(
+		'tenup_isc_most_read_palette',
+		__( 'Most used characters palette', 'insert-special-characters' ),
+		__NAMESPACE__ . '\render_isc_writing_setting',
+		'writing',
+		'tenup_isc_writing_section',
+		array(
+			'label_for' => 'tenup_isc_most_read_palette',
+		),
+	);
+}
+add_action( 'admin_init', __NAMESPACE__ . '\register_settings_fields' );
+
+/**
+ * Renders settings fields.
+ */
+function render_isc_writing_setting() {
+	$option = get_most_used_palette_setting();
+	?>
+	<p>
+		<label for="tenup_isc_most_read_palette">
+			<input
+				type="checkbox"
+				name="tenup_isc_most_read_palette"
+				id="tenup_isc_most_read_palette"
+				<?php checked( $option, true, true ); ?>
+			>
+			<?php esc_html_e( 'Check this to enable the most used character palette.', 'insert-special-characters' ); ?>
+		</label>
+	</p>
+
+	<?php if ( $option ) : ?>
+	<p>
+		<button class="button secondary" type="button" style="margin-top: 16px;">
+			<?php esc_html_e( 'Reset palette', 'insert-special-characters' ); ?>
+		</button>
+		&nbsp;
+		<?php esc_html_e( 'Press this to clear palette data.', 'insert-special-characters' ); ?>
+	</p>
+	<?php endif;
+}
+
+/**
+ * Helper function to get most used character palette setting.
+ */
+function get_most_used_palette_setting() {
+	return 'on' === get_option( 'tenup_isc_most_read_palette' );
+}

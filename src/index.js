@@ -141,7 +141,7 @@ registerFormatType( type, {
 						'insert-special-characters'
 					) }
 					key="charmap"
-					mostUsedPalette={ true }
+					mostUsedPalette={ tenupIscVars.most_read_palette }
 				/>
 			</Popover>
 		);

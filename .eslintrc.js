@@ -13,5 +13,6 @@ module.exports = {
 		"Cypress": "readonly",
 		"cy": "readonly",
 		"before": "readonly",
+		"tenupIscVars": "readonly",
 	}
 };
