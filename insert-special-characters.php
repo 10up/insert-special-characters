@@ -109,8 +109,8 @@ function render_isc_writing_setting() {
 
 	<?php if ( $option ) : ?>
 	<p>
-		<button class="button secondary" type="button" style="margin-top: 16px;">
-			<?php esc_html_e( 'Reset palette', 'insert-special-characters' ); ?>
+		<button class="button secondary" id="isc_reset_palette" type="button" style="margin-top: 16px;">
+			<?php esc_html_e( 'Clear palette', 'insert-special-characters' ); ?>
 		</button>
 		&nbsp;
 		<?php esc_html_e( 'Press this to clear palette data.', 'insert-special-characters' ); ?>
@@ -126,3 +126,33 @@ function render_isc_writing_setting() {
 function get_most_used_palette_setting() {
 	return 'on' === get_option( 'tenup_isc_most_read_palette' );
 }
+
+/**
+ * Loads admin scripts.
+ */
+function load_admin_scripts( $hook ) {
+	if ( 'options-writing.php' !== $hook ) {
+		return;
+	}
+
+	$asset_data_file = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'build/admin.asset.php';
+
+	if ( ! file_exists( $asset_data_file ) ) {
+		return;
+	}
+
+	$script_data = include $asset_data_file;
+
+	wp_enqueue_script(
+		'insert-special-characters-admin-js',
+		plugin_dir_url( __FILE__ ) . 'build/admin.js',
+		$script_data['dependencies'],
+		$script_data['version'],
+		true
+	);
+
+	wp_localize_script( 'insert-special-characters-admin-js', 'tenupIscAdminVars', array(
+		'palette_deleted_message' => __( 'Palette cleared', 'insert-special-characters' ),
+	) );
+}
+add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\load_admin_scripts' );

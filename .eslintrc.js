@@ -7,12 +7,16 @@ module.exports = {
 		"tests/cypress/support",
 		"tests/bin",
 		"vendor",
-		".eslintrc.js"
+		".eslintrc.js",
+		"webpack.config.js",
 	],
 	"globals": {
 		"Cypress": "readonly",
 		"cy": "readonly",
 		"before": "readonly",
 		"tenupIscVars": "readonly",
+		"tenupIscAdminVars": "readonly",
+		"localStorage": "readonly",
+		"jQuery": "readonly",
 	}
 };
