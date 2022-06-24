@@ -36,7 +36,7 @@
     "style-loader": "^1.0.0"
   },
   "dependencies": {
-    "react-character-map": "^0.4.4"
+    "react-character-map": "^0.4.6"
   },
   "husky": {
     "hooks": {
