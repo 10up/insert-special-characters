@@ -30,7 +30,7 @@
     "@wordpress/scripts": "^7.1.0",
     "css-loader": "^3.2.0",
     "cypress": "^9.5.2",
-    "husky": "^4.2.3",
+    "husky": "^8.0.1",
     "lint-staged": "^10.0.7",
     "prettier": "npm:wp-prettier@1.19.1",
     "style-loader": "^1.0.0"
