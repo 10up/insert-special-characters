@@ -46,9 +46,14 @@ function gcm_block_enqueue_scripts() {
 
 	wp_add_inline_script(
 		'insert-special-characters',
-		sprintf( 'var tenupIscVars = window.tenupIscVars || {}; tenupIscVars = %1$s', wp_json_encode( array(
-			'most_read_palette' => get_most_used_palette_setting(),
-		) ) )
+		sprintf(
+			'var tenupIscVars = window.tenupIscVars || {}; tenupIscVars = %1$s',
+			wp_json_encode(
+				array(
+					'most_read_palette' => get_most_used_palette_setting(),
+				)
+			)
+		)
 	);
 
 	wp_set_script_translations( 'insert-special-characters', 'insert-special-characters' );
@@ -84,7 +89,7 @@ function register_settings_fields() {
 		'tenup_isc_writing_section',
 		array(
 			'label_for' => 'tenup_isc_most_read_palette',
-		),
+		)
 	);
 }
 add_action( 'admin_init', __NAMESPACE__ . '\register_settings_fields' );
@@ -115,7 +120,8 @@ function render_isc_writing_setting() {
 		&nbsp;
 		<?php esc_html_e( 'Press this to clear palette data.', 'insert-special-characters' ); ?>
 	</p>
-	<?php endif;
+		<?php
+	endif;
 }
 
 /**
@@ -153,8 +159,12 @@ function load_admin_scripts( $hook ) {
 		true
 	);
 
-	wp_localize_script( 'insert-special-characters-admin-js', 'tenupIscAdminVars', array(
-		'palette_deleted_message' => __( 'Palette cleared', 'insert-special-characters' ),
-	) );
+	wp_localize_script(
+		'insert-special-characters-admin-js',
+		'tenupIscAdminVars',
+		array(
+			'palette_deleted_message' => __( 'Palette cleared', 'insert-special-characters' ),
+		)
+	);
 }
 add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\load_admin_scripts' );
