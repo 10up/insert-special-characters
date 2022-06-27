@@ -16,40 +16,20 @@ describe( 'Insert character in post', () => {
 			.contains( 'Page with special characters' )
 			.click();
 
-		cy.get( 'body' ).then( ( $body ) => {
-			// WP 5.4
-			if ( $body.find( '.nux-dot-tip__disable' ).length > 0 ) {
-				cy.get( '.nux-dot-tip__disable' ).click();
-			} else {
-				cy.get( 'button[aria-label="Close dialog"]' ).click();
-			}
-		} );
+		cy.get( 'button[aria-label="Close dialog"]' ).click();
 
 		/**
 		 * Click block inserter.
 		 */
-		cy.get( 'body' ).then( ( $body ) => {
-			// WP 5.4
-			if (
-				$body.find(
-					'.edit-post-header-toolbar .block-editor-inserter__toggle'
-				).length > 0
-			) {
-				cy.get(
-					'.edit-post-header-toolbar .block-editor-inserter__toggle'
-				).click();
-			} else {
-				cy.get( '.edit-post-header-toolbar__inserter-toggle' ).click();
-			}
-		} );
+		cy.get( '.edit-post-header-toolbar__inserter-toggle' ).click();
 
 		/**
 		 * Search for paragraph block in inserter.
 		 */
 		cy.get( 'body' ).then( ( $body ) => {
-			// WP 5.4
-			if ( $body.find( '.block-editor-inserter__search' ).length > 0 ) {
-				cy.get( '.block-editor-inserter__search' ).type( 'Paragraph' );
+			// WP 5.5
+			if ( $body.find( '.block-editor-inserter__search-input' ).length > 0 ) {
+				cy.get( '.block-editor-inserter__search-input' ).type( 'Paragraph' );
 			} else {
 				cy.get( '.components-search-control__input' ).type(
 					'Paragraph'
@@ -62,9 +42,18 @@ describe( 'Insert character in post', () => {
 		/**
 		 * Add content to paragraph.
 		 */
-		cy.get( '.wp-block-paragraph' )
-			.click()
-			.type( 'Hello world' );
+		cy.get( 'body' ).then( ( $body ) => {
+			// WP 5.5
+			if ( $body.find( 'p[data-type="core/paragraph"]' ).length > 0 ) {
+				cy.get( 'p[data-type="core/paragraph"]' )
+					.click()
+					.type( 'Hello world' );
+			} else {
+				cy.get( '.wp-block-paragraph' )
+					.click()
+					.type( 'Hello world' );
+			}
+		} );
 
 		/**
 		 * Open block list view.
