@@ -37,4 +37,11 @@ jobs:
     - name: Create test pages
       run: npm run create-pages
     - name: Test
-      run: npm run cypress:run
+      run: npm run cypress:run --record
+    - name: Upload RSA artifcats
+      uses: actions/upload-artifact@v2.3.0
+      if: always()
+      with:
+        name: 'Cypress artifacts'
+        path: tests/cypress/videos/
+        if-no-files-found: warn
