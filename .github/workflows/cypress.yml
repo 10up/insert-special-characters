@@ -34,14 +34,5 @@ jobs:
       run: ./tests/bin/set-core-version.js ${{ matrix.core.version }}
     - name: Set up WP environment
       run: npm run env:start
-    - name: Create test pages
-      run: npm run create-pages
     - name: Test
-      run: npm run cypress:run --record
-    - name: Upload RSA artifcats
-      uses: actions/upload-artifact@v2.3.0
-      if: always()
-      with:
-        name: 'Cypress artifacts'
-        path: tests/cypress/videos/
-        if-no-files-found: warn
+      run: npm run cypress:run
