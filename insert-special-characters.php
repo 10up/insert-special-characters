@@ -129,6 +129,8 @@ function get_most_used_palette_setting() {
 
 /**
  * Loads admin scripts.
+ *
+ * @param string $hook The current admin page.
  */
 function load_admin_scripts( $hook ) {
 	if ( 'options-writing.php' !== $hook ) {
