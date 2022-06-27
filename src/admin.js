@@ -14,4 +14,4 @@
 			resetPaletteBtnEl.text( currentTextBackup );
 		}, 2000 );
 	} );
-} )( jQuery );
+}( jQuery ) );

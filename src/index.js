@@ -58,7 +58,7 @@ registerFormatType( type, {
 			 */
 			const rangeSelectionRect = getRectangleFromRange( anchorRange );
 			const rangeSelectionRectCenterX =
-				rangeSelectionRect.x + rangeSelectionRect.width / 2;
+				rangeSelectionRect.x + ( rangeSelectionRect.width / 2 );
 
 			const editorViewportEl = document.querySelector(
 				'.interface-interface-skeleton__content'
