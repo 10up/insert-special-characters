@@ -101,9 +101,9 @@ describe( 'Insert character in post', () => {
 			force: true,
 		} );
 		cy.get( '.editor-post-publish-button' ).click();
-	} );
 
-	it( 'Verify the character on the front end', () => {
+		cy.wait( 1000 );
+
 		cy.visit( `${ Cypress.config().baseUrl }page-with-special-characters` );
 		cy.contains( 'Hello world∀' );
 	} );
