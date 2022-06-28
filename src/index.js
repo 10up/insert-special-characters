@@ -60,9 +60,16 @@ registerFormatType( type, {
 			const rangeSelectionRectCenterX =
 				rangeSelectionRect.x + ( rangeSelectionRect.width / 2 );
 
-			const editorViewportEl = document.querySelector(
+			let editorViewportEl = document.querySelector(
 				'.interface-interface-skeleton__content'
 			);
+
+			if ( ! editorViewportEl ) {
+				editorViewportEl = document.querySelector(
+					'.block-editor-editor-skeleton__content'
+				)
+			}
+
 			const editorViewportRect = editorViewportEl.getBoundingClientRect();
 
 			/*

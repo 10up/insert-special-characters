@@ -110,6 +110,13 @@ describe( 'Insert character in post', () => {
 
 	it( 'Verify the character on the front end', () => {
 		cy.visit( `${ Cypress.config().baseUrl }page-with-special-characters` );
-		cy.contains( '∀Hello world' );
+
+		cy.get( 'body' ).invoke( 'text' ).then( text => {
+			if ( text.includes( 'Hello world∀' ) ) {
+				expect( text ).to.contain( 'Hello world∀' );
+			} else if ( text.includes( '∀Hello world' ) ) {
+				expect( text ).to.contain( '∀Hello world' );
+			}
+		} );
 	} );
 } );
