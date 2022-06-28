@@ -67,7 +67,7 @@ registerFormatType( type, {
 			if ( ! editorViewportEl ) {
 				editorViewportEl = document.querySelector(
 					'.block-editor-editor-skeleton__content'
-				)
+				);
 			}
 
 			const editorViewportRect = editorViewportEl.getBoundingClientRect();
