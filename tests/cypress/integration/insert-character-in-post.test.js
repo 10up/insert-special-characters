@@ -28,8 +28,12 @@ describe( 'Insert character in post', () => {
 		 */
 		cy.get( 'body' ).then( ( $body ) => {
 			// WP 5.5
-			if ( $body.find( '.block-editor-inserter__search-input' ).length > 0 ) {
-				cy.get( '.block-editor-inserter__search-input' ).type( 'Paragraph' );
+			if (
+				$body.find( '.block-editor-inserter__search-input' ).length > 0
+			) {
+				cy.get( '.block-editor-inserter__search-input' ).type(
+					'Paragraph'
+				);
 			} else {
 				cy.get( '.components-search-control__input' ).type(
 					'Paragraph'
