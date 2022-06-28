@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [1.0.5] - 2022-06-28
+### Added
+- End-to-end testing with Cypress (props [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh) via [#116](https://github.com/10up/insert-special-characters/pull/116)).
+- More robust PHP testing, including PHP 8 compatibility (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter), [@cadic](https://github.com/cadic) via [#118](https://github.com/10up/insert-special-characters/pull/118), [#129](https://github.com/10up/insert-special-characters/pull/129)).
+- Dependency security scanning (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#126](https://github.com/10up/insert-special-characters/pull/126)).
+- Dependabot daily version update check (props [@jeffpaul](https://github.com/jeffpaul) via [#134](https://github.com/10up/insert-special-characters/pull/134)).
+
+### Changed
+- Bump WordPress version "tested up to" 6.0 (props [@vikrampm1](https://github.com/vikrampm1), [@jeffpaul](https://github.com/jeffpaul) via [#125](https://github.com/10up/insert-special-characters/pull/125)).
+- Bump our minimum supported WordPress version to 5.5 (props [@dkotter](https://github.com/dkotter), [@jeffpaul](https://github.com/jeffpaul), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#150](https://github.com/10up/insert-special-characters/pull/150)).
+
+### Fixed
+- Address an issue where the inserter popup can overflow which prevents user from selecting characters (props [@cldhmmr](https://github.com/cldhmmr), [@Sidsector9](https://github.com/Sidsector9), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#130](https://github.com/10up/insert-special-characters/pull/130)).
+- Ensure required WordPress libraries were included as dependencies (props [@peterwilsoncc](https://github.com/peterwilsoncc), [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh) via [#132](https://github.com/10up/insert-special-characters/pull/132)).
+
+### Security
+- Bump `guzzlehttp/psr7` from 1.6.1 to 1.8.5 (props [@dependabot](https://github.com/apps/dependabot) via [#119](https://github.com/10up/insert-special-characters/pull/119)).
+- Bump `minimist` from 1.2.5 to 1.2.6 (props [@dependabot](https://github.com/apps/dependabot) via [#120](https://github.com/10up/insert-special-characters/pull/120)).
+- Bump `ansi-regex` from 3.0.0 to 3.0.1 (props [@dependabot](https://github.com/apps/dependabot) via [#121](https://github.com/10up/insert-special-characters/pull/121)).
+- Bump `async` from 2.6.3 to 2.6.4 (props [@dependabot](https://github.com/apps/dependabot) via [#124](https://github.com/10up/insert-special-characters/pull/124)).
+- Bump `semver-regex` from 3.1.3 to 3.1.4 (props [@dependabot](https://github.com/apps/dependabot) via [#128](https://github.com/10up/insert-special-characters/pull/128)).
+- Bump `react-character-map` from 0.4.4 to 0.4.6 (props [@dependabot](https://github.com/apps/dependabot) via [#139](https://github.com/10up/insert-special-characters/pull/139)).
+- Bump `@wordpress/env` from 4.3.1 to 4.9.0 (props [@dependabot](https://github.com/apps/dependabot) via [#140](https://github.com/10up/insert-special-characters/pull/140)).
+- Bump `@10up/cypress-wp-utils` from `ecf048c` to `d52e775` (props [@dependabot](https://github.com/apps/dependabot) via [#142](https://github.com/10up/insert-special-characters/pull/142)).
+- Bump `husky` from 4.3.8 to 8.0.1 (props [@dependabot](https://github.com/apps/dependabot) via [#144](https://github.com/10up/insert-special-characters/pull/144)).
+
 ## [1.0.4] - 2022-01-27
 ### Added
 - Many new special characters (e.g., ⅐, ⅑, ⅒, single quotation marks, ß, ẞ, Ć, ć, Ḉ, ḉ) and grouping (Music) (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#104](https://github.com/10up/insert-special-characters/pull/104)).
@@ -72,6 +98,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Plugin header and icon images (props [@McCallumDillon](https://github.com/McCallumDillon) via [#28](https://github.com/10up/insert-special-characters/pull/28))
 
 [Unreleased]: https://github.com/10up/insert-special-characters/compare/trunk...develop
+[1.0.5]: https://github.com/10up/insert-special-characters/compare/1.0.4...1.0.5
 [1.0.4]: https://github.com/10up/insert-special-characters/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/10up/insert-special-characters/compare/1.0.2...1.0.3
 [1.0.2]: https://github.com/10up/insert-special-characters/compare/1.0.1...1.0.2
