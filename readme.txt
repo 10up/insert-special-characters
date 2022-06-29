@@ -1,5 +1,5 @@
 === Insert Special Characters ===
-Contributors:      10up, adamsilverstein
+Contributors:      10up, adamsilverstein, johnwatkins0, jeffpaul
 Tags:              Special Characters, Character Map, Omega, Gutenberg, Block, block editor
 Requires at least: 5.5
 Tested up to:      6.0
