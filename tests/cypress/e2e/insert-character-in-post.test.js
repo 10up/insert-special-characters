@@ -6,7 +6,7 @@ describe( 'Insert character in post', () => {
 		cy.get( '#user_pass' ).type( 'password' );
 		cy.get( '#wp-submit' ).click();
 		cy.visit( 'wp-admin/options-permalink.php' );
-		cy.get('[type="radio"]').check( '/%postname%/' );
+		cy.get( '[type="radio"]' ).check( '/%postname%/' );
 		cy.get( '#submit' ).click();
 	} );
 
