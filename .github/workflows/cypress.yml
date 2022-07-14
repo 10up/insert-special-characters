@@ -34,7 +34,5 @@ jobs:
       run: ./tests/bin/set-core-version.js ${{ matrix.core.version }}
     - name: Set up WP environment
       run: npm run env:start
-    - name: Create test pages
-      run: npm run create-pages
     - name: Test
       run: npm run cypress:run

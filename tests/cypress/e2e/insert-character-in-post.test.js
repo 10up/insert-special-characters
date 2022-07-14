@@ -5,6 +5,9 @@ describe( 'Insert character in post', () => {
 		cy.get( '#user_login' ).type( 'admin' );
 		cy.get( '#user_pass' ).type( 'password' );
 		cy.get( '#wp-submit' ).click();
+		cy.visit( 'wp-admin/options-permalink.php' );
+		cy.get( '[type="radio"]' ).check( '/%postname%/' );
+		cy.get( '#submit' ).click();
 	} );
 
 	it( 'Admin can add character in post and save it', () => {
@@ -94,10 +97,19 @@ describe( 'Insert character in post', () => {
 			force: true,
 		} );
 		cy.get( '.editor-post-publish-button' ).click();
+
+		cy.wait( 1000 );
 	} );
 
 	it( 'Verify the character on the front end', () => {
 		cy.visit( `${ Cypress.config().baseUrl }page-with-special-characters` );
-		cy.contains( 'Hello world∀' );
+
+		cy.get( 'body' ).invoke( 'text' ).then( text => {
+			if ( text.includes( 'Hello world∀' ) ) {
+				expect( text ).to.contain( 'Hello world∀' );
+			} else if ( text.includes( '∀Hello world' ) ) {
+				expect( text ).to.contain( '∀Hello world' );
+			}
+		} );
 	} );
 } );
