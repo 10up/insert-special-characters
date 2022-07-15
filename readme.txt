@@ -79,7 +79,7 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 = 1.0.5 - 2022-07-18 =
 **Note that this release bumps the WordPress minimum supported version from 5.4 to 5.5.**
 
-* **Added:** Most and last used character palette (props [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi) via [#147](https://github.com/10up/insert-special-characters/pull/147)).
+* **Added:** Most and last used character palette. Most used palette can be turned on by going to `Settings > Writing` (props [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi) via [#147](https://github.com/10up/insert-special-characters/pull/147)).
 * **Added:** End-to-end testing with Cypress (props [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh) via [#116](https://github.com/10up/insert-special-characters/pull/116)).
 * **Added:** More robust PHP testing, including PHP 8 compatibility (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter), [@cadic](https://github.com/cadic) via [#118](https://github.com/10up/insert-special-characters/pull/118), [#129](https://github.com/10up/insert-special-characters/pull/129)).
 * **Added:** Dependency security scanning (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#126](https://github.com/10up/insert-special-characters/pull/126)).
