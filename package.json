@@ -46,6 +46,6 @@
   },
   "dependencies": {
     "react-character-map": "^0.4.6",
-	"react-chevron": "^1.0.4"
+	"react-chevron": "1.0.4"
   }
 }
