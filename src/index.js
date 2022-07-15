@@ -8,7 +8,7 @@ import { displayShortcut } from '@wordpress/keycodes';
 import { __ } from '@wordpress/i18n';
 
 import { CharacterMap } from 'react-character-map';
-import './insert-special-characters.css';
+import './insert-special-characters.scss';
 
 // Load the default Chars provided by react-character-map component.
 import Chars from '../node_modules/react-character-map/dist/component/chars.json';
@@ -35,11 +35,17 @@ registerFormatType( type, {
 
 	/**
 	 * The `edit` function is called when the Character Map is selected.
+	 *
+	 * @param {Object}   props          Props object.
+	 * @param {boolean}  props.isActive State of popover.
+	 * @param {boolean}  props.value    State of popover.
+	 * @param {Function} props.onChange Event handler to detect range selection.
 	 */
 	edit( { isActive, value, onChange } ) {
 		const onToggle = () => {
 			// Set up the anchorRange when the Popover is opened.
-			const selection = window.getSelection();
+			const selection = document.defaultView.getSelection();
+
 			anchorRange =
 				selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
 			onChange( toggleFormat( value, { type } ) );
@@ -52,11 +58,18 @@ registerFormatType( type, {
 			 */
 			const rangeSelectionRect = getRectangleFromRange( anchorRange );
 			const rangeSelectionRectCenterX =
-				rangeSelectionRect.x + rangeSelectionRect.width / 2;
+				rangeSelectionRect.x + ( rangeSelectionRect.width / 2 );
 
-			const editorViewportEl = document.querySelector(
+			let editorViewportEl = document.querySelector(
 				'.interface-interface-skeleton__content'
 			);
+
+			if ( ! editorViewportEl ) {
+				editorViewportEl = document.querySelector(
+					'.block-editor-editor-skeleton__content'
+				);
+			}
+
 			const editorViewportRect = editorViewportEl.getBoundingClientRect();
 
 			/*
@@ -135,6 +148,7 @@ registerFormatType( type, {
 						'insert-special-characters'
 					) }
 					key="charmap"
+					mostUsedPalette={ tenupIscVars.most_read_palette }
 				/>
 			</Popover>
 		);
