@@ -4,18 +4,20 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
-## [1.0.5] - 2022-06-28
+## [1.0.5] - 2022-07-18
 **Note that this release bumps the WordPress minimum from 5.4 to 5.5.**
 
 ### Added
+- Most and last used character palette (props [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi) via [#147](https://github.com/10up/insert-special-characters/pull/147)).
 - End-to-end testing with Cypress (props [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh) via [#116](https://github.com/10up/insert-special-characters/pull/116)).
 - More robust PHP testing, including PHP 8 compatibility (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter), [@cadic](https://github.com/cadic) via [#118](https://github.com/10up/insert-special-characters/pull/118), [#129](https://github.com/10up/insert-special-characters/pull/129)).
 - Dependency security scanning (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#126](https://github.com/10up/insert-special-characters/pull/126)).
-- Dependabot daily version update check (props [@jeffpaul](https://github.com/jeffpaul) via [#134](https://github.com/10up/insert-special-characters/pull/134)).
 
 ### Changed
+- Character palette UI changed to be in alignment with Gutenberg (props [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi) via [#147](https://github.com/10up/insert-special-characters/pull/147)).
 - Bump WordPress version "tested up to" 6.0 (props [@vikrampm1](https://github.com/vikrampm1), [@jeffpaul](https://github.com/jeffpaul) via [#125](https://github.com/10up/insert-special-characters/pull/125)).
 - Bump WordPress minimum supported version from 5.4 to 5.5 (props [@dkotter](https://github.com/dkotter), [@jeffpaul](https://github.com/jeffpaul), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#150](https://github.com/10up/insert-special-characters/pull/150)).
+- Release instructions to ensure dependency updates are included (props [@jeffpaul](https://github.com/jeffpaul) via [#155](https://github.com/10up/insert-special-characters/pull/155)).
 
 ### Fixed
 - Address an issue where the inserter popup can overflow which prevents user from selecting characters (props [@cldhmmr](https://github.com/cldhmmr), [@Sidsector9](https://github.com/Sidsector9), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#130](https://github.com/10up/insert-special-characters/pull/130)).

@@ -76,15 +76,17 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 
 == Changelog ==
 
-= 1.0.5 - 2022-06-28 =
+= 1.0.5 - 2022-07-18 =
 **Note that this release bumps the WordPress minimum supported version from 5.4 to 5.5.**
 
+* **Added:** Most and last used character palette (props [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi) via [#147](https://github.com/10up/insert-special-characters/pull/147)).
 * **Added:** End-to-end testing with Cypress (props [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh) via [#116](https://github.com/10up/insert-special-characters/pull/116)).
 * **Added:** More robust PHP testing, including PHP 8 compatibility (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter), [@cadic](https://github.com/cadic) via [#118](https://github.com/10up/insert-special-characters/pull/118), [#129](https://github.com/10up/insert-special-characters/pull/129)).
 * **Added:** Dependency security scanning (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#126](https://github.com/10up/insert-special-characters/pull/126)).
-* **Added:** Dependabot daily version update check (props [@jeffpaul](https://github.com/jeffpaul) via [#134](https://github.com/10up/insert-special-characters/pull/134)).
+* **Changed:** Character palette UI changed to be in alignment with Gutenberg (props [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi) via [#147](https://github.com/10up/insert-special-characters/pull/147)).
 * **Changed:** Bump WordPress version "tested up to" 6.0 (props [@vikrampm1](https://github.com/vikrampm1), [@jeffpaul](https://github.com/jeffpaul) via [#125](https://github.com/10up/insert-special-characters/pull/125)).
 * **Changed:** Bump WordPress minimum supported version from 5.4 to 5.5 (props [@dkotter](https://github.com/dkotter), [@jeffpaul](https://github.com/jeffpaul), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#150](https://github.com/10up/insert-special-characters/pull/150)).
+* **Changed:** Release instructions to ensure dependency updates are included (props [@jeffpaul](https://github.com/jeffpaul) via [#155](https://github.com/10up/insert-special-characters/pull/155)).
 * **Fixed:** Address an issue where the inserter popup can overflow which prevents user from selecting characters (props [@cldhmmr](https://github.com/cldhmmr), [@Sidsector9](https://github.com/Sidsector9), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#130](https://github.com/10up/insert-special-characters/pull/130)).
 * **Fixed:** Ensure required WordPress libraries were included as dependencies (props [@peterwilsoncc](https://github.com/peterwilsoncc), [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh) via [#132](https://github.com/10up/insert-special-characters/pull/132)).
 * **Security:** Bump `guzzlehttp/psr7` from 1.6.1 to 1.8.5 (props [@dependabot](https://github.com/apps/dependabot) via [#119](https://github.com/10up/insert-special-characters/pull/119)).
