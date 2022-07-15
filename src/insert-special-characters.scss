@@ -1,0 +1,151 @@
+$grid-border-color: #c8c8c8;
+
+.character-map-popover {
+	.components-popover__content {
+		border: 1px solid #1e1e1e
+	}
+
+	ul {
+		list-style: none !important;
+	}
+}
+
+.charMap {
+	&--filter {
+		display: inline-flex;
+		align-items: center;
+		margin: 0;
+		margin-top: 8px !important;
+		margin-left: 6px !important;
+
+		input {
+			margin-left: 8px !important;
+		}
+	}
+
+	&--container {
+		font-size: 18px;
+		width: 550px;
+		max-height: 400px;
+
+		label {
+			font-size: 14px;
+		}
+	}
+
+	&--last-used-palette-wrapper {
+		display: inline-flex;
+		align-items: center;
+		float: right;
+		margin-top: 8px !important;
+		margin-right: 6px !important;
+	}
+
+	&--category-menu-item {
+		&.active {
+
+			button {
+				background-color: var(--wp-admin-theme-color);
+				color: #fff;
+			}
+		}
+
+		button {
+			padding: 0.25rem;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&--last-used-palette {
+		display: flex;
+		margin: 0 !important;
+		margin-left: 8px !important;
+
+		li {
+			margin-bottom: 0;
+		}
+
+		.charMap--category.active {
+			display: flex;
+			border: 0;
+			margin-bottom: 0;
+			border-top: 1px solid $grid-border-color;
+			border-left: 1px solid $grid-border-color;
+
+			li {
+				border: none;
+				margin: 0;
+				border-bottom: 1px solid $grid-border-color;
+				border-right: 1px solid $grid-border-color;
+			}
+		}
+	}
+
+	&--category-menu {
+		display: flex;
+		flex-flow: row wrap;
+		font-size: 14px;
+		margin-top: 18px !important;
+		width: 100%;
+
+		li {
+			margin-bottom: 0;
+
+			button {
+				border: none;
+				box-shadow: none;
+				background-color: #fff;
+				cursor: pointer;
+			}
+		}
+	}
+
+	&--category {
+		display: none;
+		grid-template-columns: repeat(16, 1fr);
+		grid-template-rows: repeat(auto-fill, 1fr);
+		margin: 0 !important;
+		padding: 0 !important;
+
+		&.active {
+			display: grid;
+			border-top: 1px solid #1e1e1e;
+			margin-bottom: 5px !important;
+		}
+
+		li {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 0 !important;
+			aspect-ratio: 1;
+			border-right: 1px solid $grid-border-color;
+			border-bottom: 1px solid $grid-border-color;
+
+			&:nth-child(16n) {
+				border-right: none;
+			}
+
+			&:hover {
+				background-color: var(--wp-admin-theme-color);
+
+				button {
+					color: #fff;
+				}
+			}
+
+			button {
+				width: 28px;
+				height: 28px;
+				border: none;
+				box-shadow: none;
+				background-color: rgba(0,0,0,0);
+				cursor: pointer;
+				font-size: 18px !important;
+			}
+		}
+	}
+}
