@@ -23,7 +23,7 @@ Development takes place in the [GitHub repository](https://github.com/10up/inser
 == Technical Notes ==
 
 * Requires PHP 5.6+.
-* Requires [WordPress](http://wordpress.org/) 5.2+
+* Requires [WordPress](http://wordpress.org/) 5.5+
 * Issues and Pull requests welcome in the [GitHub repository](https://github.com/10up/insert-special-characters).
 
 == Installation ==
