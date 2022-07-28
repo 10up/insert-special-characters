@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Advance Security Compliance Action
-      uses: GeekMasher/advanced-security-compliance@v1.6
+      uses: GeekMasher/advanced-security-compliance@v1.6.1
       with:
         # We'll need an access token that can call the GraphQL GitHub API to get
         #  all the of the licensing data.
@@ -23,4 +23,6 @@ jobs:
         # The owner/repo of where the policy is stored  
         policy: 10up/.github
         # The local (within the workspace) or repository
-        policy-path: blob/trunk/policy.yml
+        policy-path: policy.yml
+        # The branch you want to target
+        policy-branch: trunk
