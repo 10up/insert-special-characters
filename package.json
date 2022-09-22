@@ -45,6 +45,6 @@
     ]
   },
   "dependencies": {
-    "react-character-map": "^0.4.6"
+    "react-character-map": "^0.4.8"
   }
 }
