@@ -16,8 +16,8 @@ jobs:
     steps:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
-      - name: 'Dependency Review'
-        uses: actions/dependency-review-action@v2
+      - name: Dependency Review
+        uses: actions/dependency-review-action@add-summary
         with:
           # Possible values: "critical", "high", "moderate", "low" 
           # fail-on-severity: critical
