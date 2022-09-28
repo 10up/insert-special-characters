@@ -13,6 +13,8 @@
 .eslintignore
 .eslintrc.js
 .gitignore
+.wp-env.json
+.wp-env.override.json
 CHANGELOG.md
 CODE_OF_CONDUCT.md
 composer.json
@@ -22,6 +24,7 @@ CREDITS.md
 LICENSE.md
 package-lock.json
 package.json
+phpcs.xml
 README.md
 webpack.config.js
 wpacceptance.json
