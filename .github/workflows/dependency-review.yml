@@ -26,39 +26,7 @@ jobs:
           # ([String]). Only allow these licenses (optional)
           # Possible values: Any `spdx_id` value(s) from https://docs.github.com/en/rest/licenses 
           # The following list is an attempt to match exactly what's listed on https://www.gnu.org/licenses/license-list.html#GPLCompatibleLicenses as GPL Compatible (currently ignoring the FSF Free/Libre and OSI Approved column data from the SPDX License List at https://spdx.org/licenses/):
-          allow-licenses: 
-            - GPL-2.0
-            - GPL-2.0-only
-            - GPL-2.0-or-later
-            - GPL-3.0
-            - GPL-3.0-only
-            - GPL-3.0-or-later
-            - LGPL-3.0
-            - LGPL-3.0-only
-            - LGPL-2.1
-            - LGPL-2.1-only
-            - AGPL-3.0
-            - AGPL-3.0-only
-            - Apache-2.0
-            - Artistic-2.0
-            - Sleepycat
-            - BSL-1.0
-            - BSD-3-Clause
-            - ECL-2.0
-            - EFL-2.0
-            - EUDatagrid
-            - MIT
-            - BSD-2-Clause
-            - HPND
-            - Intel
-            - ISC
-            - MPL-2.0
-            - NCSA
-            - UPL-1.0
-            - Unlicense
-            - W3C
-            - Zlib
-            - ZPL-2.0
+          allow-licenses: GPL-2.0, GPL-2.0-only, GPL-2.0-or-later, GPL-3.0, GPL-3.0-only, GPL-3.0-or-later, LGPL-3.0, LGPL-3.0-only, LGPL-2.1, LGPL-2.1-only, AGPL-3.0, AGPL-3.0-only, Apache-2.0, Artistic-2.0, Sleepycat, BSL-1.0, BSD-3-Clause, ECL-2.0, EFL-2.0, EUDatagrid, MIT, BSD-2-Clause, HPND, Intel, ISC, MPL-2.0, NCSA, UPL-1.0, Unlicense, W3C, Zlib, ZPL-2.0
           # The following licenses fit the above criteria except they are not marked as FSF Free/Libre on the SPDX License List (https://spdx.org/licenses/):  Unicode-DFS-2016
           # The following licenses fit the above criteria except they are not marked as OSI Approved on the SPDX License List (https://spdx.org/licenses/): ClArtistic, CECILL-2.0, BSD-3-Clause-Clear, FTL, iMatix, Imlib2, IJG, OLDAP-2.7, Ruby, SGI-B-2.0, SMLNJ, Vim, WTFPL, X11, XFree86-1.1
           # ([String]). Block the pull request on these licenses (optional)
