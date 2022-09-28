@@ -42,7 +42,7 @@ wp.hooks.addFilter(
 ## Requirements
 
 * PHP 5.6+
-* [WordPress](http://wordpress.org/) 5.2+
+* [WordPress](http://wordpress.org/) 5.5+
 
 ## Installation
 

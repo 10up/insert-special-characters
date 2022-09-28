@@ -1,6 +1,6 @@
 {
   "name": "insert-special-characters",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A Special Character inserter for the WordPress block editor (Gutenberg).",
   "homepage": "https://github.com/10up/insert-special-characters#readme",
   "license": "GPL-2.0-only",
@@ -14,29 +14,22 @@
   "scripts": {
     "build": "wp-scripts build",
     "start": "wp-scripts start",
-    "lint:js": "wp-scripts lint-js",
+    "lint:js": "wp-scripts lint-js src",
     "lint:css": "wp-scripts lint-style",
-    "cypress:open": "cypress open --config-file tests/cypress/config.json",
-    "cypress:run": "cypress run --config-file tests/cypress/config.json",
     "env": "wp-env",
     "env:start": "wp-env start",
     "env:stop": "wp-env stop",
     "postenv:start": "./tests/bin/initialize.sh",
-    "create-pages": "wp-env run tests-cli \"wp post create --post_type=page --post_title='Page with special characters' --post_status='publish'\""
+    "cypress:open": "cypress open --config-file tests/cypress/config.js --e2e --browser chrome",
+    "cypress:run": "cypress run --config-file tests/cypress/config.js"
   },
   "devDependencies": {
     "@10up/cypress-wp-utils": "github:10up/cypress-wp-utils#build",
-    "@wordpress/env": "^4.3.1",
-    "@wordpress/scripts": "^7.1.0",
-    "css-loader": "^3.2.0",
-    "cypress": "^9.5.2",
-    "husky": "^4.2.3",
-    "lint-staged": "^10.0.7",
-    "prettier": "npm:wp-prettier@1.19.1",
-    "style-loader": "^1.0.0"
-  },
-  "dependencies": {
-    "react-character-map": "^0.4.4"
+    "@wordpress/env": "^5.3.0",
+    "@wordpress/scripts": "23.3.0",
+    "cypress": "^10.2.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^10.0.7"
   },
   "husky": {
     "hooks": {
@@ -50,5 +43,8 @@
     "*.js": [
       "npm run lint:js"
     ]
+  },
+  "dependencies": {
+    "react-character-map": "^0.4.8"
   }
 }
