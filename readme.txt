@@ -16,8 +16,6 @@ Ever wanted to add a special character while working within the WordPress block 
 
 **Note:** you can display the popover via the `ctrl`/`cmd` + `o` keyboard shortcut.
 
-https://media.giphy.com/media/ImJtBjUD0RQqjdJkHv/giphy.mp4
-
 Development takes place in the [GitHub repository](https://github.com/10up/insert-special-characters).
 
 == Technical Notes ==
@@ -69,10 +67,11 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 
 == Screenshots ==
 
-1. "Special Characters" option in Paragraph Block menu.
-2. Initial special characters, showing the "Math" character set.
-3. Filtering the special characters via search.
-4. Resulting inserted special character (note focus on special character, rest of window has been blurred).
+1. Example of special characters selection in the Block Editor.
+2. "Special Characters" option in Paragraph Block menu.
+3. Initial special characters, showing the "Math" character set.
+4. Filtering the special characters via search.
+5. Resulting inserted special character (note focus on special character, rest of window has been blurred).
 
 == Changelog ==
 
