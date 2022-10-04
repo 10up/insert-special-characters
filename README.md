@@ -10,7 +10,7 @@ Ever wanted to add a special character while working within Gutenberg and sudden
 
 **Note:** you can display the popover via the `ctrl`/`cmd` + `o` keyboard shortcut.
 
-![Demo of special characters within Gutenberg](assets/insert-special-characters.gif "Example of a special characters in the new WordPress editor")
+![Demo of special characters within Gutenberg](.wordpress-org/screenshot-1.gif "Example of special characters selection in the Block Editor")
 
 ## Extending
 
