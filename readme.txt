@@ -3,7 +3,7 @@ Contributors:      10up, adamsilverstein, johnwatkins0, jeffpaul
 Tags:              Special Characters, Character Map, Omega, Gutenberg, Block, block editor
 Requires at least: 5.5
 Tested up to:      6.0
-Stable tag:        1.0.5
+Stable tag:        1.0.6
 Requires PHP:      5.6
 License:           GPLv2
 License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
