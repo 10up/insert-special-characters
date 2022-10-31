@@ -75,6 +75,14 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 
 == Changelog ==
 
+= 1.0.6 - 2022-10-31 =
+
+* **Added:** Scanning of dependencies to ensure they are GPL-compatible. (props [@jeffpaul](https://github.com/jeffpaul), [@vikrampm1](https://github.com/vikrampm1), [@GeekMasher](https://github.com/GeekMasher), [@dkotter](https://github.com/dkotter)).
+* **Changed:** Updated documentation and plugin screencast GIF demo. (props [@jeffpaul](https://github.com/jeffpaul), [@cadic](https://github.com/cadic)).
+* **Fixed:** No-breaking spacing `&nbsp;` character. (props [@redorca](https://profiles.wordpress.org/redorca/), [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh)).
+* **Fixed:** WordPress minimum supported version to 5.5. (props [@grappler](https://github.com/grappler), [@dkotter](https://github.com/dkotter)).
+* **Security:** Update wp-env dependency from 4.9 to to 5.3. (props [@peterwilsoncc](https://github.com/peterwilsoncc), [@Sidsector9](https://github.com/Sidsector9)).
+
 = 1.0.5 - 2022-07-18 =
 **Note that this release bumps the WordPress minimum supported version from 5.4 to 5.5.**
 

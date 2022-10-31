@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [1.0.6] - 2022-10-31
+
+### Added
+
+- Scanning of dependencies to ensure they are GPL-compatible. (props [@jeffpaul](https://github.com/jeffpaul), [@vikrampm1](https://github.com/vikrampm1), [@GeekMasher](https://github.com/GeekMasher), [@dkotter](https://github.com/dkotter) via [#157](https://github.com/10up/insert-special-characters/pull/157)).
+
+### Changed
+
+- Updated documentation and plugin screencast GIF demo. (props [@jeffpaul](https://github.com/jeffpaul), [@cadic](https://github.com/cadic) via [#163](https://github.com/10up/insert-special-characters/pull/163))
+
+### Fixed
+
+- No-breaking spacing `&nbsp;` character. (props [@redorca](https://profiles.wordpress.org/redorca/), [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh) via [#159](https://github.com/10up/insert-special-characters/pull/159)).
+- WordPress minimum supported version to 5.5. (props [@grappler](https://github.com/grappler), [@dkotter](https://github.com/dkotter) via [#158](https://github.com/10up/insert-special-characters/pull/158)).
+
+### Security
+
+- Update wp-env dependency from 4.9 to to 5.3. (props [@peterwilsoncc](https://github.com/peterwilsoncc), [@Sidsector9](https://github.com/Sidsector9) via [#161](https://github.com/10up/insert-special-characters/pull/161)).
+
 ## [1.0.5] - 2022-07-18
 **Note that this release bumps the WordPress minimum from 5.4 to 5.5.**
 
