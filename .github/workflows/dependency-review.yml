@@ -21,4 +21,4 @@ jobs:
         with:
           license-check: true
           vulnerability-check: false
-          config-file: `10up/.github/blob/trunk/.github/dependency-review-config.yml@trunk`
+          config-file: 10up/.github/.github/dependency-review-config.yml@trunk
