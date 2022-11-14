@@ -17,6 +17,6 @@ jobs:
       - name: 'Checkout Repository'
         uses: actions/checkout@v3
       - name: Dependency Review
-        uses: actions/dependency-review-action@v2
+        uses: actions/dependency-review-action@v3
         with:
-          - config-file: https://github.com/10up/.github/blob/trunk/.github/dependency-review-config.yml
+          - config-file: 10up/.github/.github/dependency-review-config.yml@trunk
