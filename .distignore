@@ -28,3 +28,4 @@ phpcs.xml
 README.md
 webpack.config.js
 wpacceptance.json
+.nvmrc

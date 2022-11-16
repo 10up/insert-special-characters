@@ -4,8 +4,8 @@
  * Plugin URI:        https://github.com/10up/insert-special-characters
  * Description:       A Special Character inserter for the WordPress block editor (Gutenberg).
  * Version:           1.0.5
- * Requires at least: 5.5
- * Requires PHP:      5.6
+ * Requires at least: 5.7
+ * Requires PHP:      7.4
  * Author:            10up
  * Author URI:        https://10up.com
  * License:           GPLv2
