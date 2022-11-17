@@ -79,9 +79,14 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 
 * **Added:** Scanning of dependencies to ensure they are GPL-compatible. (props [@jeffpaul](https://github.com/jeffpaul), [@vikrampm1](https://github.com/vikrampm1), [@GeekMasher](https://github.com/GeekMasher), [@dkotter](https://github.com/dkotter)).
 * **Changed:** Updated documentation and plugin screencast GIF demo. (props [@jeffpaul](https://github.com/jeffpaul), [@cadic](https://github.com/cadic)).
+* **Changed:** License scanning to use org-wide config file. (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9)).
+* **Changed:** Bump minimum PHP version from 5.6 to 7.4. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic)).
+* **Changed:** Bump minimum WordPress version from 5.5 to 5.7. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic)).
+* **Changed:** Bump minimum node version from 12 to 16. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic)).
 * **Fixed:** No-breaking spacing `&nbsp;` character. (props [@redorca](https://profiles.wordpress.org/redorca/), [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh)).
 * **Fixed:** WordPress minimum supported version to 5.5. (props [@grappler](https://github.com/grappler), [@dkotter](https://github.com/dkotter)).
 * **Security:** Update wp-env dependency from 4.9 to to 5.3. (props [@peterwilsoncc](https://github.com/peterwilsoncc), [@Sidsector9](https://github.com/Sidsector9)).
+* **Security:** Bump loader-utils from 2.0.2 to 2.0.4. (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9)).
 
 = 1.0.5 - 2022-07-18 =
 **Note that this release bumps the WordPress minimum supported version from 5.4 to 5.5.**

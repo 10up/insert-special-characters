@@ -13,6 +13,10 @@ All notable changes to this project will be documented in this file, per [the Ke
 ### Changed
 
 - Updated documentation and plugin screencast GIF demo. (props [@jeffpaul](https://github.com/jeffpaul), [@cadic](https://github.com/cadic) via [#163](https://github.com/10up/insert-special-characters/pull/163))
+- License scanning to use org-wide config file. (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#164](https://github.com/10up/insert-special-characters/pull/164)).
+- Bump minimum PHP version from 5.6 to 7.4. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic) via [#166](https://github.com/10up/insert-special-characters/pull/166)).
+- Bump minimum WordPress version from 5.5 to 5.7. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic) via [#166](https://github.com/10up/insert-special-characters/pull/166)).
+- Bump minimum node version from 12 to 16. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic) via [#166](https://github.com/10up/insert-special-characters/pull/166)).
 
 ### Fixed
 
@@ -22,6 +26,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 ### Security
 
 - Update wp-env dependency from 4.9 to to 5.3. (props [@peterwilsoncc](https://github.com/peterwilsoncc), [@Sidsector9](https://github.com/Sidsector9) via [#161](https://github.com/10up/insert-special-characters/pull/161)).
+- Bump loader-utils from 2.0.2 to 2.0.4. (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#171](https://github.com/10up/insert-special-characters/pull/171)).
 
 ## [1.0.5] - 2022-07-18
 **Note that this release bumps the WordPress minimum from 5.4 to 5.5.**
