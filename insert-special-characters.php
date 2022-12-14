@@ -17,10 +17,7 @@
 
 namespace InsertSpecialCharacters;
 
-/**
- * Enqueue the admin JavaScript assets.
- */
-function gcm_block_enqueue_scripts() {
+function register_assets() {
 	$asset_data_file = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'build/index.asset.php';
 
 	if ( ! file_exists( $asset_data_file ) ) {
@@ -29,7 +26,7 @@ function gcm_block_enqueue_scripts() {
 
 	$script_data = include $asset_data_file;
 
-	wp_enqueue_script(
+	wp_register_script(
 		'insert-special-characters',
 		plugin_dir_url( __FILE__ ) . 'build/index.js',
 		$script_data['dependencies'],
@@ -37,12 +34,27 @@ function gcm_block_enqueue_scripts() {
 		true
 	);
 
-	wp_enqueue_style(
+	wp_register_style(
 		'insert-special-characters-css',
 		plugin_dir_url( __FILE__ ) . 'build/index.css',
 		array(),
 		$script_data['version']
 	);
+
+	wp_set_script_translations( 'insert-special-characters', 'insert-special-characters', plugin_dir_path( __FILE__ ) . 'languages' );
+}
+
+add_action( 'init', __NAMESPACE__ . '\register_assets' );
+
+
+/**
+ * Enqueue the admin JavaScript assets.
+ */
+function gcm_block_enqueue_scripts() {
+
+	wp_enqueue_script( 'insert-special-characters' );
+
+	wp_enqueue_style( 'insert-special-characters-css' );
 
 	wp_add_inline_script(
 		'insert-special-characters',
@@ -55,8 +67,6 @@ function gcm_block_enqueue_scripts() {
 			)
 		)
 	);
-
-	wp_set_script_translations( 'insert-special-characters', 'insert-special-characters' );
 }
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\gcm_block_enqueue_scripts' );
 
@@ -76,14 +86,14 @@ function register_settings_fields() {
 
 	add_settings_section(
 		'tenup_isc_writing_section',
-		__( 'Insert Special Characters', 'insert-special-characters' ),
+		esc_html__( 'Insert Special Characters', 'insert-special-characters' ),
 		null,
 		'writing'
 	);
 
 	add_settings_field(
 		'tenup_isc_most_read_palette',
-		__( 'Most used characters palette', 'insert-special-characters' ),
+		esc_html__( 'Most used characters palette', 'insert-special-characters' ),
 		__NAMESPACE__ . '\render_isc_writing_setting',
 		'writing',
 		'tenup_isc_writing_section',
