@@ -2,7 +2,6 @@ import { registerFormatType, toggleFormat, insert } from '@wordpress/rich-text';
 import { Fragment } from '@wordpress/element';
 import { BlockControls, RichTextShortcut } from '@wordpress/block-editor';
 import { Popover, ToolbarButton, ToolbarGroup } from '@wordpress/components';
-import { getRectangleFromRange } from '@wordpress/dom';
 import { applyFilters } from '@wordpress/hooks';
 import { displayShortcut } from '@wordpress/keycodes';
 import { __ } from '@wordpress/i18n';
@@ -52,14 +51,14 @@ registerFormatType( type, {
 		};
 		// Pin the Popover to the caret position.
 		const anchorRect = () => {
-			return getRectangleFromRange( anchorRange );
+			return anchorRange ? anchorRange.getBoundingClientRect() : null;
 		};
 		const characters = applyFilters( `${ name }-characters`, Chars );
 		// Display the character map when it is active.
 		const specialCharsPopover = isActive && (
 			<Popover
 				className="character-map-popover"
-				position="bottom center"
+				placement="bottom-start"
 				focusOnMount="firstElement"
 				key="charmap-popover"
 				getAnchorRect={ anchorRect }
