@@ -17,6 +17,9 @@
 
 namespace InsertSpecialCharacters;
 
+/**
+ * Registers JS and CSS assets.
+ */
 function register_assets() {
 	$asset_data_file = trailingslashit( plugin_dir_path( __FILE__ ) ) . 'build/index.asset.php';
 
