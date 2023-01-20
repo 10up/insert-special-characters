@@ -85,8 +85,12 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 * **Changed:** Bump minimum node version from 12 to 16. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic)).
 * **Fixed:** No-breaking spacing `&nbsp;` character. (props [@redorca](https://profiles.wordpress.org/redorca/), [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh)).
 * **Fixed:** WordPress minimum supported version to 5.5. (props [@grappler](https://github.com/grappler), [@dkotter](https://github.com/dkotter)).
+* **Fixed:** Translation issue for the string "Most Used". (props [@alexclassroom](https://github.com/alexclassroom), [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi), [@iamdharmesh](https://github.com/iamdharmesh)).
 * **Security:** Update wp-env dependency from 4.9 to to 5.3. (props [@peterwilsoncc](https://github.com/peterwilsoncc), [@Sidsector9](https://github.com/Sidsector9)).
 * **Security:** Bump loader-utils from 2.0.2 to 2.0.4. (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9)).
+* **Security:** Bump simple-git from 3.14.1 to 3.15.1 (props [@dependabot](https://github.com/apps/dependabot), [@jeffpaul](https://github.com/jeffpaul)).
+* **Security:** Bump Bump json5 from 1.0.1 to 1.0.2. (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9)).
+* **Security:** Adds a workflow to build a pre-release ZIP (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter)).
 
 = 1.0.5 - 2022-07-18 =
 **Note that this release bumps the WordPress minimum supported version from 5.4 to 5.5.**

@@ -22,11 +22,15 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 - No-breaking spacing `&nbsp;` character. (props [@redorca](https://profiles.wordpress.org/redorca/), [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh) via [#159](https://github.com/10up/insert-special-characters/pull/159)).
 - WordPress minimum supported version to 5.5. (props [@grappler](https://github.com/grappler), [@dkotter](https://github.com/dkotter) via [#158](https://github.com/10up/insert-special-characters/pull/158)).
+- Translation issue for the string "Most Used". (props [@alexclassroom](https://github.com/alexclassroom), [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi), [@iamdharmesh](https://github.com/iamdharmesh) via [#172](https://github.com/10up/insert-special-characters/pull/172)).
 
 ### Security
 
 - Update wp-env dependency from 4.9 to to 5.3. (props [@peterwilsoncc](https://github.com/peterwilsoncc), [@Sidsector9](https://github.com/Sidsector9) via [#161](https://github.com/10up/insert-special-characters/pull/161)).
 - Bump loader-utils from 2.0.2 to 2.0.4. (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#171](https://github.com/10up/insert-special-characters/pull/171)).
+- Bump simple-git from 3.14.1 to 3.15.1 (props [@dependabot](https://github.com/apps/dependabot), [@jeffpaul](https://github.com/jeffpaul) via [#175](https://github.com/10up/insert-special-characters/pull/175)).
+- Bump Bump json5 from 1.0.1 to 1.0.2. (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#180](https://github.com/10up/insert-special-characters/pull/180)).
+- Adds a workflow to build a pre-release ZIP (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter) via [#174](https://github.com/10up/insert-special-characters/pull/174)).
 
 ## [1.0.5] - 2022-07-18
 **Note that this release bumps the WordPress minimum from 5.4 to 5.5.**
