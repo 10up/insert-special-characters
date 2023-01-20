@@ -130,6 +130,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Plugin header and icon images (props [@McCallumDillon](https://github.com/McCallumDillon) via [#28](https://github.com/10up/insert-special-characters/pull/28))
 
 [Unreleased]: https://github.com/10up/insert-special-characters/compare/trunk...develop
+[1.0.6]: https://github.com/10up/insert-special-characters/compare/1.0.5...1.0.6
 [1.0.5]: https://github.com/10up/insert-special-characters/compare/1.0.4...1.0.5
 [1.0.4]: https://github.com/10up/insert-special-characters/compare/1.0.3...1.0.4
 [1.0.3]: https://github.com/10up/insert-special-characters/compare/1.0.2...1.0.3
