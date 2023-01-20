@@ -45,6 +45,6 @@
     ]
   },
   "dependencies": {
-    "react-character-map": "^0.4.8"
+    "react-character-map": "github:Dayjo/react-character-map#v0.4.9"
   }
 }
