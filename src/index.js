@@ -106,6 +106,10 @@ registerFormatType( type, {
 					) }
 					key="charmap"
 					mostUsedPalette={ tenupIscVars.most_read_palette }
+					mostUsedPaletteLabelText={ __(
+						'Most Used',
+						'insert-special-characters'
+					) }
 				/>
 			</Popover>
 		);

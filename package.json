@@ -46,6 +46,6 @@
   },
   "dependencies": {
     "@wordpress/components": "^22.1.0",
-    "react-character-map": "^0.4.8"
+    "react-character-map": "^0.4.10"
   }
 }
