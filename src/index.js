@@ -2,7 +2,6 @@ import { registerFormatType, toggleFormat, insert } from '@wordpress/rich-text';
 import { Fragment } from '@wordpress/element';
 import { BlockControls, RichTextShortcut } from '@wordpress/block-editor';
 import { Popover, ToolbarButton, ToolbarGroup } from '@wordpress/components';
-import { getRectangleFromRange } from '@wordpress/dom';
 import { applyFilters } from '@wordpress/hooks';
 import { displayShortcut } from '@wordpress/keycodes';
 import { __ } from '@wordpress/i18n';
@@ -52,56 +51,14 @@ registerFormatType( type, {
 		};
 		// Pin the Popover to the caret position.
 		const anchorRect = () => {
-			/*
-			 * @see https://github.com/10up/insert-special-characters/issues/115
-			 * to know more about reasons behind the following computation.
-			 */
-			const rangeSelectionRect = getRectangleFromRange( anchorRange );
-			const rangeSelectionRectCenterX =
-				rangeSelectionRect.x + ( rangeSelectionRect.width / 2 );
-
-			let editorViewportEl = document.querySelector(
-				'.interface-interface-skeleton__content'
-			);
-
-			if ( ! editorViewportEl ) {
-				editorViewportEl = document.querySelector(
-					'.block-editor-editor-skeleton__content'
-				);
-			}
-
-			const editorViewportRect = editorViewportEl.getBoundingClientRect();
-
-			/*
-			 * The width of the charmap is 550px, so we use 550/2 = 275
-			 * as the popover opens from the horizontal center.
-			 */
-			const canCharMapOverflowOnLeft =
-				275 > rangeSelectionRectCenterX - editorViewportRect.x;
-			const canCharMapOverflowOnRight =
-				275 > editorViewportRect.right - rangeSelectionRectCenterX;
-
-			/*
-			 * The value 30 is an additional offset.
-			 * For some reason, Popover uses Rect.x - 24px instead of the
-			 * exact value. The value 30 is provided to add 24 + some empty space.
-			 */
-			if ( canCharMapOverflowOnLeft ) {
-				rangeSelectionRect.x = editorViewportRect.x + 30;
-			}
-
-			if ( canCharMapOverflowOnRight ) {
-				rangeSelectionRect.x = editorViewportRect.right - 275 - 30;
-			}
-
-			return rangeSelectionRect;
+			return anchorRange ? anchorRange.getBoundingClientRect() : null;
 		};
 		const characters = applyFilters( `${ name }-characters`, Chars );
 		// Display the character map when it is active.
 		const specialCharsPopover = isActive && (
 			<Popover
 				className="character-map-popover"
-				position="bottom center"
+				placement="bottom-start"
 				focusOnMount="firstElement"
 				key="charmap-popover"
 				getAnchorRect={ anchorRect }
