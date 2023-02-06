@@ -4,7 +4,8 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
-## [1.0.6] - 2023-01-23
+## [1.0.6] - 2023-02-07
+**Note that this release bumps the WordPress minimum from 5.7 to 6.1. and minimum PHP version from 5.6 to 7.4**
 
 ### Added
 
@@ -16,7 +17,9 @@ All notable changes to this project will be documented in this file, per [the Ke
 - License scanning to use org-wide config file. (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#164](https://github.com/10up/insert-special-characters/pull/164)).
 - Bump minimum PHP version from 5.6 to 7.4. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic) via [#166](https://github.com/10up/insert-special-characters/pull/166)).
 - Bump minimum WordPress version from 5.5 to 5.7. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic) via [#166](https://github.com/10up/insert-special-characters/pull/166)).
+- Bump minimum supported WordPress version from 5.7 to 6.1 (props [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi), [@iamdharmesh](https://github.com/iamdharmesh), [@jeffpaul](https://github.com/jeffpaul) via [#173](https://github.com/10up/insert-special-characters/pull/173)).
 - Bump minimum node version from 12 to 16. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic) via [#166](https://github.com/10up/insert-special-characters/pull/166)).
+- Support Level from Active to Stable (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#184](https://github.com/10up/insert-special-characters/pull/184)).
 
 ### Fixed
 
@@ -30,6 +33,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Bump loader-utils from 2.0.2 to 2.0.4. (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#171](https://github.com/10up/insert-special-characters/pull/171)).
 - Bump simple-git from 3.14.1 to 3.15.1 (props [@dependabot](https://github.com/apps/dependabot), [@jeffpaul](https://github.com/jeffpaul) via [#175](https://github.com/10up/insert-special-characters/pull/175)).
 - Bump Bump json5 from 1.0.1 to 1.0.2. (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#180](https://github.com/10up/insert-special-characters/pull/180)).
+- Bump http-cache-semantics from 4.1.0 to 4.1.1 (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#185](https://github.com/10up/insert-special-characters/pull/185)).
 - Adds a workflow to build a pre-release ZIP (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter) via [#174](https://github.com/10up/insert-special-characters/pull/174)).
 
 ## [1.0.5] - 2022-07-18

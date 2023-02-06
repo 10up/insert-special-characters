@@ -75,14 +75,17 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 
 == Changelog ==
 
-= 1.0.6 - 2022-10-31 =
+= 1.0.6 - 2023-02-07 =
+**Note that this release bumps the WordPress minimum from 5.7 to 6.1. and minimum PHP version from 5.6 to 7.4**
 
 * **Added:** Scanning of dependencies to ensure they are GPL-compatible. (props [@jeffpaul](https://github.com/jeffpaul), [@vikrampm1](https://github.com/vikrampm1), [@GeekMasher](https://github.com/GeekMasher), [@dkotter](https://github.com/dkotter)).
 * **Changed:** Updated documentation and plugin screencast GIF demo. (props [@jeffpaul](https://github.com/jeffpaul), [@cadic](https://github.com/cadic)).
 * **Changed:** License scanning to use org-wide config file. (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9)).
 * **Changed:** Bump minimum PHP version from 5.6 to 7.4. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic)).
 * **Changed:** Bump minimum WordPress version from 5.5 to 5.7. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic)).
+* **Changed:** Bump minimum supported WordPress version from 5.7 to 6.1 (props [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi), [@iamdharmesh](https://github.com/iamdharmesh), [@jeffpaul](https://github.com/jeffpaul)).
 * **Changed:** Bump minimum node version from 12 to 16. (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic)).
+* **Changed:** Support Level from Active to Stable (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9)).
 * **Fixed:** No-breaking spacing `&nbsp;` character. (props [@redorca](https://profiles.wordpress.org/redorca/), [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh)).
 * **Fixed:** WordPress minimum supported version to 5.5. (props [@grappler](https://github.com/grappler), [@dkotter](https://github.com/dkotter)).
 * **Fixed:** Translation issue for the string "Most Used". (props [@alexclassroom](https://github.com/alexclassroom), [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi), [@iamdharmesh](https://github.com/iamdharmesh)).
@@ -90,6 +93,7 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 * **Security:** Bump loader-utils from 2.0.2 to 2.0.4. (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9)).
 * **Security:** Bump simple-git from 3.14.1 to 3.15.1 (props [@dependabot](https://github.com/apps/dependabot), [@jeffpaul](https://github.com/jeffpaul)).
 * **Security:** Bump Bump json5 from 1.0.1 to 1.0.2. (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9)).
+* **Security:** Bump http-cache-semantics from 4.1.0 to 4.1.1 (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9)).
 * **Security:** Adds a workflow to build a pre-release ZIP (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter)).
 
 = 1.0.5 - 2022-07-18 =
