@@ -45,6 +45,7 @@
     ]
   },
   "dependencies": {
-    "react-character-map": "github:Dayjo/react-character-map#v0.4.9"
+    "@wordpress/components": "^22.1.0",
+    "react-character-map": "^0.4.10"
   }
 }
