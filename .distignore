@@ -6,6 +6,7 @@
 /node_modules
 /src
 /tests
+/bin
 
 # Files
 .distignore
@@ -28,3 +29,4 @@ phpcs.xml
 README.md
 webpack.config.js
 wpacceptance.json
+.nvmrc

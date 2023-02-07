@@ -1,10 +1,10 @@
 === Insert Special Characters ===
 Contributors:      10up, adamsilverstein, johnwatkins0, jeffpaul
 Tags:              Special Characters, Character Map, Omega, Gutenberg, Block, block editor
-Requires at least: 5.5
-Tested up to:      6.0
-Stable tag:        1.0.5
-Requires PHP:      5.6
+Stable tag:        1.0.6
+Requires at least: 6.1
+Tested up to:      6.1
+Requires PHP:      7.4
 License:           GPLv2
 License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
@@ -16,14 +16,12 @@ Ever wanted to add a special character while working within the WordPress block 
 
 **Note:** you can display the popover via the `ctrl`/`cmd` + `o` keyboard shortcut.
 
-https://media.giphy.com/media/ImJtBjUD0RQqjdJkHv/giphy.mp4
-
 Development takes place in the [GitHub repository](https://github.com/10up/insert-special-characters).
 
 == Technical Notes ==
 
-* Requires PHP 5.6+.
-* Requires [WordPress](http://wordpress.org/) 5.2+
+* Requires PHP 7.4+.
+* Requires [WordPress](http://wordpress.org/) 5.7+
 * Issues and Pull requests welcome in the [GitHub repository](https://github.com/10up/insert-special-characters).
 
 == Installation ==
@@ -69,12 +67,34 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 
 == Screenshots ==
 
-1. "Special Characters" option in Paragraph Block menu.
-2. Initial special characters, showing the "Math" character set.
-3. Filtering the special characters via search.
-4. Resulting inserted special character (note focus on special character, rest of window has been blurred).
+1. Example of special characters selection in the Block Editor.
+2. "Special Characters" option in Paragraph Block menu.
+3. Initial special characters, showing the "Math" character set.
+4. Filtering the special characters via search.
+5. Resulting inserted special character (note focus on special character, rest of window has been blurred).
 
 == Changelog ==
+
+= 1.0.6 - 2023-02-07 =
+**Note that this release bumps the WordPress minimum from 5.7 to 6.1. and minimum PHP version from 5.6 to 7.4**
+
+* **Added:** Scanning of dependencies to ensure they are GPL-compatible (props [@jeffpaul](https://github.com/jeffpaul), [@vikrampm1](https://github.com/vikrampm1), [@GeekMasher](https://github.com/GeekMasher), [@dkotter](https://github.com/dkotter), [@Sidsector9](https://github.com/Sidsector9) via [#157](https://github.com/10up/insert-special-characters/pull/157), [#164](https://github.com/10up/insert-special-characters/pull/164)).
+* **Added:** GitHub Action workflow to build a pre-release ZIP (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter) via [#174](https://github.com/10up/insert-special-characters/pull/174)).
+* **Changed:** Support Level from `Active` to `Stable` (props [@jeffpaul](https://github.com/jeffpaul), [@Sidsector9](https://github.com/Sidsector9) via [#184](https://github.com/10up/insert-special-characters/pull/184)).
+* **Changed:** Bump minimum PHP version from 5.6 to 7.4 (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic) via [#166](https://github.com/10up/insert-special-characters/pull/166)).
+* **Changed:** Bump minimum WordPress version from 5.5 to 5.7 (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic) via [#166](https://github.com/10up/insert-special-characters/pull/166)).
+* **Changed:** Bump minimum supported WordPress version from 5.7 to 6.1 (props [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi), [@iamdharmesh](https://github.com/iamdharmesh), [@jeffpaul](https://github.com/jeffpaul) via [#173](https://github.com/10up/insert-special-characters/pull/173)).
+* **Changed:** Bump minimum Node version from 12 to 16 (props [@Sidsector9](https://github.com/Sidsector9), [@cadic](https://github.com/cadic) via [#166](https://github.com/10up/insert-special-characters/pull/166)).
+* **Changed:** Updated documentation and plugin screencast GIF demo (props [@jeffpaul](https://github.com/jeffpaul), [@cadic](https://github.com/cadic) via [#163](https://github.com/10up/insert-special-characters/pull/163)).
+* **Fixed:** Non-breaking spacing `&nbsp;` character (props [@redorca](https://profiles.wordpress.org/redorca/), [@Sidsector9](https://github.com/Sidsector9), [@iamdharmesh](https://github.com/iamdharmesh) via [#159](https://github.com/10up/insert-special-characters/pull/159)).
+* **Fixed:** WordPress minimum supported version to 5.5 (props [@grappler](https://github.com/grappler), [@dkotter](https://github.com/dkotter) via [#158](https://github.com/10up/insert-special-characters/pull/158)).
+* **Fixed:** Translation issue for the string "Most Used" (props [@alexclassroom](https://github.com/alexclassroom), [@Sidsector9](https://github.com/Sidsector9), [@faisal-alvi](https://github.com/faisal-alvi), [@iamdharmesh](https://github.com/iamdharmesh) via [#172](https://github.com/10up/insert-special-characters/pull/172)).
+* **Security:** Bump `wp-env` from 4.9 to to 5.3 (props [@peterwilsoncc](https://github.com/peterwilsoncc), [@Sidsector9](https://github.com/Sidsector9) via [#161](https://github.com/10up/insert-special-characters/pull/161)).
+* **Security:** Bump `loader-utils` from 2.0.2 to 2.0.4 (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#171](https://github.com/10up/insert-special-characters/pull/171)).
+* **Security:** Bump `simple-git` from 3.14.1 to 3.16.0 (props [@dependabot](https://github.com/apps/dependabot), [@jeffpaul](https://github.com/jeffpaul) via [#175](https://github.com/10up/insert-special-characters/pull/175), [#182](https://github.com/10up/insert-special-characters/pull/182)).
+* **Security:** Bump `json5` from 1.0.1 to 1.0.2 (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#180](https://github.com/10up/insert-special-characters/pull/180)).
+* **Security:** Bump `ua-parser-js` from 0.7.32 to 0.7.33 (props [@dependabot](https://github.com/apps/dependabot), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#183](https://github.com/10up/insert-special-characters/pull/183)).
+* **Security:** Bump `http-cache-semantics` from 4.1.0 to 4.1.1 (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#185](https://github.com/10up/insert-special-characters/pull/185)).
 
 = 1.0.5 - 2022-07-18 =
 **Note that this release bumps the WordPress minimum supported version from 5.4 to 5.5.**
