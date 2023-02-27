@@ -76,7 +76,12 @@ registerFormatType( type, {
 					onSelect={
 						// Insert the selected character and close the popover.
 						( char ) => {
-							onChange( insert( value, char.char ) );
+							const newValue = {
+								...value,
+								text: char.char,
+							};
+
+							onChange( insert( value, newValue ) );
 						}
 					}
 					categoryNames={ {
