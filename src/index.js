@@ -78,6 +78,13 @@ registerFormatType( type, {
 						( char ) => {
 							const newValue = {
 								...value,
+								// duplicate the format at the value start to ensure the
+								// formats array is the correct size and formatted correctly.
+								formats: value.formats.splice(
+									value.start,
+									0,
+									value.formats.at( value.start )
+								),
 								text: char.char,
 							};
 
