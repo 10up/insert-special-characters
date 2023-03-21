@@ -1,5 +1,18 @@
 describe( 'Insert character in post', () => {
 	before( () => {
+		const userId = '1';
+		cy.setLocalStorage(
+			`WP_DATA_USER_${ userId }`,
+			JSON.stringify({
+				'core/edit-post': {
+					preferences: {
+						features: {
+							welcomeGuide: false,
+						},
+					},
+				},
+			} )
+		);
 		cy.visit( `${ Cypress.config().baseUrl }wp-admin` );
 		cy.wait( 500 );
 		cy.get( '#user_login' ).type( 'admin' );
@@ -14,12 +27,9 @@ describe( 'Insert character in post', () => {
 		cy.visit(
 			`${ Cypress.config().baseUrl }wp-admin/edit.php?post_type=page`
 		);
-
 		cy.get( 'a.row-title' )
 			.contains( 'Page with special characters' )
 			.click();
-
-		cy.get( 'button[aria-label="Close dialog"]' ).click();
 
 		/**
 		 * Click block inserter.
@@ -68,8 +78,11 @@ describe( 'Insert character in post', () => {
 		cy.get( 'body' ).then( ( $body ) => {
 			if ( $body.find( '.block-editor-block-navigation' ).length > 0 ) {
 				cy.get( '.block-editor-block-navigation' ).click();
-			} else {
+			} else if ( $body.find( '.edit-post-header-toolbar__list-view-toggle' ).length > 0 ) {
 				cy.get( '.edit-post-header-toolbar__list-view-toggle' ).click();
+			} else {
+				// WP 6.2
+				cy.get( '.edit-post-header-toolbar__document-overview-toggle' ).click();
 			}
 		} );
 

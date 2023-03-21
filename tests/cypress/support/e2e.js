@@ -14,13 +14,7 @@
 // ***********************************************************
 
 import "@10up/cypress-wp-utils";
+import "cypress-localstorage-commands";
 
 // Import commands.js using ES2015 syntax:
 import "./commands";
-
-// Preserve WP cookies.
-beforeEach(() => {
-  Cypress.Cookies.defaults({
-    preserve: /^wordpress.*?/,
-  });
-});
