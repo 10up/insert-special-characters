@@ -19,7 +19,7 @@ describe( 'Insert character in post', () => {
 			.contains( 'Page with special characters' )
 			.click();
 
-		cy.get( 'button[aria-label="Close dialog"]' ).click();
+		cy.closeWelcomeGuide();
 
 		/**
 		 * Click block inserter.
