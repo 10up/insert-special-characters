@@ -1,10 +1,7 @@
 describe( 'Insert character in post', () => {
 	before( () => {
-		cy.visit( `${ Cypress.config().baseUrl }wp-admin` );
-		cy.wait( 500 );
-		cy.get( '#user_login' ).type( 'admin' );
-		cy.get( '#user_pass' ).type( 'password' );
-		cy.get( '#wp-submit' ).click();
+		cy.login();
+
 		cy.visit( 'wp-admin/options-permalink.php' );
 		cy.get( '[type="radio"]' ).check( '/%postname%/' );
 		cy.get( '#submit' ).click();
@@ -21,46 +18,11 @@ describe( 'Insert character in post', () => {
 
 		cy.closeWelcomeGuide();
 
-		/**
-		 * Click block inserter.
-		 */
-		cy.get( '.edit-post-header-toolbar__inserter-toggle' ).click();
-
-		/**
-		 * Search for paragraph block in inserter.
-		 */
-		cy.get( 'body' ).then( ( $body ) => {
-			// WP 5.5
-			if (
-				$body.find( '.block-editor-inserter__search-input' ).length > 0
-			) {
-				cy.get( '.block-editor-inserter__search-input' ).type(
-					'Paragraph'
-				);
-			} else {
-				cy.get( '.components-search-control__input' ).type(
-					'Paragraph'
-				);
-			}
-		} );
-
-		cy.get( '.editor-block-list-item-paragraph' ).click();
-
-		/**
-		 * Add content to paragraph.
-		 */
-		cy.get( 'body' ).then( ( $body ) => {
-			// WP 5.5
-			if ( $body.find( 'p[data-type="core/paragraph"]' ).length > 0 ) {
-				cy.get( 'p[data-type="core/paragraph"]' )
+		cy.insertBlock("core/paragraph", "paragraph").then((id) => {
+			cy.get( '#'+id )
 					.click()
 					.type( 'Hello world' );
-			} else {
-				cy.get( '.wp-block-paragraph' )
-					.click()
-					.type( 'Hello world' );
-			}
-		} );
+		});
 
 		/**
 		 * Open block list view.
@@ -68,6 +30,8 @@ describe( 'Insert character in post', () => {
 		cy.get( 'body' ).then( ( $body ) => {
 			if ( $body.find( '.block-editor-block-navigation' ).length > 0 ) {
 				cy.get( '.block-editor-block-navigation' ).click();
+			} else if( $body.find( '.edit-post-header-toolbar__document-overview-toggle' ) ) {
+				cy.get( '.edit-post-header-toolbar__document-overview-toggle' ).click();
 			} else {
 				cy.get( '.edit-post-header-toolbar__list-view-toggle' ).click();
 			}
