@@ -30,7 +30,7 @@ describe( 'Insert character in post', () => {
 		cy.get( 'body' ).then( ( $body ) => {
 			if ( $body.find( '.block-editor-block-navigation' ).length > 0 ) {
 				cy.get( '.block-editor-block-navigation' ).click();
-			} else if( $body.find( '.edit-post-header-toolbar__document-overview-toggle' ) ) {
+			} else if( $body.find( '.edit-post-header-toolbar__document-overview-toggle' ).length > 0 ) {
 				cy.get( '.edit-post-header-toolbar__document-overview-toggle' ).click();
 			} else {
 				cy.get( '.edit-post-header-toolbar__list-view-toggle' ).click();
