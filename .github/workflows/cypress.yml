@@ -10,7 +10,7 @@ on:
       - develop
 jobs:
   build: 
-    uses: 10up/insert-special-characters/.github/workflows/build-release-zip.yml@update/176 # TODO: Update this to develop branch.
+    uses: ./.github/workflows/build-release-zip.yml
   cypress:
     needs: build
     name: ${{ matrix.core.name }}
