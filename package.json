@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "@wordpress/components": "^22.1.0",
+    "cypress-mochawesome-reporter": "^3.4.0",
     "react-character-map": "^0.4.10"
   }
 }
