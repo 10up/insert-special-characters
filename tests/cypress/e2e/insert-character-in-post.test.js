@@ -1,4 +1,10 @@
 describe( 'Insert character in post', () => {
+	Cypress.on('uncaught:exception', (err, runnable) => {
+		if (err.message.includes('Error loading image')) {
+		  return false
+		}
+	});
+
 	before( () => {
 		cy.login();
 
@@ -16,6 +22,12 @@ describe( 'Insert character in post', () => {
 			.click();
 
 		cy.closeWelcomeGuide();
+
+		cy.insertBlock("core/paragraph", "paragraph").then((id) => {
+			cy.get( '#'+id )
+					.click()
+					.type( 'Hello world' );
+		});
 
 		/**
 		 * Open block list view.
