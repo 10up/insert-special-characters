@@ -29,6 +29,7 @@
     "@wordpress/scripts": "23.3.0",
     "cypress": "^12.8.1",
     "cypress-localstorage-commands": "^2.2.2",
+    "cypress-mochawesome-reporter": "^3.4.0",
     "husky": "^8.0.1",
     "lint-staged": "^10.0.7"
   },
