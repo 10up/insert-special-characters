@@ -17,12 +17,6 @@ describe( 'Insert character in post', () => {
 
 		cy.closeWelcomeGuide();
 
-		cy.insertBlock("core/paragraph", "paragraph").then((id) => {
-			cy.get( '#'+id )
-					.click()
-					.type( 'Hello world' );
-		});
-
 		/**
 		 * Open block list view.
 		 */
