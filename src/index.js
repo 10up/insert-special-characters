@@ -51,7 +51,8 @@ registerFormatType( type, {
 
 			// Pin the Popover to the caret position.
 			const boundingClientRect = anchorRange
-				? anchorRange.getBoundingClientRect() : null;
+				? anchorRange.getBoundingClientRect()
+				: null;
 
 			anchorRect = anchorRange ? () => boundingClientRect : null;
 			onChange( toggleFormat( value, { type } ) );
