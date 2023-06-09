@@ -18,11 +18,19 @@ describe( 'Insert character in post', () => {
 
 		cy.closeWelcomeGuide();
 
-		cy.insertBlock("core/paragraph", "paragraph").then((id) => {
-			cy.get( '#'+id )
-					.click()
-					.type( 'Hello world' );
-		});
+		cy.window().then( ( win ) => {
+			const { wp } = win;
+
+			const paraBlock = wp.blocks.createBlock( 
+				'core/paragraph',
+				{
+					content: 'Hello world'
+				}
+			);
+			
+
+			wp.data.dispatch( 'core/editor' ).insertBlocks( paraBlock );
+		} );
 
 		/**
 		 * Open block list view.
