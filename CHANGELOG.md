@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 ### Fixed
 - Maintain text formatting when inserting a character (props [@jrmd](https://github.com/jrmd), [@Sidsector9](https://github.com/Sidsector9) via [#187](https://github.com/10up/insert-special-characters/pull/187)).
 - Address failing E2E tests in WP 6.2 (props [@ggutenberg](https://github.com/ggutenberg), [@iamdharmesh](https://github.com/iamdharmesh) via [#189](https://github.com/10up/insert-special-characters/pull/189)).
+- Ensure grid positioning is correct when text is selected (props [@bmarshall511](https://github.com/bmarshall511), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#195](https://github.com/10up/insert-special-characters/pull/195)).
 
 ### Security
 - Bump `@sideway/formula` from 3.0.0 to 3.0.1 (props [@dependabot](https://github.com/apps/dependabot), [@faisal-alvi](https://github.com/faisal-alvi) via [#186](https://github.com/10up/insert-special-characters/pull/186)).
