@@ -22,6 +22,7 @@ const InsertSpecialCharactersOptions = {
 const { name, title, character } = InsertSpecialCharactersOptions;
 const type = `special-characters/${ name }`;
 let anchorRange;
+let anchorRect;
 
 /**
  * Register the "Format Type" to create the character inserter.
@@ -47,11 +48,14 @@ registerFormatType( type, {
 
 			anchorRange =
 				selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
+
+			// Pin the Popover to the caret position.
+			const boundingClientRect = anchorRange
+				? anchorRange.getBoundingClientRect()
+				: null;
+
+			anchorRect = anchorRange ? () => boundingClientRect : null;
 			onChange( toggleFormat( value, { type } ) );
-		};
-		// Pin the Popover to the caret position.
-		const anchorRect = () => {
-			return anchorRange ? anchorRange.getBoundingClientRect() : null;
 		};
 		const characters = applyFilters( `${ name }-characters`, Chars );
 		// Display the character map when it is active.
