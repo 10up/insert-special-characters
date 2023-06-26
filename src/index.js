@@ -43,8 +43,18 @@ registerFormatType( type, {
 	 */
 	edit( { isActive, value, onChange } ) {
 		const onToggle = () => {
-			// Set up the anchorRange when the Popover is opened.
-			const selection = document.defaultView.getSelection();
+			let theDocument;
+
+			// Needs review, this feels 'dirty', gotta be a better way to check for & select the FSE iframe.
+			const fseIframe = document.getElementsByName('editor-canvas')[0];
+			if ( fseIframe ) {
+				theDocument = fseIframe.contentDocument ||  fseIframe.contentWindow.document;
+			} else {
+				// FSE not avaiable, use the current document.
+				theDocument = document.defaultView;
+			}
+
+			const selection = theDocument.getSelection();
 
 			anchorRange =
 				selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
