@@ -41,20 +41,9 @@ registerFormatType( type, {
 	 * @param {boolean}  props.value    State of popover.
 	 * @param {Function} props.onChange Event handler to detect range selection.
 	 */
-	edit( { isActive, value, onChange } ) {
+	edit( { isActive, value, onChange, contentRef } ) {
 		const onToggle = () => {
-			let theDocument;
-
-			// Needs review, this feels 'dirty', gotta be a better way to check for & select the FSE iframe.
-			const fseIframe = document.getElementsByName('editor-canvas')[0];
-			if ( fseIframe ) {
-				theDocument = fseIframe.contentDocument ||  fseIframe.contentWindow.document;
-			} else {
-				// FSE not avaiable, use the current document.
-				theDocument = document.defaultView;
-			}
-
-			const selection = theDocument.getSelection();
+			const selection = contentRef.current.ownerDocument.getSelection();
 
 			anchorRange =
 				selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
