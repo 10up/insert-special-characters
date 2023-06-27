@@ -21,6 +21,8 @@ All notable changes to this project will be documented in this file, per [the Ke
 ### Security
 - Bump `@sideway/formula` from 3.0.0 to 3.0.1 (props [@dependabot](https://github.com/apps/dependabot), [@faisal-alvi](https://github.com/faisal-alvi) via [#186](https://github.com/10up/insert-special-characters/pull/186)).
 - Bump `webpack` from 5.75.0 to 5.76.1 (props [@dependabot](https://github.com/apps/dependabot), [@faisal-alvi](https://github.com/faisal-alvi) via [#188](https://github.com/10up/insert-special-characters/pull/188)).
+- Bump `simple-git` from 3.15.1 to 3.19.1 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#200](https://github.com/10up/insert-special-characters/pull/200)).
+- Bump `ua-parser-js` from 0.7.32 to 0.7.35 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#201](https://github.com/10up/insert-special-characters/pull/201)).
 
 ## [1.0.6] - 2023-02-07
 **Note that this release bumps the WordPress minimum from 5.7 to 6.1. and minimum PHP version from 5.6 to 7.4**
