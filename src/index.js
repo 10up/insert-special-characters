@@ -82,17 +82,22 @@ registerFormatType( type, {
 						( char ) => {
 							const newValue = {
 								...value,
-								// duplicate the format at the value start to ensure the
-								// formats array is the correct size and formatted correctly.
-								formats: value.formats.splice(
-									value.start,
-									0,
-									value.formats.at( value.start )
-								),
+								// grab the format at the start position,
+								// if it is undefined then use an empty array.
+								formats: value.formats.at( value.start )
+									? [ value.formats.at( value.start ) ]
+									: [],
 								text: char.char,
 							};
 
-							onChange( insert( value, newValue ) );
+							onChange(
+								insert(
+									value,
+									newValue,
+									newValue.start,
+									newValue.end
+								)
+							);
 						}
 					}
 					categoryNames={ {
