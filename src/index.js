@@ -1,9 +1,14 @@
 import { registerFormatType, toggleFormat, insert } from '@wordpress/rich-text';
-import { Fragment } from '@wordpress/element';
-import { BlockControls, RichTextShortcut } from '@wordpress/block-editor';
+import { Fragment, useEffect, useState } from '@wordpress/element';
+import {
+	BlockControls,
+	RichTextShortcut,
+	store as blockEditorStore
+} from '@wordpress/block-editor';
 import { Popover, ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
 import { displayShortcut } from '@wordpress/keycodes';
+import { select, useSelect, dispatch, createReduxStore, register } from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 
 import { CharacterMap } from 'react-character-map';
@@ -24,6 +29,55 @@ const type = `special-characters/${ name }`;
 let anchorRange;
 let anchorRect;
 
+const DEFAULT_STATE = {
+	clientId: '',
+	originalContent: '',
+};
+
+const caretDataStore = createReduxStore( 'caret-data-store', {
+	reducer( state = DEFAULT_STATE, action ) {
+		switch ( action.type ) {
+			case 'SET_CLIENT_ID':
+				return {
+					...state,
+					clientId: action.clientId,
+				};
+
+			case 'SET_ORIGINAL_CONTENT':
+				return {
+					...state,
+					originalContent: action.originalContent,
+				};
+		}
+
+		return state;
+	},
+	actions: {
+		setClientId( clientId ) {
+			return {
+				type: 'SET_CLIENT_ID',
+				clientId,
+			};
+		},
+		setOriginalContent( originalContent ) {
+			return {
+				type: 'SET_ORIGINAL_CONTENT',
+				originalContent,
+			};
+		},
+	},
+	selectors: {
+		getClientId( state ) {
+			return state.clientId;
+		},
+		getOriginalContent( state ) {
+			return state.originalContent;
+		},
+	},
+} );
+
+register( caretDataStore );
+
 /**
  * Register the "Format Type" to create the character inserter.
  */
@@ -43,6 +97,52 @@ registerFormatType( type, {
 	 * @param {HTMLElement} props.contentRef The editable element.
 	 */
 	edit( { isActive, value, onChange, contentRef } ) {
+		const [ inActiveBySelection, setInactiveBySelection ] = useState( false );
+		const { start, end, selectedBlock } = useSelect( ( select ) => {
+			const start = select( blockEditorStore ).getSelectionStart();
+			const end = select( blockEditorStore ).getSelectionEnd();
+			const selectedBlock = select( blockEditorStore ).getSelectedBlock();
+
+			return {
+				start: start.offset,
+				end: end.offset,
+				selectedBlock,
+			}
+		} );
+
+		useEffect( () => {
+			const content = selectedBlock.attributes.content;
+			dispatch( caretDataStore ).setClientId( selectedBlock.clientId );
+			dispatch( caretDataStore ).setOriginalContent( content );
+			const preBreak = content.substring( 0, start );
+			const postBreak = content.substring( start );
+			const postBreakFirstChar = postBreak.substring( 0, 1 );
+			const postBreakWithoutFirstChar = postBreak.substring( 1 );
+			const charWrapper = `<span class="insert-special-character__faux-caret">${ postBreakFirstChar }</span>`;
+			const finalContent = preBreak + charWrapper + postBreakWithoutFirstChar;
+
+			if ( ( isActive || inActiveBySelection ) && start - end === 0 ) {
+				contentRef.current.innerHTML = finalContent;
+			}
+
+			return () => {
+				const storedClientId = select( caretDataStore ).getClientId();
+
+				if ( selectedBlock.clientId !== storedClientId ) {
+					return;
+				}
+
+				const backupUpContent = select( caretDataStore ).getOriginalContent();
+
+				if ( backupUpContent ) {
+					if ( inActiveBySelection ) {
+					}
+					contentRef.current.innerHTML = backupUpContent;
+					dispatch( caretDataStore ).setOriginalContent( '' );
+				}
+			}
+		}, [ isActive, inActiveBySelection ] );
+
 		const onToggle = () => {
 			const selection = contentRef.current.ownerDocument.getSelection();
 
@@ -89,6 +189,8 @@ registerFormatType( type, {
 									: [],
 								text: char.char,
 							};
+
+							setInactiveBySelection( true );
 
 							onChange(
 								insert(
