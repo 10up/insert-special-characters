@@ -22,6 +22,7 @@ const InsertSpecialCharactersOptions = {
 const { name, title, character } = InsertSpecialCharactersOptions;
 const type = `special-characters/${ name }`;
 let anchorRange;
+let anchorRect;
 
 /**
  * Register the "Format Type" to create the character inserter.
@@ -35,23 +36,26 @@ registerFormatType( type, {
 	/**
 	 * The `edit` function is called when the Character Map is selected.
 	 *
-	 * @param {Object}   props          Props object.
-	 * @param {boolean}  props.isActive State of popover.
-	 * @param {boolean}  props.value    State of popover.
-	 * @param {Function} props.onChange Event handler to detect range selection.
+	 * @param {Object}      props            Props object.
+	 * @param {boolean}     props.isActive   State of popover.
+	 * @param {boolean}     props.value      State of popover.
+	 * @param {Function}    props.onChange   Event handler to detect range selection.
+	 * @param {HTMLElement} props.contentRef The editable element.
 	 */
-	edit( { isActive, value, onChange } ) {
+	edit( { isActive, value, onChange, contentRef } ) {
 		const onToggle = () => {
-			// Set up the anchorRange when the Popover is opened.
-			const selection = document.defaultView.getSelection();
+			const selection = contentRef.current.ownerDocument.getSelection();
 
 			anchorRange =
 				selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
+
+			// Pin the Popover to the caret position.
+			const boundingClientRect = anchorRange
+				? anchorRange.getBoundingClientRect()
+				: null;
+
+			anchorRect = anchorRange ? () => boundingClientRect : null;
 			onChange( toggleFormat( value, { type } ) );
-		};
-		// Pin the Popover to the caret position.
-		const anchorRect = () => {
-			return anchorRange ? anchorRange.getBoundingClientRect() : null;
 		};
 		const characters = applyFilters( `${ name }-characters`, Chars );
 		// Display the character map when it is active.
@@ -78,17 +82,22 @@ registerFormatType( type, {
 						( char ) => {
 							const newValue = {
 								...value,
-								// duplicate the format at the value start to ensure the
-								// formats array is the correct size and formatted correctly.
-								formats: value.formats.splice(
-									value.start,
-									0,
-									value.formats.at( value.start )
-								),
+								// grab the format at the start position,
+								// if it is undefined then use an empty array.
+								formats: value.formats.at( value.start )
+									? [ value.formats.at( value.start ) ]
+									: [],
 								text: char.char,
 							};
 
-							onChange( insert( value, newValue ) );
+							onChange(
+								insert(
+									value,
+									newValue,
+									newValue.start,
+									newValue.end
+								)
+							);
 						}
 					}
 					categoryNames={ {
