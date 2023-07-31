@@ -3,12 +3,18 @@ import { Fragment, useEffect, useState } from '@wordpress/element';
 import {
 	BlockControls,
 	RichTextShortcut,
-	store as blockEditorStore
+	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import { Popover, ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
 import { displayShortcut } from '@wordpress/keycodes';
-import { select, useSelect, dispatch, createReduxStore, register } from '@wordpress/data';
+import {
+	select,
+	useSelect,
+	dispatch,
+	createReduxStore,
+	register,
+} from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 
 import { CharacterMap } from 'react-character-map';
@@ -97,17 +103,14 @@ registerFormatType( type, {
 	 * @param {HTMLElement} props.contentRef The editable element.
 	 */
 	edit( { isActive, value, onChange, contentRef } ) {
-		const [ inActiveBySelection, setInactiveBySelection ] = useState( false );
-		const { start, end, selectedBlock } = useSelect( ( select ) => {
-			const start = select( blockEditorStore ).getSelectionStart();
-			const end = select( blockEditorStore ).getSelectionEnd();
-			const selectedBlock = select( blockEditorStore ).getSelectedBlock();
-
+		const [ inActiveBySelection, setInactiveBySelection ] =
+			useState( false );
+		const { start, end, selectedBlock } = useSelect( ( __select ) => {
 			return {
-				start: start.offset,
-				end: end.offset,
-				selectedBlock,
-			}
+				start: __select( blockEditorStore ).getSelectionStart().offset,
+				end: __select( blockEditorStore ).getSelectionEnd().offset,
+				selectedBlock: __select( blockEditorStore ).getSelectedBlock(),
+			};
 		} );
 
 		useEffect( () => {
@@ -119,7 +122,8 @@ registerFormatType( type, {
 			const postBreakFirstChar = postBreak.substring( 0, 1 );
 			const postBreakWithoutFirstChar = postBreak.substring( 1 );
 			const charWrapper = `<span class="insert-special-character__faux-caret">${ postBreakFirstChar }</span>`;
-			const finalContent = preBreak + charWrapper + postBreakWithoutFirstChar;
+			const finalContent =
+				preBreak + charWrapper + postBreakWithoutFirstChar;
 
 			if ( ( isActive || inActiveBySelection ) && start - end === 0 ) {
 				contentRef.current.innerHTML = finalContent;
@@ -132,7 +136,8 @@ registerFormatType( type, {
 					return;
 				}
 
-				const backupUpContent = select( caretDataStore ).getOriginalContent();
+				const backupUpContent =
+					select( caretDataStore ).getOriginalContent();
 
 				if ( backupUpContent ) {
 					if ( inActiveBySelection ) {
@@ -140,7 +145,7 @@ registerFormatType( type, {
 					contentRef.current.innerHTML = backupUpContent;
 					dispatch( caretDataStore ).setOriginalContent( '' );
 				}
-			}
+			};
 		}, [ isActive, inActiveBySelection ] );
 
 		const onToggle = () => {
