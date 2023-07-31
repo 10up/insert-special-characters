@@ -102,7 +102,7 @@ registerFormatType( type, {
 	 * @param {Function}    props.onChange   Event handler to detect range selection.
 	 * @param {HTMLElement} props.contentRef The editable element.
 	 */
-	edit( { isActive, value, onChange, contentRef } ) {
+	edit: function Edit( { isActive, value, onChange, contentRef } ) {
 		const [ inActiveBySelection, setInactiveBySelection ] =
 			useState( false );
 		const { start, end, selectedBlock } = useSelect( ( __select ) => {
