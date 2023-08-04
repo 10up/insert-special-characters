@@ -127,10 +127,13 @@ registerFormatType( type, {
 				const postBreak = content.substring( start );
 				const postBreakFirstChar = postBreak.substring( 0, 1 );
 				const postBreakWithoutFirstChar = postBreak.substring( 1 );
-				contentRef.current.innerHTML =
-					preBreak +
-					`<span class="insert-special-character__faux-caret">${ postBreakFirstChar }</span>` +
-					postBreakWithoutFirstChar;
+
+				if ( contentRef && contentRef.current ) {
+					contentRef.current.innerHTML =
+						preBreak +
+						`<span class="insert-special-character__faux-caret">${ postBreakFirstChar }</span>` +
+						postBreakWithoutFirstChar;
+				}
 			} else if (
 				( isActive || inActiveBySelection ) &&
 				end - start > 0
@@ -139,10 +142,13 @@ registerFormatType( type, {
 				const selectedText = content.substring( start, end );
 				const preSelectText = content.substring( 0, start );
 				const postSelectText = content.substring( end );
-				contentRef.current.innerHTML =
-					preSelectText +
-					`<span class="insert-special-character__faux-selection">${ selectedText }</span>` +
-					postSelectText;
+
+				if ( contentRef && contentRef.current ) {
+					contentRef.current.innerHTML =
+						preSelectText +
+						`<span class="insert-special-character__faux-selection">${ selectedText }</span>` +
+						postSelectText;
+				}
 			}
 
 			return () => {
