@@ -5,6 +5,10 @@ $grid-border-color: #c8c8c8;
 	animation: 1s caret-blink step-end infinite;
 }
 
+.insert-special-character__faux-selection {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
 @keyframes caret-blink {
 	from, to {
 		border-color: black;

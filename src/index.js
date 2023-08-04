@@ -114,19 +114,23 @@ registerFormatType( type, {
 		} );
 
 		useEffect( () => {
-			const content = selectedBlock.attributes.content;
+			let content = selectedBlock.attributes.content.replace( /<insertspecialcharacters>|<\/insertspecialcharacters>/g, '' );
 			dispatch( caretDataStore ).setClientId( selectedBlock.clientId );
-			dispatch( caretDataStore ).setOriginalContent( content );
+			
 			const preBreak = content.substring( 0, start );
-			const postBreak = content.substring( start );
-			const postBreakFirstChar = postBreak.substring( 0, 1 );
-			const postBreakWithoutFirstChar = postBreak.substring( 1 );
-			const charWrapper = `<span class="insert-special-character__faux-caret">${ postBreakFirstChar }</span>`;
-			const finalContent =
-				preBreak + charWrapper + postBreakWithoutFirstChar;
 
 			if ( ( isActive || inActiveBySelection ) && start - end === 0 ) {
-				contentRef.current.innerHTML = finalContent;
+				dispatch( caretDataStore ).setOriginalContent( content );
+				const postBreak = content.substring( start );
+				const postBreakFirstChar = postBreak.substring( 0, 1 );
+				const postBreakWithoutFirstChar = postBreak.substring( 1 );
+				contentRef.current.innerHTML = preBreak + `<span class="insert-special-character__faux-caret">${ postBreakFirstChar }</span>` + postBreakWithoutFirstChar;
+			} else if ( ( isActive || inActiveBySelection ) && end - start > 0 ) {
+				dispatch( caretDataStore ).setOriginalContent( content );
+				const selectedText = content.substring( start, end );
+				const preSelectText = content.substring( 0, start );
+				const postSelectText = content.substring( end );
+				contentRef.current.innerHTML = preSelectText + `<span class="insert-special-character__faux-selection">${ selectedText }</span>` + postSelectText;
 			}
 
 			return () => {
@@ -140,8 +144,6 @@ registerFormatType( type, {
 					select( caretDataStore ).getOriginalContent();
 
 				if ( backupUpContent ) {
-					if ( inActiveBySelection ) {
-					}
 					contentRef.current.innerHTML = backupUpContent;
 					dispatch( caretDataStore ).setOriginalContent( '' );
 				}
