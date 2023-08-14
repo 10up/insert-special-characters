@@ -18,6 +18,53 @@
 namespace InsertSpecialCharacters;
 
 /**
+ * Get the minimum version of PHP required by this plugin.
+ *
+ * @since 1.0.8
+ *
+ * @return string Minimum version required.
+ */
+function minimum_php_requirement(): string {
+	return '7.4';
+}
+
+/**
+ * Whether PHP installation meets the minimum requirements
+ *
+ * @since 1.0.8
+ *
+ * @return bool True if meets minimum requirements, false otherwise.
+ */
+function site_meets_php_requirements(): bool {
+	return version_compare( phpversion(), minimum_php_requirement(), '>=' );
+}
+
+// Try to load the plugin files, ensuring our PHP version is met first.
+if ( ! site_meets_php_requirements() ) {
+	add_action(
+		'admin_notices',
+		function() {
+			?>
+			<div class="notice notice-error">
+				<p>
+					<?php
+					echo wp_kses_post(
+						sprintf(
+						/* translators: %s: Minimum required PHP version */
+							__( 'Insert Special Characters requires PHP version %s or later. Please upgrade PHP or disable the plugin.', 'insert-special-characters' ),
+							esc_html( minimum_php_requirement() )
+						)
+					);
+					?>
+				</p>
+			</div>
+			<?php
+		}
+	);
+	return;
+}
+
+/**
  * Registers JS and CSS assets.
  */
 function register_assets() {
