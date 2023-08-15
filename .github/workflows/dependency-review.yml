@@ -9,6 +9,7 @@ on: [pull_request]
 
 permissions:
   contents: read
+  pull-requests: write
 
 jobs:
   dependency-review:
@@ -22,3 +23,4 @@ jobs:
           license-check: true
           vulnerability-check: false
           config-file: 10up/.github/.github/dependency-review-config.yml@trunk
+          comment-summary-in-pr: always
