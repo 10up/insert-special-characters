@@ -48,6 +48,7 @@
   "dependencies": {
     "@wordpress/components": "^22.1.0",
     "react-character-map": "^0.4.10",
-    "argparse": "2.0.1"
+    "argparse": "^2.0.1",
+    "react-chevron": "1.1.0"
   }
 }
