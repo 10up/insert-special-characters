@@ -1,7 +1,10 @@
 <?php
 /**
  * Registers JS and CSS assets.
+ *
+ * @package insert-special-characters
  */
+
 namespace InsertSpecialCharacters;
 
 /**
@@ -100,27 +103,27 @@ add_action( 'admin_init', __NAMESPACE__ . '\register_settings_fields' );
 function render_isc_writing_setting() {
 	$option = get_most_used_palette_setting();
 	?>
-    <p>
-        <label for="tenup_isc_most_read_palette">
-            <input
-                    type="checkbox"
-                    name="tenup_isc_most_read_palette"
-                    id="tenup_isc_most_read_palette"
+	<p>
+		<label for="tenup_isc_most_read_palette">
+			<input
+					type="checkbox"
+					name="tenup_isc_most_read_palette"
+					id="tenup_isc_most_read_palette"
 				<?php checked( $option, true, true ); ?>
-            >
+			>
 			<?php esc_html_e( 'Check this to enable the most used character palette.', 'insert-special-characters' ); ?>
-        </label>
-    </p>
+		</label>
+	</p>
 
 	<?php if ( $option ) : ?>
-        <p>
-            <button class="button secondary" id="isc_reset_palette" type="button" style="margin-top: 16px;">
+		<p>
+			<button class="button secondary" id="isc_reset_palette" type="button" style="margin-top: 16px;">
 				<?php esc_html_e( 'Clear palette', 'insert-special-characters' ); ?>
-            </button>
-            &nbsp;
+			</button>
+			&nbsp;
 			<?php esc_html_e( 'Press this to clear palette data.', 'insert-special-characters' ); ?>
-        </p>
-	<?php
+		</p>
+		<?php
 	endif;
 }
 

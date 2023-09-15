@@ -53,7 +53,7 @@ if ( ! site_meets_php_requirements() ) {
 					<?php
 					echo wp_kses_post(
 						sprintf(
-						    /* translators: %s: Minimum required PHP version */
+							/* translators: %s: Minimum required PHP version */
 							__( 'Insert Special Characters requires PHP version %s or later. Please upgrade PHP or disable the plugin.', 'insert-special-characters' ),
 							esc_html( minimum_php_requirement() )
 						)

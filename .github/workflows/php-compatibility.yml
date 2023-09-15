@@ -29,5 +29,8 @@ jobs:
       - name: Install dependencies
         run: composer install
 
-      - name: Run PHP Compatibility
-        run: vendor/bin/phpcs insert-special-characters.php --standard=PHPCompatibilityWP --extensions=php --runtime-set testVersion 7.4-
+      - name: Run PHP Compatibility on all files.
+        run: vendor/bin/phpcs inc --standard=PHPCompatibilityWP --extensions=php --runtime-set testVersion 7.4-
+
+      - name: Run PHP Compatibility on main file.
+        run: vendor/bin/phpcs insert-special-characters.php --standard=PHPCompatibilityWP --extensions=php --runtime-set testVersion 5.6-
