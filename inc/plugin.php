@@ -106,9 +106,9 @@ function render_isc_writing_setting() {
 	<p>
 		<label for="tenup_isc_most_read_palette">
 			<input
-					type="checkbox"
-					name="tenup_isc_most_read_palette"
-					id="tenup_isc_most_read_palette"
+				type="checkbox"
+				name="tenup_isc_most_read_palette"
+				id="tenup_isc_most_read_palette"
 				<?php checked( $option, true, true ); ?>
 			>
 			<?php esc_html_e( 'Check this to enable the most used character palette.', 'insert-special-characters' ); ?>
