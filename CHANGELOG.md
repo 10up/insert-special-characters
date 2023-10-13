@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 ### Security
 - Bump `semver` from 5.7.1 to 5.7.2 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#202](https://github.com/10up/insert-special-characters/pull/202)).
 - Bump `word-wrap` from 1.2.3 to 1.2.4 (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#206](https://github.com/10up/insert-special-characters/pull/206)).
+- Bump `@cypress/request` from 2.88.10 to 3.0.0, `cypress` from 12.8.1 to 13.3.1 and `@10up/cypress-wp-utils` from 0.1.0 to 0.2.0 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#213](https://github.com/10up/insert-special-characters/pull/213)).
 - Bump `tough-cookie` from 4.1.2 to 4.1.3 and `@cypress/request` from 2.88.10 to 2.88.12 (props [@dependabot](https://github.com/apps/dependabot), [@ravinderk](https://github.com/ravinderk) via [#214](https://github.com/10up/insert-special-characters/pull/214)).
 - Bump `postcss` from 8.4.20 to 8.4.31 (props [@dependabot](https://github.com/apps/dependabot), [@faisal-alvi](https://github.com/faisal-alvi) via [#216](https://github.com/10up/insert-special-characters/pull/216)).
 
