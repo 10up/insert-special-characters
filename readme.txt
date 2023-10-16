@@ -1,7 +1,7 @@
 === Insert Special Characters ===
 Contributors:      10up, adamsilverstein, johnwatkins0, jeffpaul
 Tags:              Special Characters, Character Map, Omega, Gutenberg, Block, block editor
-Stable tag:        1.0.7
+Stable tag:        1.1.0
 Requires at least: 6.1
 Tested up to:      6.3
 Requires PHP:      7.4
@@ -74,6 +74,17 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 5. Resulting inserted special character (note focus on special character, rest of window has been blurred).
 
 == Changelog ==
+
+= 1.1.0 - 2023-10-16 =
+* **Added:** Show a faux cursor to preserve context (props [@Sidsector9](https://github.com/Sidsector9), [@helen](https://github.com/helen), [@ravinderk](https://github.com/ravinderk) via [#207](https://github.com/10up/insert-special-characters/pull/207)).
+* **Added:** Check for minimum required PHP version before loading the plugin (props [@kmgalanakis](https://github.com/kmgalanakis), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#210](https://github.com/10up/insert-special-characters/pull/210)).
+* **Changed:** Bump WordPress "tested up to" version to 6.3 (props [@kmgalanakis](https://github.com/kmgalanakis), [@jeffpaul](https://github.com/jeffpaul), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#212](https://github.com/10up/insert-special-characters/pull/212), [#215](https://github.com/10up/insert-special-characters/pull/215)).
+* **Fixed:** Ensure that when highlighting a special character, the block doesn't crash (props [@jrmd](https://github.com/jrmd), [@dkotter](https://github.com/dkotter) via [#204](https://github.com/10up/insert-special-characters/pull/204)).
+* **Security:** Bump `semver` from 5.7.1 to 5.7.2 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#202](https://github.com/10up/insert-special-characters/pull/202)).
+* **Security:** Bump `word-wrap` from 1.2.3 to 1.2.4 (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#206](https://github.com/10up/insert-special-characters/pull/206)).
+* **Security:** Bump `@cypress/request` from 2.88.10 to 3.0.0, `cypress` from 12.8.1 to 13.3.1 and `@10up/cypress-wp-utils` from 0.1.0 to 0.2.0 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#213](https://github.com/10up/insert-special-characters/pull/213)).
+* **Security:** Bump `tough-cookie` from 4.1.2 to 4.1.3 and `@cypress/request` from 2.88.10 to 2.88.12 (props [@dependabot](https://github.com/apps/dependabot), [@ravinderk](https://github.com/ravinderk) via [#214](https://github.com/10up/insert-special-characters/pull/214)).
+* **Security:** Bump `postcss` from 8.4.20 to 8.4.31 (props [@dependabot](https://github.com/apps/dependabot), [@faisal-alvi](https://github.com/faisal-alvi) via [#216](https://github.com/10up/insert-special-characters/pull/216)).
 
 = 1.0.7 - 2023-06-28 =
 * **Added:** Mochawesome reporter added for Cypress test report (props [@jayedul](https://github.com/jayedul), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#194](https://github.com/10up/insert-special-characters/pull/194)).

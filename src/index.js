@@ -1,9 +1,20 @@
 import { registerFormatType, toggleFormat, insert } from '@wordpress/rich-text';
-import { Fragment } from '@wordpress/element';
-import { BlockControls, RichTextShortcut } from '@wordpress/block-editor';
+import { Fragment, useEffect, useState } from '@wordpress/element';
+import {
+	BlockControls,
+	RichTextShortcut,
+	store as blockEditorStore,
+} from '@wordpress/block-editor';
 import { Popover, ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
 import { displayShortcut } from '@wordpress/keycodes';
+import {
+	select,
+	useSelect,
+	dispatch,
+	createReduxStore,
+	register,
+} from '@wordpress/data';
 import { __ } from '@wordpress/i18n';
 
 import { CharacterMap } from 'react-character-map';
@@ -24,6 +35,55 @@ const type = `special-characters/${ name }`;
 let anchorRange;
 let anchorRect;
 
+const DEFAULT_STATE = {
+	clientId: '',
+	originalContent: '',
+};
+
+const caretDataStore = createReduxStore( 'caret-data-store', {
+	reducer( state = DEFAULT_STATE, action ) {
+		switch ( action.type ) {
+			case 'SET_CLIENT_ID':
+				return {
+					...state,
+					clientId: action.clientId,
+				};
+
+			case 'SET_ORIGINAL_CONTENT':
+				return {
+					...state,
+					originalContent: action.originalContent,
+				};
+		}
+
+		return state;
+	},
+	actions: {
+		setClientId( clientId ) {
+			return {
+				type: 'SET_CLIENT_ID',
+				clientId,
+			};
+		},
+		setOriginalContent( originalContent ) {
+			return {
+				type: 'SET_ORIGINAL_CONTENT',
+				originalContent,
+			};
+		},
+	},
+	selectors: {
+		getClientId( state ) {
+			return state.clientId;
+		},
+		getOriginalContent( state ) {
+			return state.originalContent;
+		},
+	},
+} );
+
+register( caretDataStore );
+
 /**
  * Register the "Format Type" to create the character inserter.
  */
@@ -42,7 +102,72 @@ registerFormatType( type, {
 	 * @param {Function}    props.onChange   Event handler to detect range selection.
 	 * @param {HTMLElement} props.contentRef The editable element.
 	 */
-	edit( { isActive, value, onChange, contentRef } ) {
+	edit: function Edit( { isActive, value, onChange, contentRef } ) {
+		const [ inActiveBySelection, setInactiveBySelection ] =
+			useState( false );
+		const { start, end, selectedBlock } = useSelect( ( __select ) => {
+			return {
+				start: __select( blockEditorStore ).getSelectionStart().offset,
+				end: __select( blockEditorStore ).getSelectionEnd().offset,
+				selectedBlock: __select( blockEditorStore ).getSelectedBlock(),
+			};
+		} );
+
+		useEffect( () => {
+			const content = selectedBlock.attributes.content.replace(
+				/<insertspecialcharacters>|<\/insertspecialcharacters>/g,
+				''
+			);
+			dispatch( caretDataStore ).setClientId( selectedBlock.clientId );
+
+			const preBreak = content.substring( 0, start );
+
+			if ( ( isActive || inActiveBySelection ) && start - end === 0 ) {
+				dispatch( caretDataStore ).setOriginalContent( content );
+				const postBreak = content.substring( start );
+				const postBreakFirstChar = postBreak.substring( 0, 1 );
+				const postBreakWithoutFirstChar = postBreak.substring( 1 );
+
+				if ( contentRef && contentRef.current ) {
+					contentRef.current.innerHTML =
+						preBreak +
+						`<span class="insert-special-character__faux-caret">${ postBreakFirstChar }</span>` +
+						postBreakWithoutFirstChar;
+				}
+			} else if (
+				( isActive || inActiveBySelection ) &&
+				end - start > 0
+			) {
+				dispatch( caretDataStore ).setOriginalContent( content );
+				const selectedText = content.substring( start, end );
+				const preSelectText = content.substring( 0, start );
+				const postSelectText = content.substring( end );
+
+				if ( contentRef && contentRef.current ) {
+					contentRef.current.innerHTML =
+						preSelectText +
+						`<span class="insert-special-character__faux-selection">${ selectedText }</span>` +
+						postSelectText;
+				}
+			}
+
+			return () => {
+				const storedClientId = select( caretDataStore ).getClientId();
+
+				if ( selectedBlock.clientId !== storedClientId ) {
+					return;
+				}
+
+				const backupUpContent =
+					select( caretDataStore ).getOriginalContent();
+
+				if ( backupUpContent ) {
+					contentRef.current.innerHTML = backupUpContent;
+					dispatch( caretDataStore ).setOriginalContent( '' );
+				}
+			};
+		}, [ isActive, inActiveBySelection ] );
+
 		const onToggle = () => {
 			const selection = contentRef.current.ownerDocument.getSelection();
 
@@ -82,17 +207,24 @@ registerFormatType( type, {
 						( char ) => {
 							const newValue = {
 								...value,
-								// duplicate the format at the value start to ensure the
-								// formats array is the correct size and formatted correctly.
-								formats: value.formats.splice(
-									value.start,
-									0,
-									value.formats.at( value.start )
-								),
+								// grab the format at the start position,
+								// if it is undefined then use an empty array.
+								formats: value.formats.at( value.start )
+									? [ value.formats.at( value.start ) ]
+									: [],
 								text: char.char,
 							};
 
-							onChange( insert( value, newValue ) );
+							setInactiveBySelection( true );
+
+							onChange(
+								insert(
+									value,
+									newValue,
+									newValue.start,
+									newValue.end
+								)
+							);
 						}
 					}
 					categoryNames={ {

@@ -21,7 +21,7 @@ describe( 'Insert character in post', () => {
 		cy.window().then( ( win ) => {
 			const { wp } = win;
 
-			const paraBlock = wp.blocks.createBlock( 
+			const paraBlock = wp.blocks.createBlock(
 				'core/paragraph',
 				{
 					content: 'Hello world'
