@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [1.1.1] - 2023-10-17
+### Fixed
+- Address an issue where some blocks would crash due to a missing attribute (props [@dkotter](https://github.com/dkotter) via [#221](https://github.com/10up/insert-special-characters/pull/221)).
+
+### Security
+- Bump `@babel/traverse` from 7.20.5 to 7.23.2 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#219](https://github.com/10up/insert-special-characters/pull/219)).
+
 ## [1.1.0] - 2023-10-16
 ### Added
 - Show a faux cursor to preserve context (props [@Sidsector9](https://github.com/Sidsector9), [@helen](https://github.com/helen), [@ravinderk](https://github.com/ravinderk) via [#207](https://github.com/10up/insert-special-characters/pull/207)).
@@ -168,6 +175,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Plugin header and icon images (props [@McCallumDillon](https://github.com/McCallumDillon) via [#28](https://github.com/10up/insert-special-characters/pull/28))
 
 [Unreleased]: https://github.com/10up/insert-special-characters/compare/trunk...develop
+[1.1.1]: https://github.com/10up/insert-special-characters/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/10up/insert-special-characters/compare/1.0.7...1.1.0
 [1.0.7]: https://github.com/10up/insert-special-characters/compare/1.0.6...1.0.7
 [1.0.6]: https://github.com/10up/insert-special-characters/compare/1.0.5...1.0.6
