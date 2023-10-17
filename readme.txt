@@ -75,6 +75,10 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 
 == Changelog ==
 
+= 1.1.1 - 2023-10-17 =
+* **Fixed:** Address an issue where some blocks would crash due to a missing attribute (props [@dkotter](https://github.com/dkotter) via [#221](https://github.com/10up/insert-special-characters/pull/221)).
+* **Security:** Bump `@babel/traverse` from 7.20.5 to 7.23.2 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#219](https://github.com/10up/insert-special-characters/pull/219)).
+
 = 1.1.0 - 2023-10-16 =
 * **Added:** Show a faux cursor to preserve context (props [@Sidsector9](https://github.com/Sidsector9), [@helen](https://github.com/helen), [@ravinderk](https://github.com/ravinderk) via [#207](https://github.com/10up/insert-special-characters/pull/207)).
 * **Added:** Check for minimum required PHP version before loading the plugin (props [@kmgalanakis](https://github.com/kmgalanakis), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#210](https://github.com/10up/insert-special-characters/pull/210)).
