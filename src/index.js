@@ -114,10 +114,15 @@ registerFormatType( type, {
 		} );
 
 		useEffect( () => {
-			const content = selectedBlock.attributes.content.replace(
+			const content = selectedBlock.attributes?.content?.replace(
 				/<insertspecialcharacters>|<\/insertspecialcharacters>/g,
 				''
 			);
+
+			if ( ! content ) {
+				return;
+			}
+
 			dispatch( caretDataStore ).setClientId( selectedBlock.clientId );
 
 			const preBreak = content.substring( 0, start );
