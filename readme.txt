@@ -1,7 +1,7 @@
 === Insert Special Characters ===
 Contributors:      10up, adamsilverstein, johnwatkins0, jeffpaul
 Tags:              Special Characters, Character Map, Omega, Gutenberg, Block, block editor
-Stable tag:        1.1.0
+Stable tag:        1.1.1
 Requires at least: 6.1
 Tested up to:      6.3
 Requires PHP:      7.4
@@ -74,6 +74,10 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 5. Resulting inserted special character (note focus on special character, rest of window has been blurred).
 
 == Changelog ==
+
+= 1.1.1 - 2023-10-17 =
+* **Fixed:** Address an issue where some blocks would crash due to a missing attribute (props [@dkotter](https://github.com/dkotter) via [#221](https://github.com/10up/insert-special-characters/pull/221)).
+* **Security:** Bump `@babel/traverse` from 7.20.5 to 7.23.2 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#219](https://github.com/10up/insert-special-characters/pull/219)).
 
 = 1.1.0 - 2023-10-16 =
 * **Added:** Show a faux cursor to preserve context (props [@Sidsector9](https://github.com/Sidsector9), [@helen](https://github.com/helen), [@ravinderk](https://github.com/ravinderk) via [#207](https://github.com/10up/insert-special-characters/pull/207)).
