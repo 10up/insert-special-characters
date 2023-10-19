@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [1.1.1] - 2023-10-17
+### Fixed
+- Address an issue where some blocks would crash due to a missing attribute (props [@dkotter](https://github.com/dkotter) via [#221](https://github.com/10up/insert-special-characters/pull/221)).
+
+### Security
+- Bump `@babel/traverse` from 7.20.5 to 7.23.2 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#219](https://github.com/10up/insert-special-characters/pull/219)).
+
+## [1.1.0] - 2023-10-16
+### Added
+- Show a faux cursor to preserve context (props [@Sidsector9](https://github.com/Sidsector9), [@helen](https://github.com/helen), [@ravinderk](https://github.com/ravinderk) via [#207](https://github.com/10up/insert-special-characters/pull/207)).
+- Check for minimum required PHP version before loading the plugin (props [@kmgalanakis](https://github.com/kmgalanakis), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#210](https://github.com/10up/insert-special-characters/pull/210)).
+
+### Changed
+- Bump WordPress "tested up to" version to 6.3 (props [@kmgalanakis](https://github.com/kmgalanakis), [@jeffpaul](https://github.com/jeffpaul), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#212](https://github.com/10up/insert-special-characters/pull/212), [#215](https://github.com/10up/insert-special-characters/pull/215)).
+
+### Fixed
+- Ensure that when highlighting a special character, the block doesn't crash (props [@jrmd](https://github.com/jrmd), [@dkotter](https://github.com/dkotter) via [#204](https://github.com/10up/insert-special-characters/pull/204)).
+
+### Security
+- Bump `semver` from 5.7.1 to 5.7.2 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#202](https://github.com/10up/insert-special-characters/pull/202)).
+- Bump `word-wrap` from 1.2.3 to 1.2.4 (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#206](https://github.com/10up/insert-special-characters/pull/206)).
+- Bump `@cypress/request` from 2.88.10 to 3.0.0, `cypress` from 12.8.1 to 13.3.1 and `@10up/cypress-wp-utils` from 0.1.0 to 0.2.0 (props [@dependabot](https://github.com/apps/dependabot), [@dkotter](https://github.com/dkotter) via [#213](https://github.com/10up/insert-special-characters/pull/213)).
+- Bump `tough-cookie` from 4.1.2 to 4.1.3 and `@cypress/request` from 2.88.10 to 2.88.12 (props [@dependabot](https://github.com/apps/dependabot), [@ravinderk](https://github.com/ravinderk) via [#214](https://github.com/10up/insert-special-characters/pull/214)).
+- Bump `postcss` from 8.4.20 to 8.4.31 (props [@dependabot](https://github.com/apps/dependabot), [@faisal-alvi](https://github.com/faisal-alvi) via [#216](https://github.com/10up/insert-special-characters/pull/216)).
+
 ## [1.0.7] - 2023-06-28
 ### Added
 - Mochawesome reporter added for Cypress test report (props [@jayedul](https://github.com/jayedul), [@peterwilsoncc](https://github.com/peterwilsoncc) via [#194](https://github.com/10up/insert-special-characters/pull/194)).
@@ -150,6 +175,8 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Plugin header and icon images (props [@McCallumDillon](https://github.com/McCallumDillon) via [#28](https://github.com/10up/insert-special-characters/pull/28))
 
 [Unreleased]: https://github.com/10up/insert-special-characters/compare/trunk...develop
+[1.1.1]: https://github.com/10up/insert-special-characters/compare/1.1.0...1.1.1
+[1.1.0]: https://github.com/10up/insert-special-characters/compare/1.0.7...1.1.0
 [1.0.7]: https://github.com/10up/insert-special-characters/compare/1.0.6...1.0.7
 [1.0.6]: https://github.com/10up/insert-special-characters/compare/1.0.5...1.0.6
 [1.0.5]: https://github.com/10up/insert-special-characters/compare/1.0.4...1.0.5
