@@ -1,5 +1,5 @@
-import { registerFormatType, toggleFormat, insert } from '@wordpress/rich-text';
-import { Fragment } from '@wordpress/element';
+import { registerFormatType, create, insert } from '@wordpress/rich-text';
+import { Fragment, useState, useRef } from '@wordpress/element';
 import { BlockControls, RichTextShortcut } from '@wordpress/block-editor';
 import { Popover, ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
@@ -21,7 +21,6 @@ const InsertSpecialCharactersOptions = {
 
 const { name, title, character } = InsertSpecialCharactersOptions;
 const type = `special-characters/${ name }`;
-let anchorRange;
 let anchorRect;
 
 /**
@@ -37,29 +36,34 @@ registerFormatType( type, {
 	 * The `edit` function is called when the Character Map is selected.
 	 *
 	 * @param {Object}      props            Props object.
-	 * @param {boolean}     props.isActive   State of popover.
 	 * @param {boolean}     props.value      State of popover.
 	 * @param {Function}    props.onChange   Event handler to detect range selection.
-	 * @param {HTMLElement} props.contentRef The editable element.
 	 */
-	edit( { isActive, value, onChange, contentRef } ) {
-		const onToggle = () => {
-			const selection = contentRef.current.ownerDocument.getSelection();
+	edit( { value, onChange } ) {
+		const [ isPopoverActive, setIsPopoverActive ] = useState( false );
+		const popoverRef = useRef( null );
+		const { start, end } = value;
 
-			anchorRange =
-				selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
+		function insertCharacter( character ) {
+			const richTextCharacter = create( {
+				text: character,
+			} );
 
-			// Pin the Popover to the caret position.
-			const boundingClientRect = anchorRange
-				? anchorRange.getBoundingClientRect()
-				: null;
+			richTextCharacter.formats = [ value.formats.at( start ) ];
 
-			anchorRect = anchorRange ? () => boundingClientRect : null;
-			onChange( toggleFormat( value, { type } ) );
-		};
+			const modified = insert(
+				value,
+				richTextCharacter,
+				start,
+				end
+			);
+
+			onChange( modified );
+		}
+
 		const characters = applyFilters( `${ name }-characters`, Chars );
 		// Display the character map when it is active.
-		const specialCharsPopover = isActive && (
+		const specialCharsPopover = isPopoverActive && (
 			<Popover
 				className="character-map-popover"
 				placement="bottom-start"
@@ -71,33 +75,15 @@ registerFormatType( type, {
 					'Insert Special Character',
 					'insert-special-characters'
 				) }
-				onClose={ () => {
-					onChange( toggleFormat( value, { type } ) );
-				} }
+				ref={ popoverRef }
 			>
 				<CharacterMap
 					characterData={ characters }
 					onSelect={
 						// Insert the selected character and close the popover.
-						( char ) => {
-							const newValue = {
-								...value,
-								// grab the format at the start position,
-								// if it is undefined then use an empty array.
-								formats: value.formats.at( value.start )
-									? [ value.formats.at( value.start ) ]
-									: [],
-								text: char.char,
-							};
-
-							onChange(
-								insert(
-									value,
-									newValue,
-									newValue.start,
-									newValue.end
-								)
-							);
+						( obj ) => {
+							insertCharacter( obj.char );
+							setIsPopoverActive( false );
 						}
 					}
 					categoryNames={ {
@@ -142,9 +128,9 @@ registerFormatType( type, {
 						<ToolbarButton
 							className={ `toolbar-button-with-text toolbar-button__advanced-${ name }` }
 							icon="editor-customchar"
-							isPressed={ isActive }
+							isPressed={ isPopoverActive }
 							label={ title }
-							onClick={ onToggle }
+							onClick={ () => setIsPopoverActive( ! isPopoverActive ) }
 							shortcut={ displayShortcut.primary( character ) }
 						/>
 					</ToolbarGroup>
@@ -153,7 +139,7 @@ registerFormatType( type, {
 					<RichTextShortcut
 						type="primary"
 						character={ character }
-						onUse={ onToggle }
+						onUse={ () => setIsPopoverActive( ! isPopoverActive ) }
 					/>
 				</Fragment>
 				{ specialCharsPopover }
