@@ -1,5 +1,5 @@
 import { registerFormatType, create, insert } from '@wordpress/rich-text';
-import { Fragment, useState, useRef } from '@wordpress/element';
+import { Fragment, useState, useRef, useEffect, useMemo } from '@wordpress/element';
 import { BlockControls, RichTextShortcut } from '@wordpress/block-editor';
 import { Popover, ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
@@ -21,7 +21,6 @@ const InsertSpecialCharactersOptions = {
 
 const { name, title, character } = InsertSpecialCharactersOptions;
 const type = `special-characters/${ name }`;
-let anchorRect;
 
 /**
  * Register the "Format Type" to create the character inserter.
@@ -38,8 +37,9 @@ registerFormatType( type, {
 	 * @param {Object}      props            Props object.
 	 * @param {boolean}     props.value      State of popover.
 	 * @param {Function}    props.onChange   Event handler to detect range selection.
+	 * @param {HTMLElement} props.contentRef The editable element.
 	 */
-	edit( { value, onChange } ) {
+	edit( { value, onChange, contentRef } ) {
 		const [ isPopoverActive, setIsPopoverActive ] = useState( false );
 		const popoverRef = useRef( null );
 		const { start, end } = value;
@@ -61,6 +61,72 @@ registerFormatType( type, {
 			onChange( modified );
 		}
 
+		/**
+		 * Find the text node and its offset within the provided element based on an index.
+		 *
+		 * @param {Node} node The root node to search for the index.
+		 * @param {number} index The index within the text content.
+		 * @returns {Array|null} An array containing the text node and its offset, or null if not found.
+		 */
+		function findTextNodeAtIndex( node, index ) {
+			let currentOffset = 0;
+
+			/**
+			 * Recursively traverse DOM to find the text node and offset.
+			 *
+			 * @param {Node} node The current node.
+			 * @returns {Array|null} Array containing the text node and its offset, or null if not found.
+			 */
+			function traverseDOM( node ) {
+				if ( node.nodeType === Node.TEXT_NODE ) {
+					const textLength = node.textContent.length;
+
+					if ( currentOffset + textLength >= index ) {
+						return [ node, index - currentOffset ];
+					}
+
+					currentOffset += textLength;
+				} else {
+					for ( const childNode of node.childNodes ) {
+						const result = traverseDOM( childNode );
+
+						if ( result ) {
+							return result;
+						}
+					}
+				}
+			}
+
+			return traverseDOM( node );
+		}
+
+		const memoizedPopoverRef = useMemo( () => popoverRef, [] );
+
+		useEffect( () => {
+			const fauxCursor = document.createElement( 'span' );
+
+			if ( contentRef.current && memoizedPopoverRef.current && isPopoverActive ) {
+				fauxCursor.className = 'insert-special-character__faux-caret';
+
+				const range = document.createRange();
+				const [ textNode, offsetWithinText ] = findTextNodeAtIndex( contentRef.current, start );
+				
+				if ( textNode ) {
+					range.setStart( textNode, offsetWithinText );
+					range.collapse( true );
+					range.insertNode( fauxCursor );
+					range.setStartAfter( fauxCursor );
+					range.collapse( true );
+				}
+			}
+
+			return () => {
+				if ( fauxCursor ) {
+					fauxCursor.remove();
+				}
+			};
+		}, [ isPopoverActive, memoizedPopoverRef ] );
+
 		const characters = applyFilters( `${ name }-characters`, Chars );
 		// Display the character map when it is active.
 		const specialCharsPopover = isPopoverActive && (
@@ -69,7 +135,7 @@ registerFormatType( type, {
 				placement="bottom-start"
 				focusOnMount="firstElement"
 				key="charmap-popover"
-				getAnchorRect={ anchorRect }
+				anchor={ contentRef.current }
 				expandOnMobile={ true }
 				headerTitle={ __(
 					'Insert Special Character',
