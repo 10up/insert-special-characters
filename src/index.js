@@ -1,5 +1,11 @@
 import { registerFormatType, create, insert } from '@wordpress/rich-text';
-import { Fragment, useState, useRef, useEffect, useMemo } from '@wordpress/element';
+import {
+	Fragment,
+	useState,
+	useRef,
+	useEffect,
+	useMemo,
+} from '@wordpress/element';
 import { BlockControls, RichTextShortcut } from '@wordpress/block-editor';
 import { Popover, ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
@@ -39,24 +45,19 @@ registerFormatType( type, {
 	 * @param {Function}    props.onChange   Event handler to detect range selection.
 	 * @param {HTMLElement} props.contentRef The editable element.
 	 */
-	edit( { value, onChange, contentRef } ) {
+	edit: function Edit( { value, onChange, contentRef } ) {
 		const [ isPopoverActive, setIsPopoverActive ] = useState( false );
 		const popoverRef = useRef( null );
 		const { start, end } = value;
 
-		function insertCharacter( character ) {
+		function insertCharacter( char ) {
 			const richTextCharacter = create( {
-				text: character,
+				text: char,
 			} );
 
 			richTextCharacter.formats = [ value.formats.at( start ) ];
 
-			const modified = insert(
-				value,
-				richTextCharacter,
-				start,
-				end
-			);
+			const modified = insert( value, richTextCharacter, start, end );
 
 			onChange( modified );
 		}
@@ -64,9 +65,9 @@ registerFormatType( type, {
 		/**
 		 * Find the text node and its offset within the provided element based on an index.
 		 *
-		 * @param {Node} node The root node to search for the index.
+		 * @param {Node}   node  The root node to search for the index.
 		 * @param {number} index The index within the text content.
-		 * @returns {Array|null} An array containing the text node and its offset, or null if not found.
+		 * @return {Array|null} An array containing the text node and its offset, or null if not found.
 		 */
 		function findTextNodeAtIndex( node, index ) {
 			let currentOffset = 0;
@@ -74,20 +75,20 @@ registerFormatType( type, {
 			/**
 			 * Recursively traverse DOM to find the text node and offset.
 			 *
-			 * @param {Node} node The current node.
-			 * @returns {Array|null} Array containing the text node and its offset, or null if not found.
+			 * @param {Node} __node The current node.
+			 * @return {Array|null} Array containing the text node and its offset, or null if not found.
 			 */
-			function traverseDOM( node ) {
-				if ( node.nodeType === Node.TEXT_NODE ) {
-					const textLength = node.textContent.length;
+			function traverseDOM( __node ) {
+				if ( __node.nodeType === Node.TEXT_NODE ) {
+					const textLength = __node.textContent.length;
 
 					if ( currentOffset + textLength >= index ) {
-						return [ node, index - currentOffset ];
+						return [ __node, index - currentOffset ];
 					}
 
 					currentOffset += textLength;
 				} else {
-					for ( const childNode of node.childNodes ) {
+					for ( const childNode of __node.childNodes ) {
 						const result = traverseDOM( childNode );
 
 						if ( result ) {
@@ -105,12 +106,19 @@ registerFormatType( type, {
 		useEffect( () => {
 			const fauxCursor = document.createElement( 'span' );
 
-			if ( contentRef.current && memoizedPopoverRef.current && isPopoverActive ) {
+			if (
+				contentRef.current &&
+				memoizedPopoverRef.current &&
+				isPopoverActive
+			) {
 				fauxCursor.className = 'insert-special-character__faux-caret';
 
 				const range = document.createRange();
-				const [ textNode, offsetWithinText ] = findTextNodeAtIndex( contentRef.current, start );
-				
+				const [ textNode, offsetWithinText ] = findTextNodeAtIndex(
+					contentRef.current,
+					start
+				);
+
 				if ( textNode ) {
 					range.setStart( textNode, offsetWithinText );
 					range.collapse( true );
@@ -196,7 +204,9 @@ registerFormatType( type, {
 							icon="editor-customchar"
 							isPressed={ isPopoverActive }
 							label={ title }
-							onClick={ () => setIsPopoverActive( ! isPopoverActive ) }
+							onClick={ () =>
+								setIsPopoverActive( ! isPopoverActive )
+							}
 							shortcut={ displayShortcut.primary( character ) }
 						/>
 					</ToolbarGroup>
