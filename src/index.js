@@ -1,4 +1,10 @@
-import { registerFormatType, create, insert, applyFormat, getActiveFormats } from '@wordpress/rich-text';
+import {
+	registerFormatType,
+	create,
+	insert,
+	applyFormat,
+	getActiveFormats,
+} from '@wordpress/rich-text';
 import {
 	Fragment,
 	useState,
@@ -56,7 +62,12 @@ registerFormatType( type, {
 			} );
 
 			for ( const format of getActiveFormats( value ) ) {
-				richTextCharacter = applyFormat( richTextCharacter, format, 0, 1 );
+				richTextCharacter = applyFormat(
+					richTextCharacter,
+					format,
+					0,
+					1
+				);
 			}
 
 			const modified = insert( value, richTextCharacter, start, end );
