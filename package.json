@@ -30,7 +30,8 @@
     "cypress": "^13.3.1",
     "cypress-mochawesome-reporter": "^3.4.0",
     "husky": "^8.0.1",
-    "lint-staged": "^10.0.7"
+    "lint-staged": "^10.0.7",
+    "mochawesome-json-to-md": "^0.7.2"
   },
   "husky": {
     "hooks": {
