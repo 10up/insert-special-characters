@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [1.1.2] - 2024-01-08
+### Added
+- Support for the WordPress.org plugin preview (props [@dkotter](https://github.com/dkotter), [@jeffpaul](https://github.com/jeffpaul) via [#232](https://github.com/10up/insert-special-characters/pull/232)).
+
+### Fixed
+- Issue with blocks crashing due to faux caret (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter), [@ankitguptaindia](https://github.com/ankitguptaindia) via [#225](https://github.com/10up/insert-special-characters/pull/225)).
+- Issue with characters added to the beginning trimming text from the end (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter), [@ankitguptaindia](https://github.com/ankitguptaindia) via [#225](https://github.com/10up/insert-special-characters/pull/225)).
+
+### Changed
+- Bump WordPress "tested up to" version to 6.4 (props [@qasumitbagthariya](https://github.com/qasumitbagthariya), [@jeffpaul](https://github.com/jeffpaul), [@QAharshalkadu](https://github.com/QAharshalkadu), [@ankitguptaindia](https://github.com/ankitguptaindia), [@dhanendran](https://github.com/dhanendran), [@iamdharmesh](https://github.com/iamdharmesh) via [#228](https://github.com/10up/insert-special-characters/pull/228)).
+
 ## [1.1.1] - 2023-10-17
 ### Fixed
 - Address an issue where some blocks would crash due to a missing attribute (props [@dkotter](https://github.com/dkotter) via [#221](https://github.com/10up/insert-special-characters/pull/221)).
@@ -175,6 +186,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Plugin header and icon images (props [@McCallumDillon](https://github.com/McCallumDillon) via [#28](https://github.com/10up/insert-special-characters/pull/28))
 
 [Unreleased]: https://github.com/10up/insert-special-characters/compare/trunk...develop
+[1.1.2]: https://github.com/10up/insert-special-characters/compare/1.1.1...1.1.2
 [1.1.1]: https://github.com/10up/insert-special-characters/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/10up/insert-special-characters/compare/1.0.7...1.1.0
 [1.0.7]: https://github.com/10up/insert-special-characters/compare/1.0.6...1.0.7

@@ -18,5 +18,6 @@ module.exports = {
 		"tenupIscAdminVars": "readonly",
 		"localStorage": "readonly",
 		"jQuery": "readonly",
+		"Node": "readonly",
 	}
 };

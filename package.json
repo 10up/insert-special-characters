@@ -1,6 +1,6 @@
 {
   "name": "insert-special-characters",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A Special Character inserter for the WordPress block editor (Gutenberg).",
   "homepage": "https://github.com/10up/insert-special-characters#readme",
   "license": "GPL-2.0-only",
@@ -30,7 +30,8 @@
     "cypress": "^13.3.1",
     "cypress-mochawesome-reporter": "^3.4.0",
     "husky": "^8.0.1",
-    "lint-staged": "^10.0.7"
+    "lint-staged": "^10.0.7",
+    "mochawesome-json-to-md": "^0.7.2"
   },
   "husky": {
     "hooks": {

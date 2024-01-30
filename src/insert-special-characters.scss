@@ -1,5 +1,24 @@
 $grid-border-color: #c8c8c8;
 
+.insert-special-character__faux-caret {
+	border-left: 1px solid #000;
+	animation: 1s caret-blink step-end infinite;
+	margin-left: -1px;
+}
+
+.insert-special-character__faux-selection {
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+@keyframes caret-blink {
+	from, to {
+		border-color: black;
+	}
+	50% {
+		border-color: transparent;
+	}
+}
+
 .character-map-popover {
 	.components-popover__content {
 		border: 1px solid #1e1e1e
