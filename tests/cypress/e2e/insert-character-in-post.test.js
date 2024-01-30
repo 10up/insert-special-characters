@@ -10,7 +10,7 @@ describe( 'Insert character in post', () => {
 
 	it( 'Admin can add character in post and save it', () => {
 		cy.visit(
-			`${ Cypress.config().baseUrl }wp-admin/edit.php?post_type=page`
+			`${ Cypress.config().baseUrl }/wp-admin/edit.php?post_type=page`
 		);
 		cy.get( 'a.row-title' )
 			.contains( 'Page with special characters' )
@@ -74,7 +74,7 @@ describe( 'Insert character in post', () => {
 	} );
 
 	it( 'Verify the character on the front end', () => {
-		cy.visit( `${ Cypress.config().baseUrl }page-with-special-characters` );
+		cy.visit( `${ Cypress.config().baseUrl }/page-with-special-characters` );
 
 		cy.get( 'body' ).invoke( 'text' ).then( text => {
 			if ( text.includes( 'Hello world∀' ) ) {

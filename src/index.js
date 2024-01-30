@@ -109,6 +109,8 @@ registerFormatType( type, {
 						}
 					}
 				}
+
+				return null;
 			}
 
 			return traverseDOM( node );

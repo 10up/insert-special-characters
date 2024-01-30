@@ -6,4 +6,8 @@ module.exports = {
         ...defaultConfig.entry(),
         admin: [ './src/admin.js' ],
     },
+    externals: {
+        ...defaultConfig.externals,
+        '@wordpress/components': 'wp.components',
+    }
 };
