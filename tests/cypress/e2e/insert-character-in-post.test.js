@@ -39,6 +39,8 @@ describe( 'Insert character in post', () => {
 				cy.get( '.block-editor-block-navigation' ).click();
 			} else if ( $body.find( '.edit-post-header-toolbar__list-view-toggle' ).length > 0 ) {
 				cy.get( '.edit-post-header-toolbar__list-view-toggle' ).click();
+			} else if ( $body.find( 'button[aria-label="Document Overview"]' ).length > 0 ) {
+				cy.get( 'button[aria-label="Document Overview"]' ).click();
 			} else {
 				// WP 6.2
 				cy.get( '.edit-post-header-toolbar__document-overview-toggle' ).click();
