@@ -1,5 +1,17 @@
-import { registerFormatType, toggleFormat, insert } from '@wordpress/rich-text';
-import { Fragment } from '@wordpress/element';
+import {
+	registerFormatType,
+	create,
+	insert,
+	applyFormat,
+	getActiveFormats,
+} from '@wordpress/rich-text';
+import {
+	Fragment,
+	useState,
+	useRef,
+	useEffect,
+	useMemo,
+} from '@wordpress/element';
 import { BlockControls, RichTextShortcut } from '@wordpress/block-editor';
 import { Popover, ToolbarButton, ToolbarGroup } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
@@ -21,8 +33,6 @@ const InsertSpecialCharactersOptions = {
 
 const { name, title, character } = InsertSpecialCharactersOptions;
 const type = `special-characters/${ name }`;
-let anchorRange;
-let anchorRect;
 
 /**
  * Register the "Format Type" to create the character inserter.
@@ -37,67 +47,132 @@ registerFormatType( type, {
 	 * The `edit` function is called when the Character Map is selected.
 	 *
 	 * @param {Object}      props            Props object.
-	 * @param {boolean}     props.isActive   State of popover.
 	 * @param {boolean}     props.value      State of popover.
 	 * @param {Function}    props.onChange   Event handler to detect range selection.
 	 * @param {HTMLElement} props.contentRef The editable element.
 	 */
-	edit( { isActive, value, onChange, contentRef } ) {
-		const onToggle = () => {
-			const selection = contentRef.current.ownerDocument.getSelection();
+	edit: function Edit( { value, onChange, contentRef } ) {
+		const [ isPopoverActive, setIsPopoverActive ] = useState( false );
+		const popoverRef = useRef( null );
+		const { start, end } = value;
 
-			anchorRange =
-				selection.rangeCount > 0 ? selection.getRangeAt( 0 ) : null;
+		function insertCharacter( char ) {
+			let richTextCharacter = create( {
+				text: char,
+			} );
 
-			// Pin the Popover to the caret position.
-			const boundingClientRect = anchorRange
-				? anchorRange.getBoundingClientRect()
-				: null;
+			for ( const format of getActiveFormats( value ) ) {
+				richTextCharacter = applyFormat(
+					richTextCharacter,
+					format,
+					0,
+					1
+				);
+			}
 
-			anchorRect = anchorRange ? () => boundingClientRect : null;
-			onChange( toggleFormat( value, { type } ) );
-		};
+			const modified = insert( value, richTextCharacter, start, end );
+
+			onChange( modified );
+		}
+
+		/**
+		 * Find the text node and its offset within the provided element based on an index.
+		 *
+		 * @param {Node}   node  The root node to search for the index.
+		 * @param {number} index The index within the text content.
+		 * @return {Array|null} An array containing the text node and its offset, or null if not found.
+		 */
+		function findTextNodeAtIndex( node, index ) {
+			let currentOffset = 0;
+
+			/**
+			 * Recursively traverse DOM to find the text node and offset.
+			 *
+			 * @param {Node} __node The current node.
+			 * @return {Array|null} Array containing the text node and its offset, or null if not found.
+			 */
+			function traverseDOM( __node ) {
+				if ( __node.nodeType === Node.TEXT_NODE ) {
+					const textLength = __node.textContent.length;
+
+					if ( currentOffset + textLength >= index ) {
+						return [ __node, index - currentOffset ];
+					}
+
+					currentOffset += textLength;
+				} else {
+					for ( const childNode of __node.childNodes ) {
+						const result = traverseDOM( childNode );
+
+						if ( result ) {
+							return result;
+						}
+					}
+				}
+
+				return null;
+			}
+
+			return traverseDOM( node );
+		}
+
+		const memoizedPopoverRef = useMemo( () => popoverRef, [] );
+
+		useEffect( () => {
+			const fauxCursor = document.createElement( 'span' );
+
+			if (
+				contentRef.current &&
+				memoizedPopoverRef.current &&
+				isPopoverActive
+			) {
+				fauxCursor.className = 'insert-special-character__faux-caret';
+
+				const range = document.createRange();
+				const [ textNode, offsetWithinText ] = findTextNodeAtIndex(
+					contentRef.current,
+					start
+				);
+
+				if ( textNode ) {
+					range.setStart( textNode, offsetWithinText );
+					range.collapse( true );
+					range.insertNode( fauxCursor );
+					range.setStartAfter( fauxCursor );
+					range.collapse( true );
+				}
+			}
+
+			return () => {
+				if ( fauxCursor ) {
+					fauxCursor.remove();
+				}
+			};
+		}, [ isPopoverActive, memoizedPopoverRef ] );
+
 		const characters = applyFilters( `${ name }-characters`, Chars );
 		// Display the character map when it is active.
-		const specialCharsPopover = isActive && (
+		const specialCharsPopover = isPopoverActive && (
 			<Popover
 				className="character-map-popover"
 				placement="bottom-start"
 				focusOnMount="firstElement"
 				key="charmap-popover"
-				getAnchorRect={ anchorRect }
+				anchor={ contentRef.current }
 				expandOnMobile={ true }
 				headerTitle={ __(
 					'Insert Special Character',
 					'insert-special-characters'
 				) }
-				onClose={ () => {
-					onChange( toggleFormat( value, { type } ) );
-				} }
+				ref={ popoverRef }
 			>
 				<CharacterMap
 					characterData={ characters }
 					onSelect={
 						// Insert the selected character and close the popover.
-						( char ) => {
-							const newValue = {
-								...value,
-								// grab the format at the start position,
-								// if it is undefined then use an empty array.
-								formats: value.formats.at( value.start )
-									? [ value.formats.at( value.start ) ]
-									: [],
-								text: char.char,
-							};
-
-							onChange(
-								insert(
-									value,
-									newValue,
-									newValue.start,
-									newValue.end
-								)
-							);
+						( obj ) => {
+							insertCharacter( obj.char );
+							setIsPopoverActive( false );
 						}
 					}
 					categoryNames={ {
@@ -142,9 +217,11 @@ registerFormatType( type, {
 						<ToolbarButton
 							className={ `toolbar-button-with-text toolbar-button__advanced-${ name }` }
 							icon="editor-customchar"
-							isPressed={ isActive }
+							isPressed={ isPopoverActive }
 							label={ title }
-							onClick={ onToggle }
+							onClick={ () =>
+								setIsPopoverActive( ! isPopoverActive )
+							}
 							shortcut={ displayShortcut.primary( character ) }
 						/>
 					</ToolbarGroup>
@@ -153,7 +230,7 @@ registerFormatType( type, {
 					<RichTextShortcut
 						type="primary"
 						character={ character }
-						onUse={ onToggle }
+						onUse={ () => setIsPopoverActive( ! isPopoverActive ) }
 					/>
 				</Fragment>
 				{ specialCharsPopover }

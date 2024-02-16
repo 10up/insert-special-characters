@@ -1,9 +1,9 @@
 === Insert Special Characters ===
 Contributors:      10up, adamsilverstein, johnwatkins0, jeffpaul
 Tags:              Special Characters, Character Map, Omega, Gutenberg, Block, block editor
-Stable tag:        1.1.1
+Stable tag:        1.1.2
 Requires at least: 6.1
-Tested up to:      6.3
+Tested up to:      6.4
 Requires PHP:      7.4
 License:           GPLv2
 License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -74,6 +74,12 @@ One example of a font with support for wide range of glyphs is the [Noto](https:
 5. Resulting inserted special character (note focus on special character, rest of window has been blurred).
 
 == Changelog ==
+
+= 1.1.2 - 2024-01-08 =
+* **Added:** Support for the WordPress.org plugin preview (props [@dkotter](https://github.com/dkotter), [@jeffpaul](https://github.com/jeffpaul) via [#232](https://github.com/10up/insert-special-characters/pull/232)).
+* **Fixed:** Issue with blocks crashing due to faux caret (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter), [@ankitguptaindia](https://github.com/ankitguptaindia) via [#225](https://github.com/10up/insert-special-characters/pull/225)).
+* **Fixed:** Issue with characters added to the beginning trimming text from the end (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter), [@ankitguptaindia](https://github.com/ankitguptaindia) via [#225](https://github.com/10up/insert-special-characters/pull/225)).
+* **Changed:** Bump WordPress "tested up to" version to 6.4 (props [@qasumitbagthariya](https://github.com/qasumitbagthariya), [@jeffpaul](https://github.com/jeffpaul), [@QAharshalkadu](https://github.com/QAharshalkadu), [@ankitguptaindia](https://github.com/ankitguptaindia), [@dhanendran](https://github.com/dhanendran), [@iamdharmesh](https://github.com/iamdharmesh) via [#228](https://github.com/10up/insert-special-characters/pull/228)).
 
 = 1.1.1 - 2023-10-17 =
 * **Fixed:** Address an issue where some blocks would crash due to a missing attribute (props [@dkotter](https://github.com/dkotter) via [#221](https://github.com/10up/insert-special-characters/pull/221)).
