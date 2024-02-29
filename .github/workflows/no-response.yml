@@ -2,9 +2,10 @@ name: No Response
 
 # **What it does**: Closes issues where the original author doesn't respond to a request for information.
 # **Why we have it**: To remove the need for maintainers to remember to check back on issues periodically to see if contributors have responded.
-# **Who does it impact**: Everyone that works on docs or docs-internal.
 
 on:
+  issues:
+    types: [closed]
   issue_comment:
     types: [created]
   schedule:
@@ -15,7 +16,7 @@ jobs:
   noResponse:
     runs-on: ubuntu-latest
     steps:
-      - uses: lee-dohm/no-response@v0.5.0
+      - uses: MBilalShafi/no-response@v0.0.6
         with:
           token: ${{ github.token }}
           daysUntilClose: 14 # Number of days of inactivity before an Issue is closed for lack of response
