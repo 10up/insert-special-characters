@@ -30,7 +30,7 @@ jobs:
             importance of repro steps](https://www.lee-dohm.com/2015/01/04/writing-good-bug-reports/)
             for more information about the kind of information that may be helpful.
           stale-issue-label: 'stale'
-          close-issue-reason: 'not-enough-information'
+          close-issue-reason: 'not_planned'
           any-of-labels: 'needs:feedback'
           remove-stale-when-updated: true
           
