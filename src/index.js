@@ -13,7 +13,7 @@ import {
 	useMemo,
 } from '@wordpress/element';
 import { BlockControls, RichTextShortcut } from '@wordpress/block-editor';
-import { Popover, ToolbarButton, ToolbarGroup } from '@wordpress/components';
+import { ToolbarButton, Dropdown } from '@wordpress/components';
 import { applyFilters } from '@wordpress/hooks';
 import { displayShortcut } from '@wordpress/keycodes';
 import { __ } from '@wordpress/i18n';
@@ -151,21 +151,10 @@ registerFormatType( type, {
 		}, [ isPopoverActive, memoizedPopoverRef ] );
 
 		const characters = applyFilters( `${ name }-characters`, Chars );
-		// Display the character map when it is active.
-		const specialCharsPopover = isPopoverActive && (
-			<Popover
-				className="character-map-popover"
-				placement="bottom-start"
-				focusOnMount="firstElement"
-				key="charmap-popover"
-				anchor={ contentRef.current }
-				expandOnMobile={ true }
-				headerTitle={ __(
-					'Insert Special Character',
-					'insert-special-characters'
-				) }
-				ref={ popoverRef }
-			>
+
+		// Character map component used by the dropdown render.
+		const characterMap = () => {
+			return (
 				<CharacterMap
 					characterData={ characters }
 					onSelect={
@@ -207,24 +196,33 @@ registerFormatType( type, {
 						'insert-special-characters'
 					) }
 				/>
-			</Popover>
-		);
+			);
+		};
 
 		return (
 			<Fragment>
 				<BlockControls group="other">
-					<ToolbarGroup>
-						<ToolbarButton
-							className={ `toolbar-button-with-text toolbar-button__advanced-${ name }` }
-							icon="editor-customchar"
-							isPressed={ isPopoverActive }
-							label={ title }
-							onClick={ () =>
-								setIsPopoverActive( ! isPopoverActive )
-							}
-							shortcut={ displayShortcut.primary( character ) }
-						/>
-					</ToolbarGroup>
+					<Dropdown
+						className="insert-special-character__dropdown"
+						open={ isPopoverActive }
+						onToggle={ () =>
+							setIsPopoverActive( ! isPopoverActive )
+						}
+						contentClassName="insert-special-character__dropdown-content"
+						renderToggle={ ( { onToggle, isOpen } ) => (
+							<ToolbarButton
+								icon="editor-customchar"
+								label={ title }
+								className="toolbar-button__advanced-insertspecialcharacters"
+								onClick={ onToggle }
+								isActive={ isOpen }
+								shortcut={ displayShortcut.primary(
+									character
+								) }
+							/>
+						) }
+						renderContent={ characterMap }
+					/>
 				</BlockControls>
 				<Fragment>
 					<RichTextShortcut
@@ -233,7 +231,6 @@ registerFormatType( type, {
 						onUse={ () => setIsPopoverActive( ! isPopoverActive ) }
 					/>
 				</Fragment>
-				{ specialCharsPopover }
 			</Fragment>
 		);
 	},
