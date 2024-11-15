@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [1.1.3] - 2024-11-18
 ### Changed
-- Update the UI to be more consistent with WordPress core props ([@psorensen](https://github.com/psorensen), [@fabiankaegy](https://github.com/fabiankaegy) via [#263](https://github.com/10up/insert-special-characters/pull/263)).
+- Update the UI to be more consistent with WordPress core (props [@psorensen](https://github.com/psorensen), [@fabiankaegy](https://github.com/fabiankaegy) via [#263](https://github.com/10up/insert-special-characters/pull/263)).
 - Clean up NPM dependencies and update node to v20 (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter) via [#238](https://github.com/10up/insert-special-characters/pull/238)).
 - Bump WordPress "tested up to" version 6.7 (props [@sudip-md](https://github.com/sudip-md), [@sonali886](https://github.com/sonali886), [@godleman](https://github.com/godleman), [@jeffpaul](https://github.com/jeffpaul), [@dkotter](https://github.com/dkotter) via [#260](https://github.com/10up/insert-special-characters/pull/260), [#261](https://github.com/10up/insert-special-characters/pull/261), [#273](https://github.com/10up/insert-special-characters/pull/273), [#274](https://github.com/10up/insert-special-characters/pull/274)).
 
