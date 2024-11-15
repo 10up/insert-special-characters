@@ -1,7 +1,7 @@
 === Insert Special Characters ===
 Contributors:      10up, adamsilverstein, johnwatkins0, jeffpaul
 Tags:              Special Characters, Character Map, Omega, character inserter, symbols
-Stable tag:        1.1.2
+Stable tag:        1.1.3
 Requires at least: 6.5
 Tested up to:      6.7
 Requires PHP:      7.4

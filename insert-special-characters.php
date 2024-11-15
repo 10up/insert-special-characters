@@ -3,7 +3,7 @@
  * Plugin Name:       Insert Special Characters
  * Plugin URI:        https://github.com/10up/insert-special-characters
  * Description:       A Special Character inserter for the WordPress block editor (Gutenberg).
- * Version:           1.1.2
+ * Version:           1.1.3
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            10up
