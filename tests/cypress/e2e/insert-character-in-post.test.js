@@ -10,7 +10,7 @@ describe( 'Insert character in post', () => {
 
 	it( 'Admin can add character in post and save it', () => {
 		cy.visit(
-			`${ Cypress.config().baseUrl }wp-admin/edit.php?post_type=page`
+			`${ Cypress.config().baseUrl }/wp-admin/edit.php?post_type=page`
 		);
 		cy.get( 'a.row-title' )
 			.contains( 'Page with special characters' )
@@ -39,6 +39,8 @@ describe( 'Insert character in post', () => {
 				cy.get( '.block-editor-block-navigation' ).click();
 			} else if ( $body.find( '.edit-post-header-toolbar__list-view-toggle' ).length > 0 ) {
 				cy.get( '.edit-post-header-toolbar__list-view-toggle' ).click();
+			} else if ( $body.find( 'button[aria-label="Document Overview"]' ).length > 0 ) {
+				cy.get( 'button[aria-label="Document Overview"]' ).click();
 			} else {
 				// WP 6.2
 				cy.get( '.edit-post-header-toolbar__document-overview-toggle' ).click();
@@ -74,7 +76,7 @@ describe( 'Insert character in post', () => {
 	} );
 
 	it( 'Verify the character on the front end', () => {
-		cy.visit( `${ Cypress.config().baseUrl }page-with-special-characters` );
+		cy.visit( `${ Cypress.config().baseUrl }/page-with-special-characters` );
 
 		cy.get( 'body' ).invoke( 'text' ).then( text => {
 			if ( text.includes( 'Hello world∀' ) ) {
