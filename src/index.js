@@ -20,6 +20,7 @@ import { __ } from '@wordpress/i18n';
 
 import { CharacterMap } from 'react-character-map';
 import './insert-special-characters.scss';
+import './filter';
 
 // Load the default Chars provided by react-character-map component.
 import Chars from '../node_modules/react-character-map/dist/component/chars.json';
@@ -152,6 +153,34 @@ registerFormatType( type, {
 
 		const characters = applyFilters( `${ name }-characters`, Chars );
 
+		/**
+		 * Set Recent Characters.
+		 *
+		 * This function will store the recently used characters
+		 * in the local storage for ease.
+		 *
+		 * @param {Object} obj The special character object.
+		 */
+		const setRecentCharacters = ( obj ) => {
+			const recentCharacters =
+				JSON.parse( localStorage.getItem( 'recentCharacters' ) ) || [];
+
+			const index = recentCharacters.findIndex(
+				( e ) => e.char === obj.char
+			);
+
+			if ( index !== -1 ) {
+				recentCharacters.splice( index, 1 );
+			}
+
+			recentCharacters.unshift( obj );
+
+			localStorage.setItem(
+				'recentCharacters',
+				JSON.stringify( recentCharacters )
+			);
+		};
+
 		// Character map component used by the dropdown render.
 		const characterMap = () => {
 			return (
@@ -162,9 +191,14 @@ registerFormatType( type, {
 						( obj ) => {
 							insertCharacter( obj.char );
 							setIsPopoverActive( false );
+							setRecentCharacters( obj );
 						}
 					}
 					categoryNames={ {
+						Recent: __(
+							'Recently Used',
+							'insert-special-characters'
+						),
 						Math: __( 'Math', 'insert-special-characters' ),
 						Currency: __( 'Currency', 'insert-special-characters' ),
 						Punctuation: __(
