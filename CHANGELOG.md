@@ -3,6 +3,7 @@
 All notable changes to this project will be documented in this file, per [the Keep a Changelog standard](http://keepachangelog.com/).
 
 ## [Unreleased] - TBD
+- Add `Recently Used` section (props [@badasswp](https://github.com/badasswp) via [#279](https://github.com/10up/insert-special-characters/pull/279)).
 
 ## [1.1.3] - 2024-11-18
 ### Changed
