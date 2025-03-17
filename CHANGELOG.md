@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file, per [the Ke
 
 ## [Unreleased] - TBD
 
+## [1.1.3] - 2024-11-18
+### Changed
+- Update the UI to be more consistent with WordPress core (props [@psorensen](https://github.com/psorensen), [@fabiankaegy](https://github.com/fabiankaegy) via [#263](https://github.com/10up/insert-special-characters/pull/263)).
+- Clean up NPM dependencies and update node to v20 (props [@Sidsector9](https://github.com/Sidsector9), [@dkotter](https://github.com/dkotter) via [#238](https://github.com/10up/insert-special-characters/pull/238)).
+- Bump WordPress "tested up to" version 6.7 (props [@sudip-md](https://github.com/sudip-md), [@sonali886](https://github.com/sonali886), [@godleman](https://github.com/godleman), [@jeffpaul](https://github.com/jeffpaul), [@dkotter](https://github.com/dkotter) via [#260](https://github.com/10up/insert-special-characters/pull/260), [#261](https://github.com/10up/insert-special-characters/pull/261), [#273](https://github.com/10up/insert-special-characters/pull/273), [#274](https://github.com/10up/insert-special-characters/pull/274)).
+
+### Security
+- Bump `express` from 4.18.2 to 4.19.2, `follow-redirects` from 1.15.5 to 1.15.6, `ip` from 1.1.8 to 1.1.9 and `webpack-dev-middleware` from 5.3.3 to 5.3.4 (props [@dependabot](https://github.com/apps/dependabot), [@iamdharmesh](https://github.com/iamdharmesh) via [#254](https://github.com/10up/insert-special-characters/pull/254)).
+- Bump `braces` from 3.0.2 to 3.0.3, `pac-resolver` from 7.0.0 to 7.0.1, `socks` from 2.7.1 to 2.8.3, `ws` from 7.59 to 7.5.10 and removes `ip` (props [@dependabot](https://github.com/apps/dependabot), [@faisal-alvi](https://github.com/faisal-alvi) via [#259](https://github.com/10up/insert-special-characters/pull/259)).
+- Bump `axios` from 1.6.7 to 1.7.7, `body-parser` from 1.20.2 to 1.20.3, `express` from 4.19.2 to 4.21.0, `ws` from 7.5.10 to 8.18.0, `@wordpress/scripts` from 27.1.0 to 29.0.0 and `webpack` from 5.90.0 to 5.94.0 (props [@dependabot](https://github.com/apps/dependabot), [@Sidsector9](https://github.com/Sidsector9) via [#267](https://github.com/10up/insert-special-characters/pull/267), [#268](https://github.com/10up/insert-special-characters/pull/268)).
+
+### Developer
+- Added a new GitHub action to pull monthly metrics (props [@vikrampm1](https://github.com/vikrampm1), [@jeffpaul](https://github.com/jeffpaul) via [#239](https://github.com/10up/insert-special-characters/pull/239), [#240](https://github.com/10up/insert-special-characters/pull/240)).
+- No Response action now uses `actions/stale` in place of `lee-dohm/no-response` (props [@jeffpaul](https://github.com/jeffpaul), [@dkotter](https://github.com/dkotter) via [#244](https://github.com/10up/insert-special-characters/pull/244), [#245](https://github.com/10up/insert-special-characters/pull/245), [#247](https://github.com/10up/insert-special-characters/pull/247), [#248](https://github.com/10up/insert-special-characters/pull/248)).
+- Upgrade `download-artifact` from v3 to v4 (props [@iamdharmesh](https://github.com/iamdharmesh), [@jeffpaul](https://github.com/jeffpaul) via [#250](https://github.com/10up/insert-special-characters/pull/250)).
+- Added Repo Automater GitHub Action (props [@iamdharmesh](https://github.com/iamdharmesh), [@jeffpaul](https://github.com/jeffpaul) via [#252](https://github.com/10up/insert-special-characters/pull/252)).
+- Move from `actions/upload-release-asset` to `softprops/action-gh-release` Github action (props [@Sidsector9](https://github.com/Sidsector9), [@jeffpaul](https://github.com/jeffpaul) via [#262](https://github.com/10up/insert-special-characters/pull/262)).
+- Update the badges in the README; add in a WP Playground badge; add in a banner image (props [@jeffpaul](https://github.com/jeffpaul), [@dkotter](https://github.com/dkotter) via [#264](https://github.com/10up/insert-special-characters/pull/264), [#266](https://github.com/10up/insert-special-characters/pull/266), [#269](https://github.com/10up/insert-special-characters/pull/269)).
+
 ## [1.1.2] - 2024-01-08
 ### Added
 - Support for the WordPress.org plugin preview (props [@dkotter](https://github.com/dkotter), [@jeffpaul](https://github.com/jeffpaul) via [#232](https://github.com/10up/insert-special-characters/pull/232)).
@@ -186,6 +205,7 @@ All notable changes to this project will be documented in this file, per [the Ke
 - Plugin header and icon images (props [@McCallumDillon](https://github.com/McCallumDillon) via [#28](https://github.com/10up/insert-special-characters/pull/28))
 
 [Unreleased]: https://github.com/10up/insert-special-characters/compare/trunk...develop
+[1.1.3]: https://github.com/10up/insert-special-characters/compare/1.1.2...1.1.3
 [1.1.2]: https://github.com/10up/insert-special-characters/compare/1.1.1...1.1.2
 [1.1.1]: https://github.com/10up/insert-special-characters/compare/1.1.0...1.1.1
 [1.1.0]: https://github.com/10up/insert-special-characters/compare/1.0.7...1.1.0
