@@ -12,6 +12,7 @@ jobs:
   build:
     name: issue metrics
     runs-on: ubuntu-latest
+
     steps:
     - name: Get dates for last month
       shell: bash
@@ -27,13 +28,13 @@ jobs:
         echo "last_month=$first_day..$last_day" >> "$GITHUB_ENV"
 
     - name: Run issue-metrics tool
-      uses: github/issue-metrics@v2
+      uses: github/issue-metrics@ed6e4b2b46f44ec7cdd2f6c145757a67a07ecf5b # v3.18.4
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SEARCH_QUERY: 'repo:10up/insert-special-characters is:issue created:${{ env.last_month }} -reason:"not planned"'
 
     - name: Create issue
-      uses: peter-evans/create-issue-from-file@v5
+      uses: peter-evans/create-issue-from-file@e8ef132d6df98ed982188e460ebb3b5d4ef3a9cd # v5.0.1
       with:
         title: Monthly issue metrics report
         token: ${{ secrets.GITHUB_TOKEN }}
