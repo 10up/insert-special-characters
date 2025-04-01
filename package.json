@@ -24,11 +24,11 @@
     "cypress:run": "cypress run --config-file tests/cypress/config.js"
   },
   "devDependencies": {
-    "@10up/cypress-wp-utils": "^0.2.0",
-    "@wordpress/env": "^9.2.0",
+    "@10up/cypress-wp-utils": "^0.5.0",
+    "@wordpress/env": "^10.21.0",
     "@wordpress/scripts": "^30.5.1",
-    "cypress": "^13.3.1",
-    "cypress-mochawesome-reporter": "^3.4.0",
+    "cypress": "^14.2.1",
+    "cypress-mochawesome-reporter": "^3.8.2",
     "husky": "^8.0.1",
     "lint-staged": "^10.0.7",
     "mochawesome-json-to-md": "^0.7.2"
