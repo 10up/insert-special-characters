@@ -9,14 +9,10 @@ describe( 'Insert character in post', () => {
 	} );
 
 	it( 'Admin can add character in post and save it', () => {
-		cy.visit(
-			`${ Cypress.config().baseUrl }/wp-admin/edit.php?post_type=page`
-		);
-		cy.get( 'a.row-title' )
-			.contains( 'Page with special characters' )
-			.click();
-
-		cy.closeWelcomeGuide();
+		cy.createPost( {
+			title: 'Page with special characters',
+			postType: 'page',
+		} );
 
 		cy.window().then( ( win ) => {
 			const { wp } = win;
