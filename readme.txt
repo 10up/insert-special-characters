@@ -1,9 +1,9 @@
 === Insert Special Characters ===
 Contributors:      10up, adamsilverstein, johnwatkins0, jeffpaul
-Tags:              Special Characters, Character Map, Omega, Gutenberg, Block, block editor
+Tags:              Special Characters, Character Map, Omega, character inserter, symbols
 Stable tag:        1.1.3
-Requires at least: 6.5
-Tested up to:      6.7
+Requires at least: 6.6
+Tested up to:      6.8
 Requires PHP:      7.4
 License:           GPLv2
 License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -21,7 +21,7 @@ Development takes place in the [GitHub repository](https://github.com/10up/inser
 == Technical Notes ==
 
 * Requires PHP 7.4+.
-* Requires [WordPress](http://wordpress.org/) 6.5+
+* Requires [WordPress](http://wordpress.org/) 6.6+
 * Issues and Pull requests welcome in the [GitHub repository](https://github.com/10up/insert-special-characters).
 
 == Installation ==
