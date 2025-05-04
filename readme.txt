@@ -2,7 +2,7 @@
 Contributors:      10up, adamsilverstein, johnwatkins0, jeffpaul
 Tags:              Special Characters, Character Map, Omega, character inserter, symbols
 Stable tag:        1.1.3
-Requires at least: 6.5
+Requires at least: 6.6
 Tested up to:      6.8
 Requires PHP:      7.4
 License:           GPLv2
@@ -21,7 +21,7 @@ Development takes place in the [GitHub repository](https://github.com/10up/inser
 == Technical Notes ==
 
 * Requires PHP 7.4+.
-* Requires [WordPress](http://wordpress.org/) 6.5+
+* Requires [WordPress](http://wordpress.org/) 6.6+
 * Issues and Pull requests welcome in the [GitHub repository](https://github.com/10up/insert-special-characters).
 
 == Installation ==
