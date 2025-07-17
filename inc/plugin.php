@@ -133,7 +133,7 @@ function render_isc_writing_setting() {
  * @return boolean
  */
 function get_most_used_palette_setting() {
-	return 'on' === get_option( 'tenup_isc_most_read_palette' );
+	return 'on' === get_option( 'tenup_isc_most_read_palette', 'on' );
 }
 
 /**
