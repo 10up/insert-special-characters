@@ -71,11 +71,28 @@ function register_settings_fields() {
 		'writing',
 		'tenup_isc_most_read_palette',
 		array(
-			'type'         => 'boolean',
-			'show_in_rest' => true,
-			'default'      => false,
+			'type'              => 'boolean',
+			'show_in_rest'      => true,
+			'default'           => false,
+			'sanitize_callback' => function( $input ) {
+				// Accept only true, 'on', or 1
+				if ( $input === 'on' || $input === true || $input === 1 || $input === '1' ) {
+					return true;
+				}
+	
+				// If input is invalid, add an admin error message
+				add_settings_error(
+					'tenup_isc_most_read_palette',
+					esc_attr( 'invalid_input' ),
+					__( 'Invalid value for Most Used Palette setting.', 'insert-special-characters' ),
+					'error'
+				);
+	
+				return false;
+			},
 		)
 	);
+	
 
 	add_settings_section(
 		'tenup_isc_writing_section',
