@@ -65,6 +65,10 @@ When a character is displayed using a font that doesn't support that character, 
 
 One example of a font with support for wide range of glyphs is the [Noto](https://fonts.google.com/noto) family by Google Fonts, which can be loaded by the theme to render the missing characters.
 
+= Where do I report security bugs found in this plugin? =
+
+Please report security bugs found in the source code of the Insert Special Characters plugin through the [Patchstack Vulnerability Disclosure  Program](https://patchstack.com/database/vdp/498eea61-a27e-4e17-be8d-52b89046146a).  The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
+
 == Screenshots ==
 
 1. Example of special characters selection in the Block Editor.
