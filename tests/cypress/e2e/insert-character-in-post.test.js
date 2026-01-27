@@ -10,8 +10,8 @@ describe( 'Insert character in post', () => {
 
 	it( 'Admin can add character in post and save it', () => {
 		cy.createPost( {
-			title: 'Page with special characters',
-			postType: 'page',
+			title: 'Post with special characters',
+			postType: 'post',
 		} );
 
 		cy.window().then( ( win ) => {
@@ -72,7 +72,7 @@ describe( 'Insert character in post', () => {
 	} );
 
 	it( 'Verify the character on the front end', () => {
-		cy.visit( `${ Cypress.config().baseUrl }/page-with-special-characters` );
+		cy.visit( `${ Cypress.config().baseUrl }/post-with-special-characters` );
 
 		cy.get( 'body' ).invoke( 'text' ).then( text => {
 			if ( text.includes( 'Hello world∀' ) ) {
