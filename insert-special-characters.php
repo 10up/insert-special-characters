@@ -46,7 +46,7 @@ function site_meets_php_requirements() {
 if ( ! site_meets_php_requirements() ) {
 	add_action(
 		'admin_notices',
-		function() {
+		function () {
 			?>
 			<div class="notice notice-error">
 				<p>

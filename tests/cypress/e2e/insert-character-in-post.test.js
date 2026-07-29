@@ -9,66 +9,51 @@ describe( 'Insert character in post', () => {
 	} );
 
 	it( 'Admin can add character in post and save it', () => {
-		cy.createPost( {
-			title: 'Post with special characters',
-			postType: 'post',
+		cy.visit( '/wp-admin/post-new.php?post_type=post' );
+
+		// Wait until the editor entity config is loaded.
+		cy.window().should( ( win ) => {
+			expect(
+				win.wp?.data?.select( 'core/editor' ).getCurrentPostType()
+			).to.eq( 'post' );
 		} );
 
+		cy.closeWelcomeGuide();
+
+		/**
+		 * Set title and insert a paragraph via the data stores so we do not
+		 * depend on getBlockEditor() / the iframed canvas for setup.
+		 */
 		cy.window().then( ( win ) => {
 			const { wp } = win;
 
-			const paraBlock = wp.blocks.createBlock(
-				'core/paragraph',
-				{
-					content: 'Hello world'
-				}
-			);
+			wp.data.dispatch( 'core/editor' ).editPost( {
+				title: 'Post with special characters',
+			} );
 
-			wp.data.dispatch( 'core/editor' ).insertBlocks( paraBlock );
-		} );
+			const paraBlock = wp.blocks.createBlock( 'core/paragraph', {
+				content: 'Hello world',
+			} );
 
-		/**
-		 * Open block list view.
-		 */
-		cy.get( 'body' ).then( ( $body ) => {
-			if ( $body.find( '.block-editor-block-navigation' ).length > 0 ) {
-				cy.get( '.block-editor-block-navigation' ).click();
-			} else if ( $body.find( '.edit-post-header-toolbar__list-view-toggle' ).length > 0 ) {
-				cy.get( '.edit-post-header-toolbar__list-view-toggle' ).click();
-			} else if ( $body.find( 'button[aria-label="Document Overview"]' ).length > 0 ) {
-				cy.get( 'button[aria-label="Document Overview"]' ).click();
-			} else {
-				// WP 6.2
-				cy.get( '.edit-post-header-toolbar__document-overview-toggle' ).click();
-			}
-		} );
-
-		/**
-		 * Select paragraph from list view.
-		 */
-		cy.get( 'body' ).then( ( $body ) => {
-			if (
-				$body.find(
-					'.block-editor-block-navigation__list > li:first-child button'
-				).length > 0
-			) {
-				cy.get(
-					'.block-editor-block-navigation__list > li:first-child button'
-				).click();
-			} else {
-				cy.get(
-					'table[aria-label="Block navigation structure"] > tbody > tr:first-child'
-				).click();
-			}
+			wp.data
+				.dispatch( 'core/block-editor' )
+				.insertBlocks( paraBlock );
+			wp.data
+				.dispatch( 'core/block-editor' )
+				.selectBlock( paraBlock.clientId );
 		} );
 
 		cy.get( '.toolbar-button__advanced-insertspecialcharacters' ).click();
 		cy.get( '.charMap--category button[data-title="FOR ALL"]' ).click( {
 			force: true,
 		} );
-		cy.get( '.editor-post-publish-button' ).click();
 
-		cy.wait( 1000 );
+		cy.get( '.editor-post-publish-panel__toggle' ).should( 'be.enabled' );
+		cy.get( '.editor-post-publish-panel__toggle' ).click();
+		cy.get( '.editor-post-publish-button' ).click();
+		cy.get( '.components-snackbar, .components-notice.is-success' ).should(
+			'be.visible'
+		);
 	} );
 
 	it( 'Verify the character on the front end', () => {
