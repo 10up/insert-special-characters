@@ -17,49 +17,19 @@ describe( 'Insert character in post', () => {
 		cy.window().then( ( win ) => {
 			const { wp } = win;
 
-			const paraBlock = wp.blocks.createBlock(
-				'core/paragraph',
-				{
-					content: 'Hello world'
-				}
-			);
+			const paraBlock = wp.blocks.createBlock( 'core/paragraph', {
+				content: 'Hello world',
+			} );
 
-			wp.data.dispatch( 'core/editor' ).insertBlocks( paraBlock );
-		} );
+			wp.data.dispatch( 'core/block-editor' ).insertBlocks( paraBlock );
 
-		/**
-		 * Open block list view.
-		 */
-		cy.get( 'body' ).then( ( $body ) => {
-			if ( $body.find( '.block-editor-block-navigation' ).length > 0 ) {
-				cy.get( '.block-editor-block-navigation' ).click();
-			} else if ( $body.find( '.edit-post-header-toolbar__list-view-toggle' ).length > 0 ) {
-				cy.get( '.edit-post-header-toolbar__list-view-toggle' ).click();
-			} else if ( $body.find( 'button[aria-label="Document Overview"]' ).length > 0 ) {
-				cy.get( 'button[aria-label="Document Overview"]' ).click();
-			} else {
-				// WP 6.2
-				cy.get( '.edit-post-header-toolbar__document-overview-toggle' ).click();
-			}
-		} );
-
-		/**
-		 * Select paragraph from list view.
-		 */
-		cy.get( 'body' ).then( ( $body ) => {
-			if (
-				$body.find(
-					'.block-editor-block-navigation__list > li:first-child button'
-				).length > 0
-			) {
-				cy.get(
-					'.block-editor-block-navigation__list > li:first-child button'
-				).click();
-			} else {
-				cy.get(
-					'table[aria-label="Block navigation structure"] > tbody > tr:first-child'
-				).click();
-			}
+			return paraBlock.clientId;
+		} ).then( ( clientId ) => {
+			/**
+			 * Select the inserted paragraph in the editor canvas.
+			 * getBlockEditor() handles the iframed canvas in modern WP.
+			 */
+			cy.getBlockEditor().find( `#block-${ clientId }` ).click();
 		} );
 
 		cy.get( '.toolbar-button__advanced-insertspecialcharacters' ).click();
