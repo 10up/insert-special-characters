@@ -47,5 +47,8 @@
   },
   "dependencies": {
     "react-character-map": "^0.4.10"
+  },
+  "overrides": {
+    "node-fetch": "2.6.7"
   }
 }
