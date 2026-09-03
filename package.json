@@ -26,7 +26,7 @@
   "devDependencies": {
     "@10up/cypress-wp-utils": "^0.7.2",
     "@wordpress/env": "^10.37.0",
-    "@wordpress/scripts": "^31.2.0",
+    "@wordpress/scripts": "^34.0.0",
     "cypress-mochawesome-reporter": "^3.8.2",
     "husky": "^8.0.1",
     "lint-staged": "^10.0.7",
