@@ -2,8 +2,8 @@
 Contributors:      10up, adamsilverstein, johnwatkins0, jeffpaul
 Tags:              Special Characters, Character Map, Omega, character inserter, symbols
 Stable tag:        1.1.3
-Requires at least: 6.6
-Tested up to:      6.9
+Requires at least: 6.9
+Tested up to:      7.1
 Requires PHP:      7.4
 License:           GPLv2
 License URI:       https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
@@ -21,7 +21,7 @@ Development takes place in the [GitHub repository](https://github.com/10up/inser
 == Technical Notes ==
 
 * Requires PHP 7.4+.
-* Requires [WordPress](http://wordpress.org/) 6.6+
+* Requires [WordPress](http://wordpress.org/) 6.9+
 * Issues and Pull requests welcome in the [GitHub repository](https://github.com/10up/insert-special-characters).
 
 == Installation ==
@@ -64,6 +64,10 @@ wp.hooks.addFilter(
 When a character is displayed using a font that doesn't support that character, a default "not defined" glyph from that font is used. The "not defined" glyph in most fonts has the appearance of a rectangular box, or some variation of that.
 
 One example of a font with support for wide range of glyphs is the [Noto](https://fonts.google.com/noto) family by Google Fonts, which can be loaded by the theme to render the missing characters.
+
+= Where do I report security bugs found in this plugin? =
+
+Please report security bugs found in the source code of the Insert Special Characters plugin through the [Patchstack Vulnerability Disclosure  Program](https://patchstack.com/database/vdp/498eea61-a27e-4e17-be8d-52b89046146a).  The Patchstack team will assist you with verification, CVE assignment, and notify the developers of this plugin.
 
 == Screenshots ==
 
