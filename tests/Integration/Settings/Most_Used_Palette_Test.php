@@ -37,12 +37,48 @@ class Most_Used_Palette_Test extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Restores the global script registry after each test.
+	 * Restores the global script registry and removes the registered setting after each test.
 	 */
 	public function tear_down(): void {
 		unset( $GLOBALS['wp_scripts'] );
+		unregister_setting( 'writing', 'tenup_isc_most_read_palette' );
 
 		parent::tear_down();
+	}
+
+	/**
+	 * Provides what Settings > Writing submits for the checkbox and the palette state it should produce.
+	 *
+	 * `wp-admin/options.php` passes the posted value to `update_option()`, or
+	 * null when the checkbox is unchecked and so absent from the request.
+	 *
+	 * @return array<string, array{0: string|null, 1: bool}>
+	 */
+	public function data_settings_form_submissions(): array {
+		return array(
+			'checked'   => array( 'on', true ),
+			'unchecked' => array( null, false ),
+		);
+	}
+
+	/**
+	 * Tests that saving Settings > Writing through the registered setting keeps the palette state the user chose.
+	 *
+	 * A sanitize callback or type change that stores anything other than `'on'`
+	 * for a checked box would silently turn the palette off.
+	 *
+	 * @dataProvider data_settings_form_submissions
+	 *
+	 * @param string|null $submitted Value `options.php` saves for the checkbox.
+	 * @param bool        $expected  Whether the palette should be on.
+	 */
+	public function test_saving_settings_form_keeps_chosen_palette_state( ?string $submitted, bool $expected ): void {
+		require_once ABSPATH . 'wp-admin/includes/template.php';
+		\InsertSpecialCharacters\register_settings_fields();
+
+		update_option( 'tenup_isc_most_read_palette', $submitted );
+
+		$this->assertSame( $expected, \InsertSpecialCharacters\get_most_used_palette_setting() );
 	}
 
 	/**
