@@ -12,13 +12,16 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event_name == 'pull_request' && github.head_ref || github.sha }}
   cancel-in-progress: true
 
-permissions:
-  contents: read
+# Disable permissions for all available scopes by default.
+# Any needed permissions should be configured at the job level.
+permissions: {}
 
 jobs:
   # The release zip, built once and shared by every E2E job.
   build:
     uses: ./.github/workflows/build-release-zip.yml
+    permissions:
+      contents: read
 
   # Runs against the release zip rather than the source tree, so packaging
   # bugs (a runtime file caught by .distignore) fail here, not after release.
@@ -26,6 +29,8 @@ jobs:
     name: E2E / WP ${{ matrix.wp }}
     needs: build
     runs-on: ubuntu-24.04
+    permissions:
+      contents: read
     timeout-minutes: 40
     strategy:
       fail-fast: false
