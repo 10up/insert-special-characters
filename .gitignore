@@ -4,8 +4,8 @@
 
 .DS_Store
 .wp-env.override.json
+.wp-env.test.override.json
+/release
 
-tests/cypress/downloads
-tests/cypress/screenshots
-tests/cypress/videos
-tests/cypress/reports
+/artifacts
+tests/.phpunit.result.cache
