@@ -13,11 +13,17 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "10up/phpcs-composer": "dev-master"
+        "10up/phpcs-composer": "dev-master",
+        "phpunit/phpunit": "^9.6",
+        "yoast/phpunit-polyfills": "^4.0",
+        "wp-phpunit/wp-phpunit": "^7.1"
     },
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true
+        },
+        "platform": {
+            "php": "7.4"
         }
     }
 }
