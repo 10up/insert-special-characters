@@ -2,8 +2,10 @@
 /.git
 /.github
 /.wordpress-org
+/artifacts
 /assets
 /node_modules
+/release
 /src
 /tests
 /bin
@@ -11,13 +13,14 @@
 # Files
 .distignore
 .DS_Store
-.eslintignore
-.eslintrc.js
+eslint.config.js
 .gitignore
 .nvmrc
 .wordpress-version-checker.json
 .wp-env.json
 .wp-env.override.json
+.wp-env.test.json
+.wp-env.test.override.json
 CHANGELOG.md
 CODE_OF_CONDUCT.md
 composer.json
@@ -27,6 +30,7 @@ CREDITS.md
 LICENSE.md
 package-lock.json
 package.json
+phpunit.xml.dist
 phpcs.xml
 README.md
 webpack.config.js
